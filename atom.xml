@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-09-01T08:02:33.000Z</updated>
+  <updated>2018-09-01T08:01:00.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://rootjang92.github.io/2018/09/01/test/"/>
-    <id>http://rootjang92.github.io/2018/09/01/test/</id>
-    <published>2018-09-01T08:02:33.000Z</published>
-    <updated>2018-09-01T08:02:33.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -48,6 +34,33 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>HTML이란?</title>
+    <link href="http://rootjang92.github.io/2018/09/01/html1/"/>
+    <id>http://rootjang92.github.io/2018/09/01/html1/</id>
+    <published>2018-09-01T06:27:45.000Z</published>
+    <updated>2018-09-01T07:13:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="HTML이란-무엇인가"><a href="#HTML이란-무엇인가" class="headerlink" title="HTML이란 무엇인가?"></a>HTML이란 무엇인가?</h3><p>우리가 흔히 보는 웹사이트의 기본은 HTML 이다. 흔히 ‘웹 문서’를 작성한다고 말하는데 이를 보는 프로그램이 바로 ‘Web browser’이다.<br>HTML은 HyperText Markup Language의 줄임말로서 하이퍼텍스트를 마크업한는 언어다.</p><h1 id="하이퍼-텍스트란"><a href="#하이퍼-텍스트란" class="headerlink" title="하이퍼 텍스트란?"></a>하이퍼 텍스트란?</h1><blockquote><p>웹 사이트에서 링크를 클릭해 다른 문서나 사이트로 즉시 이동할 수 있는 기능.</p></blockquote><p><code>&lt;&gt;</code>로 묶인 것은 HTML 태그라고 하고 이렇게 태그를 붙이는 것이 마크업이다. 이 꺽쇠안의 내용은 웹 브라우저 화면에 나타나지 않는다.</p><p>네이버로 들어가 [페이지 소스 보기], 혹은 검사(chrome)을 하여 documents를 살펴보자.<br><a href="https://www.naver.com" target="_blank" rel="noopener">HTML소스 엿보기</a></p><h1 id="웹-표준이란"><a href="#웹-표준이란" class="headerlink" title="웹 표준이란?"></a>웹 표준이란?</h1><p>우리가 현재 사용하고 있는 HTML5를 웹 표준 기술이라고 하는데 왜 웹 표준이 필요할까?<br>바로 ‘표준’이 필요하기 떄문입니다. 세상에는 많은 브라우저들이 있기 때문에 예를 들어 IE에서는 맞지 않고 크롬에만 맞는 사이트를 구현한다면 사용자들이 자유롭게 이용할 수 없다.</p><p>따라서 HTML5로 문서를 만드는 것은 웹 표준을 지키는 문서를 만드는 것이다.</p><ol><li>최신 웹 표준에 맞는 웹사이트를 제작할 수 있다.</li><li>앱 화면의 기초를 디자인한다.</li><li>Interactive한 사이트를 만들 수 있다.</li><li>소스를 이해하여 웹 사이트나 블로그를 쉽게 수정할 수 있다.</li></ol><p>이로서 HTML5를 왜 사용하는 지에 대해 알아보았습니다. 다음 시간에는 HTML의 기본 문서 구조에 대해 알아보겠습니다.</p><ul><li>이 글은 DO it! HTML5 + CSS3 웹 표준의 정석이라는 책을 인용하였습니다.</li><li>thumbnail 출처 : <a href="http://knulab.com/archives/1060" target="_blank" rel="noopener">http://knulab.com/archives/1060</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;HTML이란-무엇인가&quot;&gt;&lt;a href=&quot;#HTML이란-무엇인가&quot; class=&quot;headerlink&quot; title=&quot;HTML이란 무엇인가?&quot;&gt;&lt;/a&gt;HTML이란 무엇인가?&lt;/h3&gt;&lt;p&gt;우리가 흔히 보는 웹사이트의 기본은 HTML 이다. 흔히 
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="HTML" scheme="http://rootjang92.github.io/categories/HTML-CSS/HTML/"/>
+    
+    
+      <category term="HTML, html" scheme="http://rootjang92.github.io/tags/HTML-html/"/>
     
   </entry>
   

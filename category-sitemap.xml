@@ -7,19 +7,17 @@
     </url>
 
     <url>
-        <loc>http://rootjang92.github.io/2018/09/01/hello-world/</loc>
-        <lastmod>2018-09-01T08:01:00.000Z</lastmod>
+        <loc>http://rootjang92.github.io/categories/HTML-CSS/</loc>
+        <lastmod>2018-09-01T07:13:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
+        <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://rootjang92.github.io/2018/09/01/html1/</loc>
+        <loc>http://rootjang92.github.io/categories/HTML-CSS/HTML/</loc>
         <lastmod>2018-09-01T07:13:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
+        <priority>0.2</priority>
     </url>
 
 </urlset>
