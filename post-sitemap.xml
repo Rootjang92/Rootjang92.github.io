@@ -7,16 +7,8 @@
     </url>
 
     <url>
-        <loc>http://rootjang92.github.io/2018/09/04/htmllist/</loc>
-        <lastmod>2018-09-04T01:35:44.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://rootjang92.github.io/2018/09/03/jsdatatype/</loc>
-        <lastmod>2018-09-03T09:47:39.000Z</lastmod>
+        <loc>http://rootjang92.github.io/2018/09/04/jsproperty/</loc>
+        <lastmod>2018-09-04T08:17:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,7 +16,23 @@
 
     <url>
         <loc>http://rootjang92.github.io/2018/09/03/htmltext/</loc>
-        <lastmod>2018-09-03T09:00:54.000Z</lastmod>
+        <lastmod>2018-09-04T08:15:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://rootjang92.github.io/2018/09/04/htmllist/</loc>
+        <lastmod>2018-09-04T08:14:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://rootjang92.github.io/2018/09/03/jsdatatype/</loc>
+        <lastmod>2018-09-04T08:05:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
