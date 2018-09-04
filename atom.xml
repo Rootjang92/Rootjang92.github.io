@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-09-04T01:32:20.000Z</updated>
+  <updated>2018-09-04T01:35:44.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://rootjang92.github.io/2018/09/04/htmllist/"/>
     <id>http://rootjang92.github.io/2018/09/04/htmllist/</id>
     <published>2018-09-04T01:12:31.000Z</published>
-    <updated>2018-09-04T01:32:20.000Z</updated>
+    <updated>2018-09-04T01:35:44.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="목록을-생성하는-태그"><a href="#목록을-생성하는-태그" class="headerlink" title="목록을 생성하는 태그"></a>목록을 생성하는 태그</h1><p>HTML 문서를 작성할 때 많이 쓰이는 태그 중 하나가 바로 목록을 생성하는 태그다. 웹 표준이 정의화된 후에는 이미지나 텍스트에 구애받지 않고 어떤 것이든 목록화 시킬 수 있다. 특히 CSS를 적용한다면 메뉴나 본문 내용 등으로 사용할 수 있으니 table 태그가 거의 안쓰이는 이유가 되기도 했다.</p><h2 id="ul태그-li태그"><a href="#ul태그-li태그" class="headerlink" title="ul태그, li태그"></a>ul태그, li태그</h2><p>이 두 태그는 ‘순서 없는’ 목록을 만들 때 사용되는 태그이다. ul태그 안에 li태그를 사용하여 목록화 시킨다.</p><h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/ctfadnky/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><h2 id="ol태그-li태그"><a href="#ol태그-li태그" class="headerlink" title="ol태그, li태그"></a>ol태그, li태그</h2><p>ol 태그는 순서가 필요한 목록을 만들 때 사용한다. ol은 타입을 지정할 수 있는데 1은 숫자를 나타내며 기본값으로 설정되어 있다.<br>그 외에 a(영소문자),A(영대문자),i(로마숫자 소문자),I(로마숫자 대문자)로 이루어져 있다. CSS로도 대체 가능하다.</p><h3 id="에제"><a href="#에제" class="headerlink" title="에제"></a>에제</h3><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/0y4vn2fj/1/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><h2 id="dl-dt-dd-태그"><a href="#dl-dt-dd-태그" class="headerlink" title="dl,dt,dd 태그"></a>dl,dt,dd 태그</h2><p>자주 쓰이는 태그는 아니지만 설명 목록을 만들 때 주로 쓰이는 태그이다. 경험이 적어서 그런건진 몰라도 이 태그 쓰는 사이트를 본 기억이 드물다. 위키트리에서는 쓰일 수도 있겠다… 여튼 dl태그로 묶고 dt 태그에 제목을 dd 태그에 설명을 표시한다.</p><p>지금까지 배운 자료를 가지고 본인만의 간단한 프로필 웹 페이지를 만들어 보는 것도 좋을 것 같다.</p><h3 id="참고할-만한-사이트"><a href="#참고할-만한-사이트" class="headerlink" title="참고할 만한 사이트."></a>참고할 만한 사이트.</h3><p><a href="https://validator.w3.org/" target="_blank" rel="noopener">HTML 온라인 검사기</a></p><p>이 사이트는 파일을 업로드하면 자동으로 HTML 문서 상 오류가 있는 지 검사해주는 사이트다. 웹 페이지를 제작할 때 꽤 유용하다.</p>]]></content>
     
@@ -39,7 +39,7 @@
       <category term="HTML" scheme="http://rootjang92.github.io/categories/HTML-CSS/HTML/"/>
     
     
-      <category term="HTML, html, HTML basic syntax, html tag - null" scheme="http://rootjang92.github.io/tags/HTML-html-HTML-basic-syntax-html-tag-null/"/>
+      <category term="HTML, html, HTML basic syntax, html tag, ul, ul태그, li - null" scheme="http://rootjang92.github.io/tags/HTML-html-HTML-basic-syntax-html-tag-ul-ul%ED%83%9C%EA%B7%B8-li-null/"/>
     
   </entry>
   
