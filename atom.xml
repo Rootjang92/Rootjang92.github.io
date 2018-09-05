@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-09-05T01:57:00.000Z</updated>
+  <updated>2018-09-05T07:08:21.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://rootjang92.github.io/2018/09/05/htmlimage/"/>
     <id>http://rootjang92.github.io/2018/09/05/htmlimage/</id>
     <published>2018-09-05T01:37:02.000Z</published>
-    <updated>2018-09-05T01:57:00.000Z</updated>
+    <updated>2018-09-05T07:08:21.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="이미지와-하이퍼텍스트-링크"><a href="#이미지와-하이퍼텍스트-링크" class="headerlink" title="이미지와 하이퍼텍스트 링크"></a>이미지와 하이퍼텍스트 링크</h1><h2 id="웹에서-사용되는-이미지-파일-형식은"><a href="#웹에서-사용되는-이미지-파일-형식은" class="headerlink" title="웹에서 사용되는 이미지 파일 형식은?"></a>웹에서 사용되는 이미지 파일 형식은?</h2><p>웹 페이지는 기본적으로 설명은 텍스트, 메뉴나 로고 등은 이미지로 처리 한다. 웹 페이지의 경우 크기가 작고 화질이 좋은 파일 형식을 사용하여야 하는데 웹에서 사용할 수 있는 파일 형식은 GIF, JPG/JPEG, PNG 파일이 있다.</p><a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%AF%B8%EC%A7%80_%ED%8C%8C%EC%9D%BC_%ED%98%95%EC%8B%9D" target="_blank" rel="noopener">이미지 파일 형식</a><h2 id="img-태그"><a href="#img-태그" class="headerlink" title="img 태그"></a>img 태그</h2><p>HTML에서 이미지를 삽입하는 태그는 <img> 태그이다. 이 때 src 속성을 사용하여 해당 이미지의 주소를 넣는다.</p><p><img src="../images/image.png" alt="img태그"></p><p>img 태그에는 src속성과 alt속성이 있는데 src는 해당 이미지의 주소, alt는 설명이 들어간다.<br>다시 돌아가 파일 경로에 대해 살펴보자. 내 컴퓨터에 있는 이미지를 사용한다면 그에 맞는 파일명, 다른 폴더에 있는 경우 하위 폴더와 함께 적어주면 된다. ‘/‘는 하위폴더를 나타낸다.(한단계 위는 ‘..’을 사용한다.)</p><p>웹 상의 이미지 또한 링크 주소를 받아 붙여넣을 수 있다. 해당 사이트가 닫히지 않는 이상 사용할 수 있다. 단 이 경우 저작권에 주의하여야 한다.</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="이미지와-하이퍼텍스트-링크"><a href="#이미지와-하이퍼텍스트-링크" class="headerlink" title="이미지와 하이퍼텍스트 링크"></a>이미지와 하이퍼텍스트 링크</h1><h2 id="웹에서-사용되는-이미지-파일-형식은"><a href="#웹에서-사용되는-이미지-파일-형식은" class="headerlink" title="웹에서 사용되는 이미지 파일 형식은?"></a>웹에서 사용되는 이미지 파일 형식은?</h2><p>웹 페이지는 기본적으로 설명은 텍스트, 메뉴나 로고 등은 이미지로 처리 한다. 웹 페이지의 경우 크기가 작고 화질이 좋은 파일 형식을 사용하여야 하는데 웹에서 사용할 수 있는 파일 형식은 GIF, JPG/JPEG, PNG 파일이 있다.</p><a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%AF%B8%EC%A7%80_%ED%8C%8C%EC%9D%BC_%ED%98%95%EC%8B%9D" target="_blank" rel="noopener">이미지 파일 형식</a><h2 id="img-태그"><a href="#img-태그" class="headerlink" title="img 태그"></a>img 태그</h2><p>HTML에서 이미지를 삽입하는 태그는 <img> 태그이다. 이 때 src 속성을 사용하여 해당 이미지의 주소를 넣는다.</p><p><img src="images/image.png" alt="img태그"></p><p>img 태그에는 src속성과 alt속성이 있는데 src는 해당 이미지의 주소, alt는 설명이 들어간다.<br>다시 돌아가 파일 경로에 대해 살펴보자. 내 컴퓨터에 있는 이미지를 사용한다면 그에 맞는 파일명, 다른 폴더에 있는 경우 하위 폴더와 함께 적어주면 된다. ‘/‘는 하위폴더를 나타낸다.(한단계 위는 ‘..’을 사용한다.)</p><p>웹 상의 이미지 또한 링크 주소를 받아 붙여넣을 수 있다. 해당 사이트가 닫히지 않는 이상 사용할 수 있다. 단 이 경우 저작권에 주의하여야 한다.</p><p>alt는 이미지를 설명하는 대체 텍스트를 달 때 사용하는 속성이다. 이를 사용할 경우 시각 장애인에게 화면 낭독기가 이미지를 설명해 줄 수 있다.</p><p>width, height 속성은 너비와 높이를 조정하는 속성이다.</p><h2 id="img의-기타-속성들"><a href="#img의-기타-속성들" class="headerlink" title="img의 기타 속성들"></a>img의 기타 속성들</h2><ul><li>figure, figcaption : 설명 속성 태그</li></ul><p>이미지에 설명을 함께 붙이고 싶을 때 사용하는 태그이다. figure태그는 설명 글을 붙일 대상을 지정합니다. 예를 들어 figure태그 안에 img태그와 figcaption태그를 넣게 되면 이미지 밑에 캡션이 달리게 됩니다.</p>]]></content>
     
     <summary type="html">
     
