@@ -21,7 +21,7 @@
 <meta property="og:description" content="프로토타입자바스크립트의 모든 객체는 자신의 부모 역할을 하는 객체와 연결되어 있다. 이를 통해 자바스크립트에서는 상속 개념을 구현할 수 있다. 이를 프로토타입 객체라고 한다. var foo = {   name: &amp;apos;Jang&amp;apos;,   age: 27 };  console.log(foo.toString()); console.dir(foo); 코드를">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://rootjang92.github.io/images/rootjang.png">
-<meta property="og:updated_time" content="2018-09-05T07:58:44.000Z">
+<meta property="og:updated_time" content="2018-09-05T08:48:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="프로토타입과 배열 그리고 연산자">
 <meta name="twitter:description" content="프로토타입자바스크립트의 모든 객체는 자신의 부모 역할을 하는 객체와 연결되어 있다. 이를 통해 자바스크립트에서는 상속 개념을 구현할 수 있다. 이를 프로토타입 객체라고 한다. var foo = {   name: &amp;apos;Jang&amp;apos;,   age: 27 };  console.log(foo.toString()); console.dir(foo); 코드를">
@@ -239,6 +239,85 @@ console.dir(foo);
 <blockquote>
 <p>객체 - <code>_proto_</code> - Object.prototype<br>배열 - <code>_proto_</code> - Array.prototype - <code>_proto_</code> - Object.prototype</p>
 </blockquote>
+<h2 id="배열의-프로퍼티-열거"><a href="#배열의-프로퍼티-열거" class="headerlink" title="배열의 프로퍼티 열거"></a>배열의 프로퍼티 열거</h2><p>객체는 for in 문으로 객체를 열거할 수 있는데 배열은 for in문을 사용하면 불필요한 프로퍼티가 출력될 수 있으므로 for문을 사용하는 것이 좋다.</p>
+<pre><code>var arr = [&apos;zero&apos;, &apos;one&apos;, &apos;two&apos;];
+console.log(arr.length);
+arr[3] = &apos;red&apos;;
+console.log(arr.length);
+
+for (var i = 0; i &lt; arr.length; i++) {
+  console.log(i, arr[i]);
+}
+</code></pre><p>출력 결과</p>
+<blockquote>
+<p>3<br>4<br>for문 결과값<br>0 ‘zero’<br>1 ‘one’<br>2 ‘two’<br>3 ‘red’</p>
+</blockquote>
+<h2 id="배열-요소-삭제"><a href="#배열-요소-삭제" class="headerlink" title="배열 요소 삭제"></a>배열 요소 삭제</h2><p>배열도 객체이므로 delete 연산자를 사용할 수 있지만, 이는 해당 요소를 undefined처리할 뿐이다. 그래서 배열에서는 splice()배열 메서드를 사용한다.</p>
+<h2 id="splice-배열-메서드"><a href="#splice-배열-메서드" class="headerlink" title="splice() 배열 메서드"></a>splice() 배열 메서드</h2><p>splice(start, deleteCount, item…)</p>
+<ul>
+<li><p>start : 배열에서 시작 위치, deleteCount : 삭제할 요소의 수 item : 삭제할 위치에 추가할 요소<br>ㅡ</p>
+<pre><code>var arr = [&apos;zero&apos;, &apos;one&apos;, &apos;two&apos;, &apos;three&apos;];
+
+arr.splice(2,1); // 1
+console.log(arr);
+console.log(arr.length);
+</code></pre></li>
+</ul>
+<p>즉 1의 의미는 arr배열의 2번째부터 1개 요소를 삭제하겠다는 의미이다. 즉 arr 요소에서 ‘two’가 삭제되는 것이다.</p>
+<p>출력 결과</p>
+<blockquote>
+<p>[ ‘zero’, ‘one’, ‘three’ ]<br>3</p>
+</blockquote>
+<h2 id="Array-생성자-함수"><a href="#Array-생성자-함수" class="headerlink" title="Array() 생성자 함수"></a>Array() 생성자 함수</h2><p>배열은 배열 리터럴로 생성하지만 배열 리터럴도 결국 Array()생성자 함수로 배열을 생성하는 것을 단수화한 것이다.<br>생성자 함수로 배열을 생성할 때에는 new 연산자를 사용하여야 한다.</p>
+<pre><code>var foo = new Array(3);
+console.log(foo);
+console.log(foo.length);
+
+var bar = new Array(1,2,3);
+console.log(bar);
+console.log(bar.length);
+</code></pre><p>호출할 때 인자가 1개이면 호출된 인자를 lenth로 갖는 빈 배열을 생성하고 그 외에는 호출된 인자를 요소로 같는다.</p>
+<p>출력 결과</p>
+<blockquote>
+<p>[ undefined x 3]<br>3<br>[1,2,3]<br>3</p>
+</blockquote>
+<h2 id="유사-배열-객체"><a href="#유사-배열-객체" class="headerlink" title="유사 배열 객체"></a>유사 배열 객체</h2><p>length 프로퍼티는 배열의 동작에 있어서 정말 중요하다. 그런데 일반 객체에서도 length를 사용할 수 있는 경우가 있으니 이를 유사 배열객체라고 한다.</p>
+<pre><code>var arr = [&apos;bar&apos;];
+var obj = { name: &apos;Jang&apos;, length : 1};
+
+arr.push(&apos;baz&apos;);
+console.log(arr);
+
+Array.prototype.push.apply(obj, [&apos;baz&apos;]);
+console.log(obj);
+</code></pre><p>원래의 경우라면 변수 obj에는 push()메서드를 사용할 수 없으나, apply() 메서드를 사용하면 객체라도 표준 배열 메서드를 사용할 수 있다.<br>후에 더 자세히 살펴볼 것이다. (call, apply 메서드)</p>
+<p>출력 결과</p>
+<blockquote>
+<p>[ ‘bar’, ‘baz’ ]<br>{ ‘1’: ‘baz’, name: ‘Jang’, length: 2 }</p>
+</blockquote>
+<h2 id="기본-타입과-표준-메서드"><a href="#기본-타입과-표준-메서드" class="headerlink" title="기본 타입과 표준 메서드"></a>기본 타입과 표준 메서드</h2><p>기본 타입의 경우 어떻게 표준 메서드를 호출하는가? 자바스크립트에서는 기본값을 객체로 변화한 다음 각 타입의 표준 메서드를 불러온다.</p>
+<h2 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h2><ul>
+<li><ul>
+<li>연산자</li>
+</ul>
+</li>
+</ul>
+<p>+연산자는 더하기 연산과 문자열 연결 연산을 수행한다. 두 연산자가 모두 숫자인 경우에는 더하기 연산을 실시한다.</p>
+<ul>
+<li>typeof 연산자</li>
+</ul>
+<p>피연산자의 타입을 문자열 형태로 리턴하는 연산자이다. 유의할 점은 null의 경우 object로 표시된다는 점(자바스크립트 개발단 오류)<br>함수는 function이라는 점에 유의하여야 한다.</p>
+<ul>
+<li>동등연산자와 일치연산자.</li>
+</ul>
+<p>동등연사자의 경우(==) 피연사자의 타입이 다를 경우 이를 변경하여 비교하고 일치연산자의 경우(===) 타입을 변경하지 않는다.</p>
+<pre><code>console.log(1 == &apos;1&apos;) // true
+console.log(1 === &apos;1&apos;) // false
+</code></pre><ul>
+<li>!! 연산자</li>
+</ul>
+<p>!!연산자는 피연산자를 불리언값으로 변환한다. 값이 0이나 없다면 false, 그 외의 빈 객체, 배열, 문자열 등은 true로 표시된다.</p>
+<p>다음 시간에는 <strong>함수와 프로토타입 체이닝</strong>에 대해서 알아보겠습니다.</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
