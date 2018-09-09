@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-09-05T08:48:34.000Z</updated>
+  <updated>2018-09-09T06:49:02.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Form 태그에 대하여</title>
+    <link href="http://rootjang92.github.io/2018/09/09/htmlform/"/>
+    <id>http://rootjang92.github.io/2018/09/09/htmlform/</id>
+    <published>2018-09-09T06:15:24.000Z</published>
+    <updated>2018-09-09T06:49:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-폼-태그에-대하여"><a href="#HTML-폼-태그에-대하여" class="headerlink" title="HTML 폼 태그에 대하여"></a>HTML 폼 태그에 대하여</h1><p>폼 태그란 특정 형식에 사용자가 무언가를 입력하는 형태로 이루어져 있다. 로그인이나 회원가입 창이 그 예이다.<br>웬만한 페이지에서는 형식에 구해받지 않고 이런 폼 태그를 볼 수 있다. 우리가 많이 사용하는 SNS에서도 회원가입을 하기 위해서 입력하는 정보들도 폼이다.</p><p>로그인을 예로 들면 우리가 클라리언트에서 정보를 입력하여 서버로 보내면 그 서버에서 DB를 확인하여 다시 보내주는 형태로 반응한다. 그 방법에는 여러가지가 있는데 흔히 ASP, PHP, JSP등을 사용할 수도 있고 최근 라이브러리나 프레임워크를 사용하면서 axios나 rxjs등의 여러가지 형태로도 가능하다.</p><h2 id="폼태그"><a href="#폼태그" class="headerlink" title="폼태그"></a>폼태그</h2><pre><code>&lt;form [속성=&quot;속성값&quot;]&gt;&lt;/form&gt;</code></pre><p>폼 택의 기본적인 형태는 이렇다. 하지만 그 속성은 정말 다양하게 존재한다.</p><ul><li><p>method<br>서버 쪽에 넘겨줄 <strong>방법</strong>을 지정하는 속성이다. 보통 get, post를 사용하는 데 get은 url자체에 담아서 넘겨줘 데이터 용량에 제한이 있지만 우리가 보통 사용하는 post 방식은 표준 입력으로 제한이 없고 정보가 노출되지 않는다.</p></li><li><p>name<br>폼의 이름을 지정한다.</p></li><li><p>action<br>서버 상의 프로그램을 지정한다.</p></li><li><p>target<br>스크립트 파일을 현재창에 띄울 지 다른 위치에서 열지 지정한다.</p></li><li><p>autocomplete<br>자동완성 속성이다. 우리가 검색창에서 어떤 검색어를 입력할 때 자동완성 되는 경험을 해본 적이 있을 것이다. 기본값은 on으로 지정되어 있다.</p></li></ul><h2 id="label-태그"><a href="#label-태그" class="headerlink" title="label 태그"></a>label 태그</h2><pre><code>&lt;label [속성=&quot;속성값&quot;]&gt;&lt;/label&gt;</code></pre><p>label 태그는 폼 요소에 레이블을 붙이기 위한 태그이다. 직접 텍스트를 입력할 수도 있고 for 속성을 사용하여 지정할 수도 있다. 또한 라벨 태그를 input 태그에 checkbox나 radio 버튼과 연결하면 텍스트를 클릭해도 항목이 클릭되게 만들 수도 있다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/zx4heatq/2/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><h2 id="fieldset과-legend-태그"><a href="#fieldset과-legend-태그" class="headerlink" title="fieldset과 legend 태그"></a>fieldset과 legend 태그</h2><p>이 두 태그는 폼 요소를 그룹으로 묶을 때 사용한다. 이 태그를 사용하면 하나의 그룹으로 묶고 외곽선을 그려준다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/nwxmroj0/5/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><h2 id="input-태그"><a href="#input-태그" class="headerlink" title="input 태그"></a>input 태그</h2><p>쉽게 말해서 우리가 입력할 수 있는 <strong>텍스트 상자</strong>나 <strong>로그인 버튼</strong> 등을 만들어 내는 태그가 바로 input 태그이다.</p><pre><code>&lt;input type=&quot;유형&quot; [속성=&quot;속성값&quot;]&gt;</code></pre><p>위 예제에서 봤듯이 input태그에서 id 속성을 사용하면 label 태그를 통해 속성을 붙이기도 하고 css에서도 사용할 수 있다.</p><a href="http://aboooks.tistory.com/294" target="_blank" rel="noopener">input태그 속성</a>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;HTML-폼-태그에-대하여&quot;&gt;&lt;a href=&quot;#HTML-폼-태그에-대하여&quot; class=&quot;headerlink&quot; title=&quot;HTML 폼 태그에 대하여&quot;&gt;&lt;/a&gt;HTML 폼 태그에 대하여&lt;/h1&gt;&lt;p&gt;폼 태그란 특정 형식에 사용자가 무언가를
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="HTML" scheme="http://rootjang92.github.io/categories/HTML-CSS/HTML/"/>
+    
+    
+      <category term="HTML, html, html form, form tag" scheme="http://rootjang92.github.io/tags/HTML-html-html-form-form-tag/"/>
+    
+  </entry>
   
   <entry>
     <title>프로토타입과 배열 그리고 연산자</title>
