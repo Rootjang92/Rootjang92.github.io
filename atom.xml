@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-09-10T06:29:54.000Z</updated>
+  <updated>2018-09-10T06:36:05.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Input 태그</title>
+    <link href="http://rootjang92.github.io/2018/09/10/htmlinput/"/>
+    <id>http://rootjang92.github.io/2018/09/10/htmlinput/</id>
+    <published>2018-09-10T06:30:48.000Z</published>
+    <updated>2018-09-10T06:36:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="태그"><a href="#태그" class="headerlink" title=" 태그"></a><input> 태그</h1><h2 id="Input-태그란"><a href="#Input-태그란" class="headerlink" title="Input 태그란?"></a>Input 태그란?</h2><p>Input 태그는 기본적으로 입력 항목을 만드는 태그다.<br>체크박스 등의 클릭하는 버튼도 input 태그를 활용해 만든다.</p><ul><li>id 속성을 사용하면 label 태그를 사용할 수 있다.</li></ul><ul><li>Input 태그의 type 속성에 사용 하는 유형.<a href="http://aboooks.tistory.com/294" target="_blank" rel="noopener">input type태그속성</a></li></ul><p>하지만 브라우저마다 지원이 다르기 때문에 이 사이트를 참조하여 얼마나 지원하는 지 알아보면 좋다.</p><a href="http://caniuse.com" target="_blank" rel="noopener">브라우저지원확인</a><p>미완성입니다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;태그&quot;&gt;&lt;a href=&quot;#태그&quot; class=&quot;headerlink&quot; title=&quot; 태그&quot;&gt;&lt;/a&gt;&lt;input&gt; 태그&lt;/h1&gt;&lt;h2 id=&quot;Input-태그란&quot;&gt;&lt;a href=&quot;#Input-태그란&quot; class=&quot;headerlink&quot; title
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="HTML" scheme="http://rootjang92.github.io/categories/HTML-CSS/HTML/"/>
+    
+    
+      <category term="html, html input" scheme="http://rootjang92.github.io/tags/html-html-input/"/>
+    
+  </entry>
   
   <entry>
     <title>함수의 this</title>
