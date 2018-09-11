@@ -6,22 +6,28 @@
     
 
     
-    <title>Tag: Javascript, js, es5, ES5 | Rootjang&#39;s IT Blog</title>
+    <title>프로토타입 체이닝 | Rootjang&#39;s IT Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="HTML, CSS, Javascript">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rootjang&#39;s IT Blog">
-<meta property="og:url" content="http://rootjang92.github.io/tags/Javascript-js-es5-ES5/index.html">
+        <meta name="keywords" content="Javascript, JS prototype, prototype chain" />
+    
+    <meta name="description" content="프로토타입 체이닝자바스크립트는 프로토타입 기반 객체지향 언어이다. 자바스크립트를 이해하기 위해서 무조건 알아가야 할 개념 중 하나가 이 프로토타입이다.그래서 오늘은 상속의 개념을 구현하는 프로토타입과 프로토타입 체이닝에 대해 글을 써보려고 한다. 가장 중요한 건 자신을 생성한 생성자 함수의 prototype 프로퍼티가 가리키는 프로토타입 객체를 자신의 부모">
+<meta name="keywords" content="Javascript, JS prototype, prototype chain">
+<meta property="og:type" content="article">
+<meta property="og:title" content="프로토타입 체이닝">
+<meta property="og:url" content="http://rootjang92.github.io/2018/09/11/jsprotochain/index.html">
 <meta property="og:site_name" content="Rootjang&#39;s IT Blog">
+<meta property="og:description" content="프로토타입 체이닝자바스크립트는 프로토타입 기반 객체지향 언어이다. 자바스크립트를 이해하기 위해서 무조건 알아가야 할 개념 중 하나가 이 프로토타입이다.그래서 오늘은 상속의 개념을 구현하는 프로토타입과 프로토타입 체이닝에 대해 글을 써보려고 한다. 가장 중요한 건 자신을 생성한 생성자 함수의 prototype 프로퍼티가 가리키는 프로토타입 객체를 자신의 부모">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://rootjang92.github.io/images/rootjang.png">
+<meta property="og:updated_time" content="2018-09-11T06:51:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rootjang&#39;s IT Blog">
+<meta name="twitter:title" content="프로토타입 체이닝">
+<meta name="twitter:description" content="프로토타입 체이닝자바스크립트는 프로토타입 기반 객체지향 언어이다. 자바스크립트를 이해하기 위해서 무조건 알아가야 할 개념 중 하나가 이 프로토타입이다.그래서 오늘은 상속의 개념을 구현하는 프로토타입과 프로토타입 체이닝에 대해 글을 써보려고 한다. 가장 중요한 건 자신을 생성한 생성자 함수의 prototype 프로퍼티가 가리키는 프로토타입 객체를 자신의 부모">
 <meta name="twitter:image" content="http://rootjang92.github.io/images/rootjang.png">
     
-    <link rel="canonical" href="http://rootjang92.github.io/tags/javascript-js-es5-es5/"/>
+    <link rel="canonical" href="http://rootjang92.github.io/2018/09/11/jsprotochain/"/>
     
         <link rel="alternate" href="/" title="Rootjang&#39;s IT Blog" type="application/atom+xml" />
     
@@ -143,7 +149,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>Javascript, js, es5, ES5</em>
+    <a class="page-title-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Javascript/ES5/">ES5</a>
     </h1>
 </div>
 
@@ -155,68 +161,228 @@ ga('send', 'pageview');
     enable_page_level_ads: true
   });
 </script>
-                            
-
-    
-    
+                            <article id="post-jsprotochain" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/02/jsbasic/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/js.png)" alt="Javascript 기본 개요" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/09/02/jsbasic/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/ES5/">ES5</a>
-            </div>
-            <div class="date"><time datetime="2018-09-02T01:46:18.000Z" itemprop="datePublished">2018-09-02</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/02/jsbasic/">Javascript 기본 개요</a>
+        프로토타입 체이닝
         </h1>
     
 
-        <p class="article-excerpt">
-            자바스크립트 기본 개요자바스크립트는 웹 브라우저에서 동작하는 스크립트 언어이다. 처음에는 웹 페이지 제작에 보조적 역할에 한정되어 있었다.하지만 여러가지 연구와 prototype 라이브러리 개발 등 많은 발전이 있으면서 서버에서 담당하던 역할이 웹 브라우저로 옮겨졌고 결국 자바스크립트는 그 변화의 중심적인 언어가 되었다. (인사이드 자바스크립트 저:송형주,
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/09/11/jsprotochain/" class="article-date">
+            <time datetime="2018-09-11T05:40:20.000Z" itemprop="datePublished">2018-09-11</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Javascript-JS-prototype-prototype-chain/">Javascript, JS prototype, prototype chain</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="프로토타입-체이닝"><a href="#프로토타입-체이닝" class="headerlink" title="프로토타입 체이닝"></a>프로토타입 체이닝</h1><p>자바스크립트는 <strong>프로토타입 기반 객체지향 언어</strong>이다. 자바스크립트를 이해하기 위해서 무조건 알아가야 할 개념 중 하나가 이 프로토타입이다.<br>그래서 오늘은 상속의 개념을 구현하는 프로토타입과 프로토타입 체이닝에 대해 글을 써보려고 한다.</p>
+<p>가장 중요한 건 <strong>자신을 생성한 생성자 함수의 prototype 프로퍼티가 가리키는 프로토타입 객체를 자신의 부모로 설정하는 [[prototype]]링크로 연결한다.</strong> 이다.</p>
+<pre><code>function Person(name) {
+  this.name = name;
+}
+
+var foo = new Person(&apos;Jang&apos;);
+
+console.dir(Person);
+console.dir(foo);
+</code></pre><p>이 코드는 그림 한장으로 설명할 수 있다.</p>
+<p><img src="https://poiemaweb.com/img/constructor_function_prototype_chaining.png" alt="프로토타입"></p>
+<p>결국 prototype 프로퍼티나 [[prototype]]은 같은 객체를 가리키고 있다는 걸 알 수 있다.<br>즉, 객체를 생성하는 건 생성자 함수가 하지만 그 부모 역할을 하는 건 생성자의 prototype 프로퍼티가 가리키는 <strong>프로토타입 객체</strong>이다.</p>
+<h2 id="객체-리터럴로-생성된-객체의-프로토타입-체이닝"><a href="#객체-리터럴로-생성된-객체의-프로토타입-체이닝" class="headerlink" title="객체 리터럴로 생성된 객체의 프로토타입 체이닝"></a>객체 리터럴로 생성된 객체의 프로토타입 체이닝</h2><p>프로토타입 체이닝이란 자신의 부모 역할을 하는 프로토타입 객체의 프로퍼티를 사용할 수 있는 것을 말한다.</p>
+<pre><code>var myObj = {
+  name: &apos;Jang&apos;,
+  sayName: function() {
+    console.log(&apos;My name is &apos; + this.name);
+  }
+};
+
+myObj.sayName();
+console.log(myObj.hasOwnProperty(&apos;name&apos;));
+console.log(myObj.hasOwnProperty(&apos;nickName&apos;));
+myObj.sayNickname();
+</code></pre><p>출력결과</p>
+<blockquote>
+<p>My name is Jang<br>true<br>false<br>TypeError: myObj.sayNickname is not a function</p>
+</blockquote>
+<p>hasOwnProperty() 메서드는 호출한 객체에 인자로 넘긴 문자열 으림의 프로퍼티나 메서드가 있는지 체크하는 API 함수이다.<br>myObj에는 name 프로퍼티가 있기 때문에 true가 출력되었다. 하지만 myObj에서 hasOwnProperty()를 사용할 수 있는 이유는 [[prototype]] 링크로 연결된 Object.prototype 객체에 hasOwnProperty() 메서드가 존재하기 때문이다.</p>
+<p>결국 프로토타입 체이닝은 해당 객체에 접근하려는 프로퍼티나 메서드가 없다면 <strong>[[prototype]]링크를 따라서 자신의 부모 역할을 하는 프로토타입 객체의 프로퍼티를 차례대로 검색하는 것</strong>을 말한다.</p>
+<h2 id="생성자-함수로-생성된-객체의-프로토타입-체이닝"><a href="#생성자-함수로-생성된-객체의-프로토타입-체이닝" class="headerlink" title="생성자 함수로 생성된 객체의 프로토타입 체이닝"></a>생성자 함수로 생성된 객체의 프로토타입 체이닝</h2><pre><code>function Person(name, age, hobby) {
+  this.name = name;
+  this.age = age;
+  this.hobby = hobby;
+}
+
+var foo = new Person(&apos;Jang&apos;, 27, &apos;Soccer&apos;);
+console.log(foo.hasOwnProperty(&apos;name&apos;));
+console.dir(Person.prototype);
+</code></pre><p>출력결과</p>
+<blockquote>
+<p>true<br>Person {}(Object)</p>
+</blockquote>
+<p>Person() 함수가 생성한 foo 객체의 프로토타입 객체는 Person.prototype이 된다. 하지만 Person.prototype에는 hasOwnProperty 메서드가 없다. 하지만 결과값은 true가 나오는데 그 이유는 프로토타입 체이닝의 종점인 Object.prototype 객체에 존재하기 떄문이다.<br>Person.prototype 역시 객체이기 때문에 <strong>Object.prototype을 프로토타입 객체로 가진다.</strong></p>
+<p><img src="https://poiemaweb.com/img/constructor_function_prototype_chaining.png" alt="프로토타입체이닝"></p>
+<h2 id="기본-데이터-타입-확장"><a href="#기본-데이터-타입-확장" class="headerlink" title="기본 데이터 타입 확장"></a>기본 데이터 타입 확장</h2><p>숫자, 문자열, 배열 등이 사용하는 표준 메서드는 그들의 프로토타입에 정의되어 있다. 또한 기본 내장 프로토타입도 Object.prototype을 자신의 프로토타입으로 가지고 있다.(알면 알수록 놀랍습니다…) 또한 자바스크립트는 표준 빌트인 프로토타입 객체에도 사용자가 직접 정의한 메서드를 추가할 수 있다.</p>
+<pre><code>String.prototype.testMethod = function() {
+  console.log(&apos;Testing method in String.prototype.testMethod()&apos;);
+};
+
+var str = &quot;this is test&quot;;
+str.testMethod();
+
+console.dir(String.prototype);
+</code></pre><p>출력 결과</p>
+<blockquote>
+<p>Testing method in String.prototype.testMethod()<br>{ [String: ‘’] testMethod: [Function] }</p>
+</blockquote>
+<p>구글 크롬의 브라우저 출력화면을 보면 다양한 메서드가 쭉 나오는데 testMethod가 추가된 것을 볼 수 있을 것이다.(꼭 해보시길!)</p>
+<h2 id="프로토타입-메서드와-this"><a href="#프로토타입-메서드와-this" class="headerlink" title="프로토타입 메서드와 this"></a>프로토타입 메서드와 this</h2><p>앞에서 봤던 <a href="https://rootjang92.github.io/2018/09/10/jsfuncthis/">객체의 메서드를 호출할 때 this바인딩</a><br>의 규칙과 같다. 그 메서드를 호출한 객체에 바인딩 된다.</p>
+<h2 id="디폴트-프로토타입"><a href="#디폴트-프로토타입" class="headerlink" title="디폴트 프로토타입"></a>디폴트 프로토타입</h2><p>디폴트 프로토타입은 한 마디로 함수가 생성될 때 같이 생성된다. 자바스크립트에서는 이러한 디폴트 프로토타입을 다른 일반 객체로 변환할 수 있다.<br>단, 변경된 시점에서 생성된 객체들은 변경된 프로토타입 객체로 [[prototype]] 링크를 연결한다.</p>
+<pre><code>function Person(name) {
+  this.name = name;
+}
+
+console.log(Person.prototype.constructor); // 1
+
+var foo = new Person(&apos;Jang&apos;);
+console.log(foo.country); // 2
+
+Person.prototype = {
+  country : &apos;Republic of Korea&apos;
+};
+console.log(Person.prototype.constructor); //3
+
+var bar = new Person(&apos;Lee&apos;);
+console.log(foo.country); //4
+console.log(bar.country); //5
+console.log(foo.constructor); //6
+console.log(bar.constructor); //7
+</code></pre><p>출력결과</p>
+<blockquote>
+<p>[Function: Person] // 1<br>undefined // 2<br>[Function: Object] // 3<br>undefined // 4<br>Republic of Korea // 5<br>[Function: Person] // 6<br>[Function: Object] // 7</p>
+</blockquote>
+<p>2번을 살펴보자 foo 객체에는 country 프로퍼티가 없고 Person.prototype객체도 마찬가지이다. 체이닝이 일어나도 결국 undefined<br>3번을 살펴보자 country라는 프로퍼티를 가진 객체로 변화시켰다. 그 결과로 이 객체에는 constructor가 존재하지 않는다. 일반 객체로 변화했기 때문이다. 일반 객체는 Object.prototype 객체로 프로토타입 체이닝이 발생하고 그 결과 그 constructor는 Object로 출력된다.<br>또한 생성된 bar 프로퍼티도 새로 변경된 프로토타입 객체를 가리킨다. 그렇기 때문에 서로 다른 결과값이 발생하는 것이다.</p>
+<p><img src="https://poiemaweb.com/img/changing_prototype.png" alt="디폴트"></p>
+<h2 id="주의할-점"><a href="#주의할-점" class="headerlink" title="주의할 점"></a>주의할 점</h2><p>프로토타입은 특정 프로퍼티를 <strong>읽거나</strong>, <strong>메서드를 실행할 때</strong> 발생한다. 다른 객체에 있는 특정 프로퍼티를 쓰려고 할 때에는 프로토타입 체이닝이 동작하지 않고 동적으로 프로퍼티를 생성한다.</p>
+<pre><code>function Person(name) {
+  this.name = name;
+}
+
+Person.prototype.country = &apos;Republic of Korea&apos;;
+
+var foo = new Person(&apos;foo&apos;);
+var bar = new Person(&apos;bar&apos;);
+console.log(foo.country);
+console.log(bar.country);
+foo.country = &apos;USA&apos;;
+
+console.log(foo.country);
+console.log(bar.country);
+</code></pre><p>출력결과</p>
+<blockquote>
+<p>Republic of Korea<br>Republic of Korea<br>USA<br>Republic of Korea</p>
+</blockquote>
+<p>foo.country 값에 ‘USA’를 지정하면 foo 객체 자체에 country 프로퍼티가 동적으로 생성된다. 그래서 bar 객체는 프로토타입 체이닝을 거쳐 ‘Republic of korea’가 출력된다.</p>
+<p>다음 시간에는 실행 컨텍스트와 클로저에 대해 알아보겠습니다!</p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7977783901878304",
+    enable_page_level_ads: true
+  });
+</script>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
     </div>
 </article>
-    
-        </div>
-    
 
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-    </div></section>
+    
+    </section>
 
 
 
@@ -264,6 +430,19 @@ ga('send', 'pageview');
     </div>
     <div class="github-card" data-github="Rootjang92" data-width="340" data-height="152" data-theme="default"></div>
     <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/09/10/htmlinput/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Input 태그</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -483,11 +662,13 @@ ga('send', 'pageview');
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://rootjang92.github.io/2018/09/11/jsprotochain/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
