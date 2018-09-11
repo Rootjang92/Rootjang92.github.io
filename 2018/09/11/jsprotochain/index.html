@@ -21,7 +21,7 @@
 <meta property="og:description" content="프로토타입 체이닝자바스크립트는 프로토타입 기반 객체지향 언어이다. 자바스크립트를 이해하기 위해서 무조건 알아가야 할 개념 중 하나가 이 프로토타입이다.그래서 오늘은 상속의 개념을 구현하는 프로토타입과 프로토타입 체이닝에 대해 글을 써보려고 한다. 가장 중요한 건 자신을 생성한 생성자 함수의 prototype 프로퍼티가 가리키는 프로토타입 객체를 자신의 부모">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://rootjang92.github.io/images/rootjang.png">
-<meta property="og:updated_time" content="2018-09-11T06:51:00.000Z">
+<meta property="og:updated_time" content="2018-09-11T06:54:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="프로토타입 체이닝">
 <meta name="twitter:description" content="프로토타입 체이닝자바스크립트는 프로토타입 기반 객체지향 언어이다. 자바스크립트를 이해하기 위해서 무조건 알아가야 할 개념 중 하나가 이 프로토타입이다.그래서 오늘은 상속의 개념을 구현하는 프로토타입과 프로토타입 체이닝에 대해 글을 써보려고 한다. 가장 중요한 건 자신을 생성한 생성자 함수의 prototype 프로퍼티가 가리키는 프로토타입 객체를 자신의 부모">
@@ -255,7 +255,7 @@ console.dir(String.prototype);
 <p>Testing method in String.prototype.testMethod()<br>{ [String: ‘’] testMethod: [Function] }</p>
 </blockquote>
 <p>구글 크롬의 브라우저 출력화면을 보면 다양한 메서드가 쭉 나오는데 testMethod가 추가된 것을 볼 수 있을 것이다.(꼭 해보시길!)</p>
-<h2 id="프로토타입-메서드와-this"><a href="#프로토타입-메서드와-this" class="headerlink" title="프로토타입 메서드와 this"></a>프로토타입 메서드와 this</h2><p>앞에서 봤던 <a href="https://rootjang92.github.io/2018/09/10/jsfuncthis/">객체의 메서드를 호출할 때 this바인딩</a><br>의 규칙과 같다. 그 메서드를 호출한 객체에 바인딩 된다.</p>
+<h2 id="프로토타입-메서드와-this"><a href="#프로토타입-메서드와-this" class="headerlink" title="프로토타입 메서드와 this"></a>프로토타입 메서드와 this</h2><p>앞에서 봤던 <a href="https://rootjang92.github.io/2018/09/10/jsfuncthis">객체의 메서드를 호출할 때 this바인딩</a><br>의 규칙과 같다. 그 메서드를 호출한 객체에 바인딩 된다.</p>
 <h2 id="디폴트-프로토타입"><a href="#디폴트-프로토타입" class="headerlink" title="디폴트 프로토타입"></a>디폴트 프로토타입</h2><p>디폴트 프로토타입은 한 마디로 함수가 생성될 때 같이 생성된다. 자바스크립트에서는 이러한 디폴트 프로토타입을 다른 일반 객체로 변환할 수 있다.<br>단, 변경된 시점에서 생성된 객체들은 변경된 프로토타입 객체로 [[prototype]] 링크를 연결한다.</p>
 <pre><code>function Person(name) {
   this.name = name;
