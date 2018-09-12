@@ -6,28 +6,28 @@
     
 
     
-    <title>프로토타입과 배열 그리고 연산자 | Rootjang&#39;s IT Blog</title>
+    <title>실행 컨텍스트와 스코프 | Rootjang&#39;s IT Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Javascript, js, es5, ES5, prototype, js prototype" />
+        <meta name="keywords" content="js, javascript, execution context, scope" />
     
-    <meta name="description" content="프로토타입자바스크립트의 모든 객체는 자신의 부모 역할을 하는 객체와 연결되어 있다. 이를 통해 자바스크립트에서는 상속 개념을 구현할 수 있다. 이를 프로토타입 객체라고 한다. var foo = {   name: &amp;apos;Jang&amp;apos;,   age: 27 };  console.log(foo.toString()); console.dir(foo); 코드를">
-<meta name="keywords" content="Javascript, js, es5, ES5, prototype, js prototype">
+    <meta name="description" content="실행 컨텍스트와 스코프실행 컨텍스트란?ECMAScript의 정의를 살펴보면 실행 가능한 코드를 형상화하고 구분하는 추상적인 개념이라고 설명하고 있다.즉 실행 가능한 자바스크립트 코드 블록이 실행되는 환경이라고 할 수 있다. 실행 가능한 코드에는 전역 코드, eval() 코드, 함수 코드가 있다. 우리는 오늘 한가지 예제를 통해 콜 스택부터 실행 컨텍스트,">
+<meta name="keywords" content="js, javascript, execution context, scope">
 <meta property="og:type" content="article">
-<meta property="og:title" content="프로토타입과 배열 그리고 연산자">
-<meta property="og:url" content="http://rootjang92.github.io/2018/09/05/jsprototype/index.html">
+<meta property="og:title" content="실행 컨텍스트와 스코프">
+<meta property="og:url" content="http://rootjang92.github.io/2018/09/12/executioncontext/index.html">
 <meta property="og:site_name" content="Rootjang&#39;s IT Blog">
-<meta property="og:description" content="프로토타입자바스크립트의 모든 객체는 자신의 부모 역할을 하는 객체와 연결되어 있다. 이를 통해 자바스크립트에서는 상속 개념을 구현할 수 있다. 이를 프로토타입 객체라고 한다. var foo = {   name: &amp;apos;Jang&amp;apos;,   age: 27 };  console.log(foo.toString()); console.dir(foo); 코드를">
+<meta property="og:description" content="실행 컨텍스트와 스코프실행 컨텍스트란?ECMAScript의 정의를 살펴보면 실행 가능한 코드를 형상화하고 구분하는 추상적인 개념이라고 설명하고 있다.즉 실행 가능한 자바스크립트 코드 블록이 실행되는 환경이라고 할 수 있다. 실행 가능한 코드에는 전역 코드, eval() 코드, 함수 코드가 있다. 우리는 오늘 한가지 예제를 통해 콜 스택부터 실행 컨텍스트,">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://rootjang92.github.io/images/rootjang.png">
-<meta property="og:updated_time" content="2018-09-05T08:48:34.000Z">
+<meta property="og:updated_time" content="2018-09-12T10:12:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="프로토타입과 배열 그리고 연산자">
-<meta name="twitter:description" content="프로토타입자바스크립트의 모든 객체는 자신의 부모 역할을 하는 객체와 연결되어 있다. 이를 통해 자바스크립트에서는 상속 개념을 구현할 수 있다. 이를 프로토타입 객체라고 한다. var foo = {   name: &amp;apos;Jang&amp;apos;,   age: 27 };  console.log(foo.toString()); console.dir(foo); 코드를">
+<meta name="twitter:title" content="실행 컨텍스트와 스코프">
+<meta name="twitter:description" content="실행 컨텍스트와 스코프실행 컨텍스트란?ECMAScript의 정의를 살펴보면 실행 가능한 코드를 형상화하고 구분하는 추상적인 개념이라고 설명하고 있다.즉 실행 가능한 자바스크립트 코드 블록이 실행되는 환경이라고 할 수 있다. 실행 가능한 코드에는 전역 코드, eval() 코드, 함수 코드가 있다. 우리는 오늘 한가지 예제를 통해 콜 스택부터 실행 컨텍스트,">
 <meta name="twitter:image" content="http://rootjang92.github.io/images/rootjang.png">
     
-    <link rel="canonical" href="http://rootjang92.github.io/2018/09/05/jsprototype/"/>
+    <link rel="canonical" href="http://rootjang92.github.io/2018/09/12/executioncontext/"/>
     
         <link rel="alternate" href="/" title="Rootjang&#39;s IT Blog" type="application/atom+xml" />
     
@@ -161,14 +161,14 @@ ga('send', 'pageview');
     enable_page_level_ads: true
   });
 </script>
-                            <article id="post-jsprototype" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-executioncontext" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        프로토타입과 배열 그리고 연산자
+        실행 컨텍스트와 스코프
         </h1>
     
 
@@ -178,8 +178,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/09/05/jsprototype/" class="article-date">
-            <time datetime="2018-09-05T07:27:24.000Z" itemprop="datePublished">2018-09-05</time>
+        <a href="/2018/09/12/executioncontext/" class="article-date">
+            <time datetime="2018-09-12T07:33:21.000Z" itemprop="datePublished">2018-09-12</time>
         </a>
     </div>
 
@@ -188,137 +188,75 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Javascript-js-es5-ES5-prototype-js-prototype/">Javascript, js, es5, ES5, prototype, js prototype</a>
+        <a class="tag-link" href="/tags/js-javascript-execution-context-scope/">js, javascript, execution context, scope</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="프로토타입"><a href="#프로토타입" class="headerlink" title="프로토타입"></a>프로토타입</h2><p>자바스크립트의 모든 객체는 자신의 부모 역할을 하는 객체와 연결되어 있다. 이를 통해 자바스크립트에서는 상속 개념을 구현할 수 있다. 이를 프로토타입 객체라고 한다.</p>
-<pre><code>var foo = {
-  name: &apos;Jang&apos;,
-  age: 27
-};
+            <h1 id="실행-컨텍스트와-스코프"><a href="#실행-컨텍스트와-스코프" class="headerlink" title="실행 컨텍스트와 스코프"></a>실행 컨텍스트와 스코프</h1><h2 id="실행-컨텍스트란"><a href="#실행-컨텍스트란" class="headerlink" title="실행 컨텍스트란?"></a>실행 컨텍스트란?</h2><p>ECMAScript의 정의를 살펴보면 <strong>실행 가능한 코드를 형상화하고 구분하는 추상적인 개념</strong>이라고 설명하고 있다.<br>즉 실행 가능한 자바스크립트 코드 블록이 실행되는 환경이라고 할 수 있다. 실행 가능한 코드에는 전역 코드, eval() 코드, 함수 코드가 있다.</p>
+<p>우리는 오늘 한가지 예제를 통해 콜 스택부터 실행 컨텍스트, 스코프가 어떻게 설계되는 지에 대해 살펴보도록 하겠다.</p>
+<a href="https://poiemaweb.com/js-execution-context" target="_blank" rel="noopener">참조사이트</a>
+<pre><code>var x = &apos;xxx&apos;;
 
-console.log(foo.toString());
-console.dir(foo);
-</code></pre><p>코드를 한 번 살펴보자. 사실상 1번 콘솔로그에서 toString이라는 메서드가 없어 오류가 발생해야 하지만 정상적으로 작동한다.<br>즉, foo 객체의 부모 역할을 하는 프로토타입에 toString() 메서드가 이미 정의되어 있기 때문에 호출이 가능한 것이다.</p>
-<p>출력결과</p>
-<blockquote>
-<p>[object Object]<br>{ name: ‘Jang’, age: 27 }</p>
-</blockquote>
-<p>즉 모든 객체는 자신의 프로토타입을 가리키는 [[Prototype]]이라는 숨겨진 프로퍼티를 가진다. (크롬 브라우저의 <code>_proto_</code>)<br>여기서 foo 객체는 자신의 부모 객체를 <code>_proto_</code>라는 내부 프로퍼티로 연결하고 있다.<br>자세한 내용은 프로토타입 체이닝에서 더 다루겠지만, 결론적으로 객체 리터럴로 생성한 객체의 경우 Object.prototype 객체가 프로토타입 객체이다.</p>
-<h2 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h2><ul>
-<li><p>배열 리터럴<br>배열 리터럴은 ‘[]’를 사용해서 배열을 만든다.</p>
-<p>  var colorArr = [‘orange’, ‘red’, ‘yellow’, ‘green’];<br>  console.log(colorArr[0]);<br>  console.log(colorArr[1]);</p>
-</li>
-</ul>
-<p>출력결과</p>
-<blockquote>
-<p>orange<br>red</p>
-</blockquote>
-<p>배열은 인덱스 값으로 접근할 수 있다. 배열 내 인덱스는 0부터 시작한다. 즉 첫번째 값의 인덱스는 0인 것이다.</p>
-<ul>
-<li><p>배열 요소 생성<br>배열도 다른 객체와 마찬가지로 동적으로 배열 원소를 동적으로 추가할 수 있다.</p>
-<p>  var empty = [];<br>  console.log(empty);</p>
-<p>  empty[0] = 100;<br>  empty[3] = ‘four’;<br>  console.log(empty);<br>  console.log(empty.length);</p>
-</li>
-</ul>
-<p>출력 결과</p>
-<blockquote>
-<p>[]<br>[ 100, undefined x 2, four ]<br>4</p>
-</blockquote>
-<p>자바스크립트의 배열은 인덱스 순서와 상관없이 할당이 가능하다. 값이 없다면 undefined가 뜬다.<br>또한 중요한 점은 <strong>자바스크립트가 배열의 크기를 배열 인덱스 중 가장 큰 값을 기준으로 정한다.</strong>는 것이다.<br>또한 length 프로퍼티를 이용하여 배열의 길이를 구할 수 있다. 배열의 길이 값은 가장 큰 인덱스에 +1을 한 값이다.(인덱스의 시작이 0 이기 때문이다.)</p>
-<ul>
-<li>length<br>길이값은 위에서 설명했지만, 중요한 것은 길이값을 명시적으로 변경할 수 있고 그 길이를 초과하는 값은 삭제된다는 점이다.<br>위 예제에서 empty의 length값은 4이지만 length값을 2로 설정하면,  100과 undefined를 제외한 뒤의 값은 삭제된다.</li>
-</ul>
-<ul>
-<li>배열과 객체<br>배열과 객체는 모두 객체이지만 몇 가지 차이점이 있다. 우선 length 프로퍼티는 배열에만 존재한다. 두 번째로는 프로토타입의 차이이다.<br>일반 객체는 push와 같은 표준 배열 메서드를 사용할 수 없는데 둘의 프로토타입 체이닝에 의한 부모 프로토타입 객체가 서로 다르기 때문이다.</li>
-</ul>
-<blockquote>
-<p>객체 - <code>_proto_</code> - Object.prototype<br>배열 - <code>_proto_</code> - Array.prototype - <code>_proto_</code> - Object.prototype</p>
-</blockquote>
-<h2 id="배열의-프로퍼티-열거"><a href="#배열의-프로퍼티-열거" class="headerlink" title="배열의 프로퍼티 열거"></a>배열의 프로퍼티 열거</h2><p>객체는 for in 문으로 객체를 열거할 수 있는데 배열은 for in문을 사용하면 불필요한 프로퍼티가 출력될 수 있으므로 for문을 사용하는 것이 좋다.</p>
-<pre><code>var arr = [&apos;zero&apos;, &apos;one&apos;, &apos;two&apos;];
-console.log(arr.length);
-arr[3] = &apos;red&apos;;
-console.log(arr.length);
+function foo () {
+  var y = &apos;yyy&apos;;
 
-for (var i = 0; i &lt; arr.length; i++) {
-  console.log(i, arr[i]);
+  function bar () {
+    var z = &apos;zzz&apos;;
+    console.log(x + y + z);
+  }
+  bar();
 }
-</code></pre><p>출력 결과</p>
-<blockquote>
-<p>3<br>4<br>for문 결과값<br>0 ‘zero’<br>1 ‘one’<br>2 ‘two’<br>3 ‘red’</p>
-</blockquote>
-<h2 id="배열-요소-삭제"><a href="#배열-요소-삭제" class="headerlink" title="배열 요소 삭제"></a>배열 요소 삭제</h2><p>배열도 객체이므로 delete 연산자를 사용할 수 있지만, 이는 해당 요소를 undefined처리할 뿐이다. 그래서 배열에서는 splice()배열 메서드를 사용한다.</p>
-<h2 id="splice-배열-메서드"><a href="#splice-배열-메서드" class="headerlink" title="splice() 배열 메서드"></a>splice() 배열 메서드</h2><p>splice(start, deleteCount, item…)</p>
+foo();
+</code></pre><p>이 코드에서는 스택이 쌓이고 소멸하게 된다.</p>
+<p><img src="https://poiemaweb.com/img/ec_1.png" alt="stack"></p>
+<ol>
+<li>실행 가능한 코드가 새로운 실행 컨텍스트 스택으로 생성된다. 이때는 후입선출(LIFO)로 진행된다.</li>
+<li>전역 실행 컨텍스트는 처음에 만들어져 컨텍스트가 끝날 때까지 유지된다</li>
+<li>함수 호출 시 스택이 쌓인다.</li>
+<li>함수 호출이 끝나면 실행 컨텍스트를 파기하고 직전 실행 컨텍스트의 컨트롤을 반환한다.</li>
+</ol>
+<h2 id="실행-컨텍스트-생성과정"><a href="#실행-컨텍스트-생성과정" class="headerlink" title="실행 컨텍스트 생성과정"></a>실행 컨텍스트 생성과정</h2><ol>
+<li>전역 컨텍스트의 경우<br>전역에 선언된 전역변수와 전역 함수를 객체로 갖는다.</li>
+</ol>
+<p><img src="https://poiemaweb.com/img/ec-vo-global.png" alt="go"></p>
+<ol start="2">
+<li>함수 컨텍스트의 경우<br>활성 객체를 가리키며 매개변수와 인수들의 정보를 가지고 있는 arguments객체가 추가된다.</li>
+</ol>
+<p><img src="https://poiemaweb.com/img/ec-vo-foo.png" alt="ao"></p>
+<p>순서로는 우선 활성 객체를 생성한다. 그 후 arguments 객체를 생성한다. 이 떄 활성객체는 arguments 프로퍼티로 arguments 객체를 참조하게 된다. 그 후 스코프의 정보를 생성한다. 연결 리스트와 유사한 형태로 만들어지며 [[scope]] 프로퍼티로 참조된다. 그 후 변수를 생성한다. 주의할 점은 생성과 초기화만 진행할 뿐, 실행되기 전까지는 할당이 이루어지지 않는다는 것이다. 마지막으로 this를 할당하는 데 함수 호출 패턴에 따라 this가 참조하는 객체가 정해진다.</p>
 <ul>
-<li><p>start : 배열에서 시작 위치, deleteCount : 삭제할 요소의 수 item : 삭제할 위치에 추가할 요소<br>ㅡ</p>
-<pre><code>var arr = [&apos;zero&apos;, &apos;one&apos;, &apos;two&apos;, &apos;three&apos;];
-
-arr.splice(2,1); // 1
-console.log(arr);
-console.log(arr.length);
-</code></pre></li>
+<li>전역 코드 진입</li>
 </ul>
-<p>즉 1의 의미는 arr배열의 2번째부터 1개 요소를 삭제하겠다는 의미이다. 즉 arr 요소에서 ‘two’가 삭제되는 것이다.</p>
-<p>출력 결과</p>
-<blockquote>
-<p>[ ‘zero’, ‘one’, ‘three’ ]<br>3</p>
-</blockquote>
-<h2 id="Array-생성자-함수"><a href="#Array-생성자-함수" class="headerlink" title="Array() 생성자 함수"></a>Array() 생성자 함수</h2><p>배열은 배열 리터럴로 생성하지만 배열 리터럴도 결국 Array()생성자 함수로 배열을 생성하는 것을 단수화한 것이다.<br>생성자 함수로 배열을 생성할 때에는 new 연산자를 사용하여야 한다.</p>
-<pre><code>var foo = new Array(3);
-console.log(foo);
-console.log(foo.length);
-
-var bar = new Array(1,2,3);
-console.log(bar);
-console.log(bar.length);
-</code></pre><p>호출할 때 인자가 1개이면 호출된 인자를 lenth로 갖는 빈 배열을 생성하고 그 외에는 호출된 인자를 요소로 같는다.</p>
-<p>출력 결과</p>
-<blockquote>
-<p>[ undefined x 3]<br>3<br>[1,2,3]<br>3</p>
-</blockquote>
-<h2 id="유사-배열-객체"><a href="#유사-배열-객체" class="headerlink" title="유사 배열 객체"></a>유사 배열 객체</h2><p>length 프로퍼티는 배열의 동작에 있어서 정말 중요하다. 그런데 일반 객체에서도 length를 사용할 수 있는 경우가 있으니 이를 유사 배열객체라고 한다.</p>
-<pre><code>var arr = [&apos;bar&apos;];
-var obj = { name: &apos;Jang&apos;, length : 1};
-
-arr.push(&apos;baz&apos;);
-console.log(arr);
-
-Array.prototype.push.apply(obj, [&apos;baz&apos;]);
-console.log(obj);
-</code></pre><p>원래의 경우라면 변수 obj에는 push()메서드를 사용할 수 없으나, apply() 메서드를 사용하면 객체라도 표준 배열 메서드를 사용할 수 있다.<br>후에 더 자세히 살펴볼 것이다. (call, apply 메서드)</p>
-<p>출력 결과</p>
-<blockquote>
-<p>[ ‘bar’, ‘baz’ ]<br>{ ‘1’: ‘baz’, name: ‘Jang’, length: 2 }</p>
-</blockquote>
-<h2 id="기본-타입과-표준-메서드"><a href="#기본-타입과-표준-메서드" class="headerlink" title="기본 타입과 표준 메서드"></a>기본 타입과 표준 메서드</h2><p>기본 타입의 경우 어떻게 표준 메서드를 호출하는가? 자바스크립트에서는 기본값을 객체로 변화한 다음 각 타입의 표준 메서드를 불러온다.</p>
-<h2 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h2><ul>
-<li><ul>
-<li>연산자</li>
-</ul>
-</li>
-</ul>
-<p>+연산자는 더하기 연산과 문자열 연결 연산을 수행한다. 두 연산자가 모두 숫자인 경우에는 더하기 연산을 실시한다.</p>
+<p>전역 객체가 생성되면 전역 코드로 컨트롤이 진입하여 전역 실행 컨텍스트가 생성되고 실행 컨텍스트가 쌓인다.</p>
+<p><img src="https://poiemaweb.com/img/ec_4.png" alt="전역코드"></p>
 <ul>
-<li>typeof 연산자</li>
+<li>스코프 체인 생성 및 초기화</li>
 </ul>
-<p>피연산자의 타입을 문자열 형태로 리턴하는 연산자이다. 유의할 점은 null의 경우 object로 표시된다는 점(자바스크립트 개발단 오류)<br>함수는 function이라는 점에 유의하여야 한다.</p>
+<p>이 때 스코프체인은 전역 객체 레퍼런스를 포함한다.</p>
+<p><img src="https://poiemaweb.com/img/ec_5.png" alt="스코프체인"></p>
 <ul>
-<li>동등연산자와 일치연산자.</li>
+<li>변수 객체화</li>
 </ul>
-<p>동등연사자의 경우(==) 피연사자의 타입이 다를 경우 이를 변경하여 비교하고 일치연산자의 경우(===) 타입을 변경하지 않는다.</p>
-<pre><code>console.log(1 == &apos;1&apos;) // true
-console.log(1 === &apos;1&apos;) // false
-</code></pre><ul>
-<li>!! 연산자</li>
-</ul>
-<p>!!연산자는 피연산자를 불리언값으로 변환한다. 값이 0이나 없다면 false, 그 외의 빈 객체, 배열, 문자열 등은 true로 표시된다.</p>
-<p>다음 시간에는 <strong>함수와 프로토타입 체이닝</strong>에 대해서 알아보겠습니다.</p>
+<p><img src="https://poiemaweb.com/img/ec_6.png" alt="변수 객체화"></p>
+<p>여기선 매개변수가 변수 객체의 프로퍼티로 인수가 값으로 설정된다. 그 후 코드 내 함수 선을 대상으로 변수 객체가 프로퍼티로, 생성된 함수 객체가 값으로 설정되며 함수 호이스팅이 발생한다. 그 다음 대상 코드 대상으로 변수 명이 변수 객체의 프로퍼티로 undefined가 값으로 설정된다. 이를 변수 호이스팅이라고 한다.</p>
+<p>이후 위 코드의 함수 foo가 처리된다. 함수 foo가 프로퍼티로 생성된 함수 객체가 값으로 지정된다. 이 때 생성된 함수 객체는 [[scope]] 프로퍼티를 가진다. 이 때 [[scope]] 프로퍼티는 자신의 실행환경을 가지고 자신을 포함하는 외부 함수와 실행 환과 전역 객체를 가리킨다. 또한 자신을 포함하는 외부 함수의 실행 컨텍스트가 소멸하여도 [[scope]] 프로퍼티가 가리키는 외부함수 실행환경을 참조할 수 있는데 이것이 클로저다.</p>
+<p>이후 변수 x를 처리하는데 var 변수는 선언과 초기화가 한 번에 이루어진다. 그 후 this value를 정한다. 이전에는 this가 전역 객체를 가리키다가, 함수 호출 패턴에 이해 this가 정해진다.</p>
+<p><img src="https://poiemaweb.com/img/ec_9.png" alt="this까지"></p>
+<p><a href="href=https://rootjang92.github.io/2018/09/10/jsfuncthis/}>https://rootjang92.github.io/2018/09/10/jsfuncthis/}</a></p>" title="<p>주의할 점은 아직 <strong>코드가 실행되지 않았다</strong>는 것이다.</p> <h2 id=코드-실행><a href=#코드-실행 class=headerlink title=코드 실행></a>코드 실행</h2><p>코드가 실행되면 우선 변수의 값을 할당하게 된다. 우선 전역 객체에 변수 x의 값이 할당되고 그 후 함수 foo가 실행된다.<br>그러면 다시 함수 foo의 스코프체인을 생성하고 초기화한다. 그 구조를 살펴보면 함수 foo를 실행한 직후 실행 컨텍스트의 스코프체인은 활성 객체(지금은 함수 foo)를 살피고 그 후 전역 객체를 살펴본다.</p> <p><img src=https://poiemaweb.com/img/ec_13.png alt=코드실행></p> <p>이를 통해 생성된 활성 객체가 변수 객체로서 변수 인스턴스화를 실행한다. 그 후에 과정은 위와 같으니 그림으로 대신하겠다.</p> <p><img src=https://poiemaweb.com/img/ec_16.png alt=foo><br>내부함수의 경우 this는 전역 객체를 가리킨다.</p> <p>이제 foo 함수를 실행되면, 변수 y의 값이 할당된다.<br>함수 bar의 과정도 위와 동일하다.</p> <ol> <li>스코프 체인의 생성과 초기화, 2. Variable Instantiation 실행, 3. this value 결정</li> </ol> <p><img src=https://poiemaweb.com/img/ec_19.png alt=최종></p> <h2 id=다른-예제><a href=#다른-예제 class=headerlink title=다른 예제></a>다른 예제</h2><p>다른 예제를 살펴보자<br>(참고 : 인사이드 자바스크립트)</p> <pre><code>var value = &quot;value1&quot;;
 
+function printValue() {
+  return value;
+}
+function printFunc(func) {
+  var value = &quot;value2&quot;;
+  console.log(func());
+}
+
+printFunc(printValue);
+</code></pre><p>항상 실행 컨텍스트를 생각해야 한다. 전역 실행 컨텍스트가 만들어지는 데 그 안에 동등한 함수 printValue와 printFunc가 존재한다.</p> <p>두 함수가 실행될 때의 [[scope]] 프로퍼티를 살펴보면 각각의 변수 객체를 만들고 그것을 참조하게 된다.</p> <p>printFunc를 실행하면 value: “value2”로 변수 객체가 생성된다. 또한 printValue의 변수 객체는 전역 객체에서 찾게 되므로 따로 변수 객체가 만들어지지 않는다.</p>">함수 호출 패턴 <a< a=""></a<></a></p>
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -449,20 +387,10 @@ console.log(1 === &apos;1&apos;) // false
         
 <nav id="article-nav">
     
-        <a href="/2018/09/09/htmlform/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Form 태그에 대하여
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/09/05/htmlimage/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/09/12/cssbasic/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">이미지와 하이퍼텍스트링크</p>
+        <p class="article-nav-title">CSS의 기초 살펴보기</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -687,7 +615,7 @@ console.log(1 === &apos;1&apos;) // false
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://rootjang92.github.io/2018/09/05/jsprototype/';
+    var disqus_url = 'http://rootjang92.github.io/2018/09/12/executioncontext/';
     
     (function() {
     var dsq = document.createElement('script');
