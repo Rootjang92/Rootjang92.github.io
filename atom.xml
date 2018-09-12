@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-09-12T01:58:28.000Z</updated>
+  <updated>2018-09-12T03:20:14.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS의 기초 살펴보기</title>
+    <link href="http://rootjang92.github.io/2018/09/12/cssbasic/"/>
+    <id>http://rootjang92.github.io/2018/09/12/cssbasic/</id>
+    <published>2018-09-12T02:04:28.000Z</published>
+    <updated>2018-09-12T03:20:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="왜-css인가"><a href="#왜-css인가" class="headerlink" title="왜 css인가?"></a>왜 css인가?</h1><p>웹 문서에 텍스트만 있다면 어떤 느낌일 것 같은가? 물론 기존 html로 기초적인 스타일링은 할 수 있지만 지금은 2018년, 4차 산업 혁명 시대 아니겠는가? css는 우리가 보는 view라는 웹 문서를 꾸미는 언어라고 보면 된다.<br>css의 가장 큰 장점은 웹 문서를 건드리지 않고 단순히 <strong>디자인만 바꿀 수 있다.</strong>라는 정말 큰 장점이 있다.</p><a href="http://www.csszengarden.com" target="_blank" rel="noopener">참고할 만한 사이트</a><p>또한 웹 문서는 브라우저 기반이기 때문에 브라우저에 따라, 사용하는 기종에 따라 그 모습이 바뀐다.</p><ul><li>스타일 형식은?</li></ul><p>ex)<br>p{text-align: center;}</p><p>p태그의 글자를 가운데로 옮기는 css 문법이다. 여기서 p는 <strong>selector(선택자)</strong>, text-align은 <strong>Property(스타일 속성)</strong> center는 <strong>Property Value(속성 값)</strong> 이라고 한다.</p><ul><li>주석</li></ul><p>주석은 참 중요하지 않아보이지만 굉장히 중요하다. 물론 주석없이 바로바로 해석되는 게 정말 가독성이 좋은 코드라고 할 수 있지만, 모두가 그럴 순 없기에 <strong>이 코드가 어떻게 사용되었다.</strong>라는 걸 설명해 주는 것이 좋다. css의 주석은 /<em> </em>/ 사이에 텍스트를 작성한다.</p><ul><li>내부 스타일과 외부 스타일</li></ul><p>css는 html문서 안에서 작성할 수도 있다. 이를 내부 스타일 시트라고 하는데 보통 head태그 안에 title밑, style ~ /style 태그 사이에 작성한다. 반면 외부 스타일 시트는 css 파일을 따로 작성하여 html 문서에서 link태그를 사용하여 연결한다.</p><pre><code>&lt;link href=&quot;파일 경로&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre><p>보통 외부에 css 파일을 만들어 사용하는 것이 좋은데 필요한 경우에 따라 만들어 놓은 css를 가져다 사용할 수 있기 때문이다.</p><p>또한 html 태그안에 인라인 스타일로 작성할 수도 있다.</p><pre><code>&lt;p style=&quot;color:blue&quot;&gt;</code></pre><p>이런식으로 말이다.</p><h2 id="Selector"><a href="#Selector" class="headerlink" title="Selector"></a>Selector</h2><p>스타일 속성을 작용하는 요소가 바로 선택자이다. 태그 하나에 지정할 수도, 여러개에 지정할 수도 있다.</p><ul><li>전체 선택자</li></ul><p>모든 요소에 적용할 때 사용하는 것이 전체 선택자 이다. 전체 선택자는 *를 사용한다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/bnL3c5p9/1/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>태그 선택자</li></ul><p>해당 요소에 스타일을 적용할 때 사용한다. 해당 태그가 사용된 모든 요소에 적용된다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/r9k2v5ha/1/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>클래스 선택자</li></ul><p>해당 태그에 클래스를 지정하여 그 클래스가 지정된 요소에만 스타일이 적용되게 할 때 사용한다. 사용할 때에는 ‘.’을 사용한다. 특히 클래스는 중복이 가능하기 때문에 태그를 적요하고 싶은 태그만 골라 클래스를 적용하여 스타일을 적용할 수 있다. 다른 경우도 있다. 예를 들어 h2.bluetext라고 사용한다면 h2에 있는 bluetext 클래스에만 스타일이 적용된다. 참고로 부분적으로 적용하고 싶을 때에는 span 태그를 사용하면 된다.</p><ul><li>id 선택자</li></ul><p>클래스와 마찬가지로 특정 부분에 스타일을 적용하고 싶을 때 사용하지만, id는 중복이 허용되지 않는다. 또 다른점은 id는 #을 사용한다는 것이다.</p><ul><li>그룹 선택자</li></ul><p>따로따로 선언할 필요 없이 같은 스타일을 적용할 때에는 쉼표로 구분해주면 된다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/9kwurca7/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><h2 id="Cascading"><a href="#Cascading" class="headerlink" title="Cascading"></a>Cascading</h2><p>캐스캐이딩의 의미는 선택자에 적용된 많은 스타일 중 어떤 스타일을 나타낼지를 결정한다는 의미이다. 스타일 간의 충돌을 막기 위해 무엇이 우선시 되어야 할 지 정하는 것이다. 그를 위해선</p><ol><li>스타일 우선순위</li><li>스타일 상속</li></ol><p>이 두가지 원칙에 대해서 알아야 한다.</p><ul><li>스타일 우선순위란?</li></ul><p>캐스캐이딩에 있어서 정말 중요한 개념이라고 할 수 있다. ‘어떤 스타일을 먼저 적용할까’를 결정하기 때문이다.<br>첫 번째로 중요도를 살펴봐야 한다.</p><ul><li>중요도</li></ul><ol><li>사용자 스타일 시트가 최우선이다.</li><li>!important (다른 어떤 것보다 최우선 되는 스타일)</li><li>기본 브라우저 스타일 시트</li></ol><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/5yhwnxdq/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>명시도</li></ul><p>명시도는 스타일의 적용 범위에 따라 우선순위를 정함을 말한다. 가장 중요한 것부터 말하자면</p><ol><li>인라인 스타일</li><li>id 스타일</li><li>클래스 스타일</li><li>태그 스타일</li></ol><p>의 순서로 중요도가 적용된다.</p><ul><li>소스 순서</li></ul><p>앞에 설명했던 중요도와 명시도가 같다면 먼저 온 스타일을 나중에 온 스타일이 겹친다. 위 예제에서 !important가 없다면 글자는 파란색이 될 것이다.</p><h2 id="상속"><a href="#상속" class="headerlink" title="상속"></a>상속</h2><p>스타일은 상속된다. 웹 문서에 사용되는 태그들은 서로 포함관계에 있다. 그 중에서는 부모요소 자식요소의 관계도 포함되어 있다.<br>자식 요소에 따로 스타일을 지정하지 않으면 부모 요소에 있는 스타일 속성이 전달된다. 이를 스타일 상속이라고 한다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/abthmcod/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>부모 요소의 배경 이미지, 배경 색 등은 상속되지 않는다. 즉 부모 요소의 모든 스타일 요소가 상속되는 것은 아니다.</p><h2 id="CSS-Module"><a href="#CSS-Module" class="headerlink" title="CSS Module"></a>CSS Module</h2><a href="https://www.w3.org/Style/CSS" target="_blank" rel="noopener">css3참조하기</a><p>여러가지 css 규약이나 상태등을 볼 수 있다.</p><ul><li>prefix</li></ul><p>css 모듈에는 규약이 많고 아직 미완성 상태이기 떄문에 모든 브라우저에서 똑같이 적용되지 않는 경우도 있다. 또한 버전에 따라서도 지원이 되고 안되고의 차이가 있기 때문에 브라우저 접두사를 붙여서 사용한다. 이를 <strong>prefix</strong>라고 한다.</p><p>-webkit- (사파리, 크롬), -moz-(모질라, 파이어폭스), -o-(오페라), -ms-(IE)</p><pre><code>-webkit-column-count:3;</code></pre><p>앞에 접두사를 붙이고 속성을 사용하면 된다.</p><p>근데 귀찮다.(매우매우) 그래서 유용한 사이트를 소개하자면</p><a href="http://leaverou.github.io/prefixfree/" target="_blank" rel="noopener">prefix-free</a><p>에서 Only 2kb gzipped에서 js 파일을 받아 폴더에 넣어 script태그로 연결해주면 된다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;왜-css인가&quot;&gt;&lt;a href=&quot;#왜-css인가&quot; class=&quot;headerlink&quot; title=&quot;왜 css인가?&quot;&gt;&lt;/a&gt;왜 css인가?&lt;/h1&gt;&lt;p&gt;웹 문서에 텍스트만 있다면 어떤 느낌일 것 같은가? 물론 기존 html로 기초적인 스타
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="CSS3" scheme="http://rootjang92.github.io/categories/HTML-CSS/CSS3/"/>
+    
+    
+      <category term="css,css3,css basic" scheme="http://rootjang92.github.io/tags/css-css3-css-basic/"/>
+    
+  </entry>
   
   <entry>
     <title>Todo app 만들기</title>
