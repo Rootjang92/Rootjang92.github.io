@@ -6,25 +6,25 @@
     
 
     
-    <title>closure | Rootjang&#39;s IT Blog</title>
+    <title>클로저에 대하여 | Rootjang&#39;s IT Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="Javascript, js, es5, closure, js closure" />
     
-    <meta name="description" content="Related Posts">
-<meta name="keywords" content="HTML, CSS, Javascript, es5, es6, Angular, React, Vue.js, Node.js">
+    <meta name="description" content="클로저앞에서 살펴봤던 실행 컨텍스트에서 클로저에 대해 잠깐 언급했다. 실행 컨텍스트가 소멸하여도 그 환경은 남아 외부에서 참조가 가능하다고 했었지만, 사실 말도 너무 어렵고 이해하기가 어렵다.(저도 그랬습니다… 아직도 완벽하다고 보긴 어렵기도 하고…) function outFun() {   var x = 1;   var inFun = function() {">
+<meta name="keywords" content="Javascript, js, es5, closure, js closure">
 <meta property="og:type" content="article">
-<meta property="og:title" content="closure">
+<meta property="og:title" content="클로저에 대하여">
 <meta property="og:url" content="http://rootjang92.github.io/2018/09/14/closure/index.html">
 <meta property="og:site_name" content="Rootjang&#39;s IT Blog">
-<meta property="og:description" content="Related Posts">
+<meta property="og:description" content="클로저앞에서 살펴봤던 실행 컨텍스트에서 클로저에 대해 잠깐 언급했다. 실행 컨텍스트가 소멸하여도 그 환경은 남아 외부에서 참조가 가능하다고 했었지만, 사실 말도 너무 어렵고 이해하기가 어렵다.(저도 그랬습니다… 아직도 완벽하다고 보긴 어렵기도 하고…) function outFun() {   var x = 1;   var inFun = function() {">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://rootjang92.github.io/images/rootjang.png">
-<meta property="og:updated_time" content="2018-09-14T01:35:10.000Z">
+<meta property="og:updated_time" content="2018-09-14T08:20:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="closure">
-<meta name="twitter:description" content="Related Posts">
+<meta name="twitter:title" content="클로저에 대하여">
+<meta name="twitter:description" content="클로저앞에서 살펴봤던 실행 컨텍스트에서 클로저에 대해 잠깐 언급했다. 실행 컨텍스트가 소멸하여도 그 환경은 남아 외부에서 참조가 가능하다고 했었지만, 사실 말도 너무 어렵고 이해하기가 어렵다.(저도 그랬습니다… 아직도 완벽하다고 보긴 어렵기도 하고…) function outFun() {   var x = 1;   var inFun = function() {">
 <meta name="twitter:image" content="http://rootjang92.github.io/images/rootjang.png">
     
     <link rel="canonical" href="http://rootjang92.github.io/2018/09/14/closure/"/>
@@ -149,7 +149,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Javascript/ES5/">ES5</a>
     </h1>
 </div>
 
@@ -168,7 +168,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        closure
+        클로저에 대하여
         </h1>
     
 
@@ -186,11 +186,173 @@ ga('send', 'pageview');
 		
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Javascript-js-es5-closure-js-closure/">Javascript, js, es5, closure, js closure</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3>
+            <h1 id="클로저"><a href="#클로저" class="headerlink" title="클로저"></a>클로저</h1><p>앞에서 살펴봤던 실행 컨텍스트에서 클로저에 대해 잠깐 언급했다. 실행 컨텍스트가 소멸하여도 그 환경은 남아 외부에서 참조가 가능하다고 했었지만, 사실 말도 너무 어렵고 이해하기가 어렵다.(저도 그랬습니다… 아직도 완벽하다고 보긴 어렵기도 하고…)</p>
+<pre><code>function outFun() {
+  var x = 1;
+  var inFun = function() {
+    console.log(x);
+  };
+  return inFun;
+};
+
+var inner = outFun();
+inner();
+</code></pre><p>이 함수를 살펴보자. 함수 outFun()은 내부함수 inFun을 반환하고 소멸했다. 마지막에 함수 outFun()을 할당해준 변수를 소환해도 변수 x에는 접근할 수 없을 것 같지만 결과는 1이 나온다.<br>이처럼 자신을 포함하고 있는 외부함수가 내부함수보다 더 오래 유지되는 경우(그 환경이) 내부함수가 노출되더라도 외부함수의 지역 변에 접근할 수 있는 것을 <strong>클로저(Closure)</strong> 라고 한다.</p>
+<p>다른 정의로는 내부함수가 그 렉시컬 환경(선언 됐을 때 환경)의 스코프를 기억하여 자신의 선언됐을 때 환경 밖에서 호출되어도 그 환경에 접근할 수 있는 함수를 말한다. 즉 <strong>자신의 태어났을 때의 환경을 기억하는 함수</strong>라고 할 수 있다.</p>
+<p><img src="https://poiemaweb.com/img/closure.png" alt="실행컨텍스트"></p>
+<p>내부함수가 유효한 상태에서 외부함수가 종료되어 외부함수의 실행 컨텍스트가 반환되어도, 외부함수 실행 컨텍스트 내의 활성 객체는 내부함수가 참조하는 한 내부함수가 스코프체인을 통해 참조할 수 있다는 것을 의미한다.<br><strong>내부함수가 하나 이상 존재하는 경우 계속 유지된다.</strong> 이 때 내부함수는 외부함수의 실제 변수에 접근한다.</p>
+<h2 id="클로저-활용하기"><a href="#클로저-활용하기" class="headerlink" title="클로저 활용하기"></a>클로저 활용하기</h2><ol>
+<li>전역 변수 억제</li>
+</ol>
+<iframe width="100%" height="300" src="//jsfiddle.net/rootjang/f2twcqpr/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+
+<p>단 이 코드의 문제는 함수 increase 함수가 호출되기 전 counter의 값이 반드시 0이여야 한다는 것이다. 그렇다고 변수 counter를 increase 함수 안에 넣는다면 함수가 호출될 때마다 값이 초기화가 된다.</p>
+<p>이 코드를 클로저를 활용해 문제를 해결하면</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/rootjang/1w4q0tru/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+
+<p>즉시실행함수는 한 번만 실행되기 때문에 counter가 초기화 될 일이 없다. 또한 increaser에 담겨있는 함수가 외부함수 변수 counter에 접근할 수 있다는 것이다. 또한 변수 counter는 private 변수이므로 외부에서의 변경을 신경쓸 필요가 없다. 여기서의 counter가 바로 <strong>자유변수</strong>이다.</p>
+<ol start="2">
+<li>특정 함수에 사용자가 정의한 객체 메서드 연결</li>
+</ol>
+<p>예제를 살펴보면</p>
+<pre><code>function HelloFunc(func) {
+  this.greeting = &apos;Helle&apos;;
+}
+
+HelloFunc.prototype.call = function(func) {
+  func ? func(this.greeting) : this.func(this.greeting);
+}
+
+var user = function(greeting) {
+  console.log(greeting); // Hello
+}
+
+var objHello = new HelloFunc();
+objHello.func = user;
+objHello.call();
+</code></pre><p>func 프로퍼티에 참조되는 함수를 call() 함수로 호출하여 func 프로퍼티에 자신이 정의한 함수를 참조시켜 호출할 수 있다.<br>다만 greeting만을 인자로 넣어 사용하기 때문에 한 개의 인자를 받는 함수를 정의할 수 밖에 없기 때문에</p>
+<pre><code>function saySomething(obj, methodName, name) {
+  return (function(greeting) {
+    return obj[methodName](greeting,name);
+  });
+}
+
+function newObj(obj, name) {
+  obj.func = saySomething(this, &quot;who&quot;, name);
+  return obj;
+}
+
+newObj.prototype.who = function(greeting, name) {
+  console.log(greeting + &quot; &quot; + (name || &quot;everyone&quot;) );
+}
+
+var obj1 = new newObj(objHello, &quot;Jang&quot;);
+obj1.call();
+console.log(obj1);
+</code></pre><p>첫 번째로  obj.func가 실행되어 saySomething() 함수에서 반환되는 함수를 참조한다. 결국 obj1은 objHello 객체에서 func 프로퍼티에 참조된 함수만 바뀐 객체가 되기 때문에 call 함수를 사용할 수 있다.</p>
+<p>출력결과</p>
+<blockquote>
+<p>Helle<br>Helle Jang<br>HelloFunc { greeting: ‘Helle’, func: [Function] }</p>
+</blockquote>
+<p>또한 obj1.call()로 인해 실행되는 것은 실제로 newObj.prototype.who()가 된다. who를 HelloFunc에 연결할 수 있고 클로저는 saySomething()에서 반환되면 function(greeting) {}이 되어 자유변수 obj, methodName, name을 참조하게 된다.</p>
+<ol start="3">
+<li><p>함수 캡슐화<br>다음 예제를 통해 자기소개를 출력해보자.</p>
+<p> var getCompleted = (function() {<br>   var buffAr = [</p>
+<pre><code>&apos;I am &apos;,
+&apos;&apos;,
+&apos;I live in &apos;,
+&apos;&apos;,
+&apos;. I\&apos;m &apos;,
+&apos;&apos;,
+&apos; years old.&apos;,
+</code></pre><p>   ];<br>   return (function(name, city, age) {</p>
+<pre><code>buffAr[1] = name;
+buffAr[3] = city;
+buffAr[5] = age;
+
+return buffAr.join(&apos;&apos;);
+</code></pre><p>   });<br> })();</p>
+<p> var str = getCompleted(‘Jang’, ‘Incheon’, 27);<br> console.log(str);</p>
+</li>
+</ol>
+<p>변수 getComplted에 익명 함수를 즉시 실행함수로 실행시켜서 반환되는 함수를 할당하는 것이다. 여기서 반환되는 함수가 클로저가 되서 자유변수 buffAr을 스코프체인에서 참조할 수 있다.</p>
+<ol start="4">
+<li>setTimeout()</li>
+</ol>
+<iframe width="100%" height="300" src="//jsfiddle.net/rootjang/1mkwqr95/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+
+<p>첫번째로 함수 fade가 document.body를 인자로 전달받아서 호출한다. 그 후 함수 fade의 지역변수인 level이 1로 초기화가 되어 있다. step은 내부함수, 외부 함수 fade의 지역변수 level을 사용하고 level은 자유 변수다.<br>setTimeout() 호출 후에는 fade 함수는 종료되지만, 100ms 이후에 함수 step이 호출된다.<br>step은 지역 변수 hex를 갖고 16진수 문자열이다. fade의 배경색을 변경할 수 있다.<br>그 후 변수 level이 15보다 작은지 확인한다. 그 후 level = 1을 증가시켜 작업을 반복한다.</p>
+<ol start="5">
+<li>실수</li>
+</ol>
+<p>클로저의 프로퍼티값이 쓰기 가능하면 여러번 호출로 값이 항상 변할 수 있다.</p>
+<pre><code>function outerFun(argNum) {
+  var num = argNum;
+  return function(x) {
+    num += x;
+    console.log(&apos;num : &apos; + num);
+  }
+}
+
+var exam = outerFun(40);
+exam(5); // 45
+exam(-5); //40
+</code></pre><p>exam을 호출할 때마다 num의 값이 변한다.</p>
+<p>하나의 클로저가 여러 함수 객체의 스코프 체인에 들어있는 경우.</p>
+<pre><code>function func() {
+  var x = 1;
+  return {
+    func1 : function(){ console.log(++x); },
+    func2 : function(){ console.log(-x); }
+  };
+};
+
+var exam = func();
+exam.func1(); // 2
+exam.func2(); // -2
+</code></pre><p>함수 호출 때마다 값이 변하므로 주의.</p>
+<p>루프 안 클로저 활용.</p>
+<pre><code>var arr = [];
+
+for(var i = 0; i &lt; 5; i++) {
+  arr[i] = function() {
+    return i;
+  };
+}
+
+for (var j=0; j &lt; arr.length; j++) {
+  console.log(arr[j]());
+} // 55555
+</code></pre><p>배열 arr 안에 5개의 함수가 할당되지만 변수 i가 전역변수이기 때문에 이미 길이가 5가 된 상태이기 때문이다.<br>이를 해결하기 위해서</p>
+<pre><code>var arr = [];
+
+for (var i = 0; i &lt; 5; i++) {
+  arr[i] = (function (id) {
+    return function() {
+      return id;
+    };
+  }(i));
+}
+
+for (var j=0; j &lt; arr.length; j++) {
+  console.log(arr[j]());
+} // 01234
+</code></pre><p>이런 식으로 즉시 실행 함수를 사용하여 매개변수 id를 자유변수를 만들어 반환하면 id의 값이 유지된다.</p>
+<p>물론 ES6의 let 키워드를 사용하면 말끔히 해결된다.(일시적 사각지대가 생기기 때문에.)</p>
+<p>다음 시간에는 객체지향 프로그래밍의 개념에 대해 알아보겠습니다.</p>
+
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
@@ -379,7 +541,7 @@ ga('send', 'pageview');
                             <a href="/2018/09/14/closure/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/js.png)" alt="클로저에 대하여" class="thumbnail-image"></span>
     
     
 </a>
@@ -387,8 +549,8 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/09/14/closure/" class="title">closure</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/ES5/">ES5</a></p>
+                            <p class="item-title"><a href="/2018/09/14/closure/" class="title">클로저에 대하여</a></p>
                             <p class="item-date"><time datetime="2018-09-14T01:35:10.000Z" itemprop="datePublished">2018-09-14</time></p>
                         </div>
                     </li>
@@ -462,7 +624,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/">HTML & CSS</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/CSS3/">CSS3</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/HTML/">HTML</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/ES5/">ES5</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/todo/">todo</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/">HTML & CSS</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/CSS3/">CSS3</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/HTML/">HTML</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/ES5/">ES5</a><span class="category-list-count">9</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/todo/">todo</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -482,7 +644,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html/">HTML, html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-HTML-hyperlink-html-link/">HTML, html, HTML basic syntax, HTML hyperlink, html link</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-html-tag/">HTML, html, HTML basic syntax, html tag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-htmltag/">HTML, html, HTML basic syntax, htmltag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-htmltag-ul-li/">HTML, html, HTML basic syntax, htmltag, ul, li</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-html-form-form-tag/">HTML, html, html form, form tag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-JS-prototype-prototype-chain/">Javascript, JS prototype, prototype chain</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5/">Javascript, js, es5, ES5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5-data-datatype/">Javascript, js, es5, ES5, data, datatype</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5-object-js-object/">Javascript, js, es5, ES5, object, js object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5-prototype-js-prototype/">Javascript, js, es5, ES5, prototype, js prototype</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-js-this-this-prototype-chain/">Javascript, js, js this, this, prototype chain</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-basic/">css,css3,css basic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-text/">css,css3,css text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html-html-input/">html, html input</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-javascript-execution-context-scope/">js, javascript, execution context, scope</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-javascript-javascript-function-자바스크립트-함수/">js, javascript, javascript function, 자바스크립트 함수</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo-todolist-front-end/">todo,todolist,front-end</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html/">HTML, html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-HTML-hyperlink-html-link/">HTML, html, HTML basic syntax, HTML hyperlink, html link</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-html-tag/">HTML, html, HTML basic syntax, html tag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-htmltag/">HTML, html, HTML basic syntax, htmltag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-htmltag-ul-li/">HTML, html, HTML basic syntax, htmltag, ul, li</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-html-form-form-tag/">HTML, html, html form, form tag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-JS-prototype-prototype-chain/">Javascript, JS prototype, prototype chain</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5/">Javascript, js, es5, ES5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5-data-datatype/">Javascript, js, es5, ES5, data, datatype</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5-object-js-object/">Javascript, js, es5, ES5, object, js object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5-prototype-js-prototype/">Javascript, js, es5, ES5, prototype, js prototype</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-closure-js-closure/">Javascript, js, es5, closure, js closure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-js-this-this-prototype-chain/">Javascript, js, js this, this, prototype chain</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-basic/">css,css3,css basic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-text/">css,css3,css text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html-html-input/">html, html input</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-javascript-execution-context-scope/">js, javascript, execution context, scope</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-javascript-javascript-function-자바스크립트-함수/">js, javascript, javascript function, 자바스크립트 함수</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo-todolist-front-end/">todo,todolist,front-end</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -492,7 +654,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/HTML-html/" style="font-size: 10px;">HTML, html</a> <a href="/tags/HTML-html-HTML-basic-syntax-HTML-hyperlink-html-link/" style="font-size: 10px;">HTML, html, HTML basic syntax, HTML hyperlink, html link</a> <a href="/tags/HTML-html-HTML-basic-syntax-html-tag/" style="font-size: 10px;">HTML, html, HTML basic syntax, html tag</a> <a href="/tags/HTML-html-HTML-basic-syntax-htmltag/" style="font-size: 10px;">HTML, html, HTML basic syntax, htmltag</a> <a href="/tags/HTML-html-HTML-basic-syntax-htmltag-ul-li/" style="font-size: 10px;">HTML, html, HTML basic syntax, htmltag, ul, li</a> <a href="/tags/HTML-html-html-form-form-tag/" style="font-size: 10px;">HTML, html, html form, form tag</a> <a href="/tags/Javascript-JS-prototype-prototype-chain/" style="font-size: 10px;">Javascript, JS prototype, prototype chain</a> <a href="/tags/Javascript-js-es5-ES5/" style="font-size: 10px;">Javascript, js, es5, ES5</a> <a href="/tags/Javascript-js-es5-ES5-data-datatype/" style="font-size: 10px;">Javascript, js, es5, ES5, data, datatype</a> <a href="/tags/Javascript-js-es5-ES5-object-js-object/" style="font-size: 10px;">Javascript, js, es5, ES5, object, js object</a> <a href="/tags/Javascript-js-es5-ES5-prototype-js-prototype/" style="font-size: 10px;">Javascript, js, es5, ES5, prototype, js prototype</a> <a href="/tags/Javascript-js-js-this-this-prototype-chain/" style="font-size: 10px;">Javascript, js, js this, this, prototype chain</a> <a href="/tags/css-css3-css-basic/" style="font-size: 10px;">css,css3,css basic</a> <a href="/tags/css-css3-css-text/" style="font-size: 10px;">css,css3,css text</a> <a href="/tags/html-html-input/" style="font-size: 10px;">html, html input</a> <a href="/tags/js-javascript-execution-context-scope/" style="font-size: 10px;">js, javascript, execution context, scope</a> <a href="/tags/js-javascript-javascript-function-자바스크립트-함수/" style="font-size: 10px;">js, javascript, javascript function, 자바스크립트 함수</a> <a href="/tags/todo-todolist-front-end/" style="font-size: 10px;">todo,todolist,front-end</a>
+            <a href="/tags/HTML-html/" style="font-size: 10px;">HTML, html</a> <a href="/tags/HTML-html-HTML-basic-syntax-HTML-hyperlink-html-link/" style="font-size: 10px;">HTML, html, HTML basic syntax, HTML hyperlink, html link</a> <a href="/tags/HTML-html-HTML-basic-syntax-html-tag/" style="font-size: 10px;">HTML, html, HTML basic syntax, html tag</a> <a href="/tags/HTML-html-HTML-basic-syntax-htmltag/" style="font-size: 10px;">HTML, html, HTML basic syntax, htmltag</a> <a href="/tags/HTML-html-HTML-basic-syntax-htmltag-ul-li/" style="font-size: 10px;">HTML, html, HTML basic syntax, htmltag, ul, li</a> <a href="/tags/HTML-html-html-form-form-tag/" style="font-size: 10px;">HTML, html, html form, form tag</a> <a href="/tags/Javascript-JS-prototype-prototype-chain/" style="font-size: 10px;">Javascript, JS prototype, prototype chain</a> <a href="/tags/Javascript-js-es5-ES5/" style="font-size: 10px;">Javascript, js, es5, ES5</a> <a href="/tags/Javascript-js-es5-ES5-data-datatype/" style="font-size: 10px;">Javascript, js, es5, ES5, data, datatype</a> <a href="/tags/Javascript-js-es5-ES5-object-js-object/" style="font-size: 10px;">Javascript, js, es5, ES5, object, js object</a> <a href="/tags/Javascript-js-es5-ES5-prototype-js-prototype/" style="font-size: 10px;">Javascript, js, es5, ES5, prototype, js prototype</a> <a href="/tags/Javascript-js-es5-closure-js-closure/" style="font-size: 10px;">Javascript, js, es5, closure, js closure</a> <a href="/tags/Javascript-js-js-this-this-prototype-chain/" style="font-size: 10px;">Javascript, js, js this, this, prototype chain</a> <a href="/tags/css-css3-css-basic/" style="font-size: 10px;">css,css3,css basic</a> <a href="/tags/css-css3-css-text/" style="font-size: 10px;">css,css3,css text</a> <a href="/tags/html-html-input/" style="font-size: 10px;">html, html input</a> <a href="/tags/js-javascript-execution-context-scope/" style="font-size: 10px;">js, javascript, execution context, scope</a> <a href="/tags/js-javascript-javascript-function-자바스크립트-함수/" style="font-size: 10px;">js, javascript, javascript function, 자바스크립트 함수</a> <a href="/tags/todo-todolist-front-end/" style="font-size: 10px;">todo,todolist,front-end</a>
         </div>
     </div>
 
