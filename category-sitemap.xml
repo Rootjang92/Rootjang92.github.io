@@ -49,20 +49,6 @@
     </url>
 
     <url>
-        <loc>http://rootjang92.github.io/categories/HTML-CSS/</loc>
-        <lastmod>2018-09-17T06:44:20.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://rootjang92.github.io/categories/HTML-CSS/CSS/</loc>
-        <lastmod>2018-09-17T06:44:20.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://rootjang92.github.io/categories/Javascirpt/</loc>
         <lastmod>2018-09-17T08:05:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -72,6 +58,20 @@
     <url>
         <loc>http://rootjang92.github.io/categories/Javascirpt/ES5/</loc>
         <lastmod>2018-09-17T08:05:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://rootjang92.github.io/categories/HTML-CSS/</loc>
+        <lastmod>2018-09-18T09:06:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://rootjang92.github.io/categories/HTML-CSS/CSS/</loc>
+        <lastmod>2018-09-18T09:06:44.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
