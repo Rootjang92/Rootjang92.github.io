@@ -150,7 +150,14 @@
 
     <url>
         <loc>http://rootjang92.github.io/tags/css-css3-css-layout/</loc>
-        <lastmod>2018-09-18T09:06:44.000Z</lastmod>
+        <lastmod>2018-09-18T09:14:36.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://rootjang92.github.io/tags/javascript-function-programming-%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%9D%B4%EB%9E%80/</loc>
+        <lastmod>2018-09-22T03:31:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
