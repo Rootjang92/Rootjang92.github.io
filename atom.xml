@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-09-22T03:31:37.000Z</updated>
+  <updated>2018-09-22T07:09:19.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS 포지셔닝에 대해서</title>
+    <link href="http://rootjang92.github.io/2018/09/22/cssposition/"/>
+    <id>http://rootjang92.github.io/2018/09/22/cssposition/</id>
+    <published>2018-09-22T03:32:10.000Z</published>
+    <updated>2018-09-22T07:09:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CSS-포지셔닝"><a href="#CSS-포지셔닝" class="headerlink" title="CSS 포지셔닝"></a>CSS 포지셔닝</h1><p>css에서 가장 <strong>중요한</strong>속성이 바로 포지셔닝이다. 이것을 이용해서 웹 문서의 레이아웃이 짜여진다고 생각하면 된다.<br>우리가 네이버나 다음에서 보는 검색창, 광고, 로그인 창들의 <strong>위치</strong>는 모두 css로 만들고 그 배치를 하는 것이 바로 포지셔닝이다.</p><h2 id="box-sizing-박스-너비-기준-정하기"><a href="#box-sizing-박스-너비-기준-정하기" class="headerlink" title="box-sizing : 박스 너비 기준 정하기"></a>box-sizing : 박스 너비 기준 정하기</h2><p>box-sizing은 박스 모델 안에 있는 콘텐츠 부분의 너비와 높이를 정하는 속성이다. 속성값에는 content-box와 border-box가 있으며 content-box는 너비의 기준이 컨텐츠이고, border-box는 콘텐츠 영역의 테두리까지 포함한다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/w7eaL5q2/4/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>box1의 실제 넓이는 패딩 30px border 2px 콘텐츠 너비 300px = 364px<br>box2의 실제 넓이는 300px에서 패딩 30px과 테두리 2px씩 할당해서 = 236px이 된다.</p><p>더 자세히 보고 싶으면 크롬 검사에 Computed 요소를 살펴보면 더 자세히 볼 수 있다.</p><h2 id="float-왼쪽-혹은-오른쪽"><a href="#float-왼쪽-혹은-오른쪽" class="headerlink" title="float : 왼쪽 혹은 오른쪽"></a>float : 왼쪽 혹은 오른쪽</h2><p>float의 단어적 의미는 “뜨다”, “띄우다”이다. 즉 css에서 float는 요소를 띄어서 배치시킨다는 의미이다.<br>즉 이미지를 어떻게 띄어서 텍스트와 함께 배치할 것인가를 나타낸다. 속성값에는 inherit(부모 요소로부터 상속),left, right, none이 있다.</p><p>float에서 중요한 점은 그 원리 이다. float를 지정할 경우 필요한 너비 값을 차지하고 다른 요소가 들어올 만큼의 공간을 비워둔다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/bv6h1du4/2/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><h2 id="clear-float-해제하기"><a href="#clear-float-해제하기" class="headerlink" title="clear : float 해제하기"></a>clear : float 해제하기</h2><p>float 속성을 적용시켜 배치하면 그 다음에 넣는 요소들에게도 같은 속성이 전달된다. 이제 그만~ 을 알려주기 위해선 clear를 사용하여야 한다.</p><p>left를 무효화 할 때에는 clear:left, right는 clear:right, 상관업싱 할 떄는 clear: both를 사용하면 된다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;CSS-포지셔닝&quot;&gt;&lt;a href=&quot;#CSS-포지셔닝&quot; class=&quot;headerlink&quot; title=&quot;CSS 포지셔닝&quot;&gt;&lt;/a&gt;CSS 포지셔닝&lt;/h1&gt;&lt;p&gt;css에서 가장 &lt;strong&gt;중요한&lt;/strong&gt;속성이 바로 포지셔닝이다. 이것
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/CSS/"/>
+    
+    
+      <category term="css, css3, css positioning, float, z-index" scheme="http://rootjang92.github.io/tags/css-css3-css-positioning-float-z-index/"/>
+    
+  </entry>
   
   <entry>
     <title>함수형 프로그래밍이란</title>
