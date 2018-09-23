@@ -6,28 +6,28 @@
     
 
     
-    <title>Javascript 기본 개요 | Rootjang&#39;s IT Blog</title>
+    <title>표 스타일 | Rootjang&#39;s IT Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Javascript, js, es5, ES5" />
+        <meta name="keywords" content="css,css3,css table" />
     
-    <meta name="description" content="자바스크립트 기본 개요자바스크립트는 웹 브라우저에서 동작하는 스크립트 언어이다. 처음에는 웹 페이지 제작에 보조적 역할에 한정되어 있었다.하지만 여러가지 연구와 prototype 라이브러리 개발 등 많은 발전이 있으면서 서버에서 담당하던 역할이 웹 브라우저로 옮겨졌고 결국 자바스크립트는 그 변화의 중심적인 언어가 되었다. (인사이드 자바스크립트 저:송형주,">
-<meta name="keywords" content="Javascript, js, es5, ES5">
+    <meta name="description" content="간단히 살펴보는 표 스타일이제 테이블이라는 태그는 많이 사용하지 않지만, 자신이 만들어야 하는 웹 페이지에 테이블이 필요하다면 ul태그나 기타 다른 태그를 사용하는 것보단 테이블 태그를 사용하는 것이 훨씬 실용적이고, 또 웹 표준성에도 맞는 방법이다. 그렇기 때문에 오늘은 표 관련 css를 살펴보려고 한다.  caption-side : 표 제목 위치  표">
+<meta name="keywords" content="css,css3,css table">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript 기본 개요">
-<meta property="og:url" content="http://rootjang92.github.io/2018/09/02/jsbasic/index.html">
+<meta property="og:title" content="표 스타일">
+<meta property="og:url" content="http://rootjang92.github.io/2018/09/23/csstable/index.html">
 <meta property="og:site_name" content="Rootjang&#39;s IT Blog">
-<meta property="og:description" content="자바스크립트 기본 개요자바스크립트는 웹 브라우저에서 동작하는 스크립트 언어이다. 처음에는 웹 페이지 제작에 보조적 역할에 한정되어 있었다.하지만 여러가지 연구와 prototype 라이브러리 개발 등 많은 발전이 있으면서 서버에서 담당하던 역할이 웹 브라우저로 옮겨졌고 결국 자바스크립트는 그 변화의 중심적인 언어가 되었다. (인사이드 자바스크립트 저:송형주,">
+<meta property="og:description" content="간단히 살펴보는 표 스타일이제 테이블이라는 태그는 많이 사용하지 않지만, 자신이 만들어야 하는 웹 페이지에 테이블이 필요하다면 ul태그나 기타 다른 태그를 사용하는 것보단 테이블 태그를 사용하는 것이 훨씬 실용적이고, 또 웹 표준성에도 맞는 방법이다. 그렇기 때문에 오늘은 표 관련 css를 살펴보려고 한다.  caption-side : 표 제목 위치  표">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://rootjang92.github.io/images/rootjang.png">
-<meta property="og:updated_time" content="2018-09-02T02:01:24.000Z">
+<meta property="og:updated_time" content="2018-09-23T03:19:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript 기본 개요">
-<meta name="twitter:description" content="자바스크립트 기본 개요자바스크립트는 웹 브라우저에서 동작하는 스크립트 언어이다. 처음에는 웹 페이지 제작에 보조적 역할에 한정되어 있었다.하지만 여러가지 연구와 prototype 라이브러리 개발 등 많은 발전이 있으면서 서버에서 담당하던 역할이 웹 브라우저로 옮겨졌고 결국 자바스크립트는 그 변화의 중심적인 언어가 되었다. (인사이드 자바스크립트 저:송형주,">
+<meta name="twitter:title" content="표 스타일">
+<meta name="twitter:description" content="간단히 살펴보는 표 스타일이제 테이블이라는 태그는 많이 사용하지 않지만, 자신이 만들어야 하는 웹 페이지에 테이블이 필요하다면 ul태그나 기타 다른 태그를 사용하는 것보단 테이블 태그를 사용하는 것이 훨씬 실용적이고, 또 웹 표준성에도 맞는 방법이다. 그렇기 때문에 오늘은 표 관련 css를 살펴보려고 한다.  caption-side : 표 제목 위치  표">
 <meta name="twitter:image" content="http://rootjang92.github.io/images/rootjang.png">
     
-    <link rel="canonical" href="http://rootjang92.github.io/2018/09/02/jsbasic/"/>
+    <link rel="canonical" href="http://rootjang92.github.io/2018/09/23/csstable/"/>
     
         <link rel="alternate" href="/" title="Rootjang&#39;s IT Blog" type="application/atom+xml" />
     
@@ -149,7 +149,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Javascript/ES5/">ES5</a>
+    <a class="page-title-link" href="/categories/HTML-CSS/">HTML & CSS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/HTML-CSS/CSS/">CSS</a>
     </h1>
 </div>
 
@@ -161,14 +161,14 @@ ga('send', 'pageview');
     enable_page_level_ads: true
   });
 </script> -->
-                            <article id="post-jsbasic" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-csstable" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Javascript 기본 개요
+        표 스타일
         </h1>
     
 
@@ -178,8 +178,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/09/02/jsbasic/" class="article-date">
-            <time datetime="2018-09-02T01:46:18.000Z" itemprop="datePublished">2018-09-02</time>
+        <a href="/2018/09/23/csstable/" class="article-date">
+            <time datetime="2018-09-23T03:16:25.000Z" itemprop="datePublished">2018-09-23</time>
         </a>
     </div>
 
@@ -188,45 +188,22 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Javascript-js-es5-ES5/">Javascript, js, es5, ES5</a>
+        <a class="tag-link" href="/tags/css-css3-css-table/">css,css3,css table</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="자바스크립트-기본-개요"><a href="#자바스크립트-기본-개요" class="headerlink" title="자바스크립트 기본 개요"></a>자바스크립트 기본 개요</h3><p>자바스크립트는 웹 브라우저에서 동작하는 스크립트 언어이다. 처음에는 웹 페이지 제작에 <strong>보조적</strong> 역할에 한정되어 있었다.<br>하지만 여러가지 연구와 prototype 라이브러리 개발 등 많은 발전이 있으면서 서버에서 담당하던 역할이 웹 브라우저로 옮겨졌고 결국 자바스크립트는 그 변화의 중심적인 언어가 되었다. (인사이드 자바스크립트 저:송형주, 고현준 참조)</p>
-<p>현재 github에서 가장 많이 사용되고 있는 언어는 자바스크립트이고 Node.js의 개발로 서버 개발 또한 가능해지며 사용자가 늘고 있다.</p>
-<p>자바스크립트는 현재 웹 개발은 물론 Node.js, express, socket.io 등을 활용한 서버 개발, 애플리케이션 개발도 가능해졌기 때문에 웹 기반 플랫폼에선 없어서는 안될 언어가 되었다.</p>
-<h3 id="자바스크립트-핵심-개념"><a href="#자바스크립트-핵심-개념" class="headerlink" title="자바스크립트 핵심 개념"></a>자바스크립트 핵심 개념</h3><p>자바스크립트에서는 꼭 알아야 할 몇가지 핵심 개념이 있는데 앞으로 블로그를 운영하면서 차차 살펴보도록 하겠다.</p>
+            <h1 id="간단히-살펴보는-표-스타일"><a href="#간단히-살펴보는-표-스타일" class="headerlink" title="간단히 살펴보는 표 스타일"></a>간단히 살펴보는 표 스타일</h1><p>이제 테이블이라는 태그는 많이 사용하지 않지만, 자신이 만들어야 하는 웹 페이지에 테이블이 필요하다면 ul태그나 기타 다른 태그를 사용하는 것보단 테이블 태그를 사용하는 것이 훨씬 실용적이고, 또 웹 표준성에도 맞는 방법이다. 그렇기 때문에 오늘은 표 관련 css를 살펴보려고 한다.</p>
 <ul>
-<li>객체(Object)</li>
+<li>caption-side : 표 제목 위치</li>
 </ul>
-<p>자바스크립트(이하 JS)의 거의 모든 것은 객체라고 할 정도로 중요한 개념이다. 자바스크립트의 기본 데이터 타입을 제외하곤 모든 것이 객체이다.<br>하지만 null과 undefined를 제외한 모든 것을 객체처럼 다룰 수 있기 때문에 이 2가지를 제외하곤 모두 객체라고 할 수 있다.</p>
+<p>표 제목은 caption 태그를 이용하는 데 그 위치를 조정하는 css 속성은 caption-side이다. top은 기본 값이며 제목이 위에 설정되도록, bottom은 제목이 아래에 오도록 하는 속성값이다.</p>
 <ul>
-<li>함수</li>
+<li>border : 표 테두리</li>
 </ul>
-<p>JS에선 함수도 객체이다. 함수는 특히 중요하기 떄문에 일급 객체(First class object)로 취급된다.</p>
-<ul>
-<li>프로토타입</li>
-</ul>
-<p>모든 객체는 프로토타입을 가진다. 분량이 상당히 많을 것으로 예상되기 때문에 뒤에서 자세히 다루겠지만, 쉽게 말해서 해당 개체를 생성한 생성자를 가리킨다고 보면 된다. 이 프로토타입으로 인해 겍체지향에 상속을 구현할 수 있게 되었다.</p>
-<ul>
-<li>실행 컨텍스트와 클로저</li>
-</ul>
-<p>JS는 자신만의 방법으로 실행 컨텍스트를 만들고 그 안에서 유효범위(Scope)를 갖는다. 또한 그 과정에서 클로저를 구현할 수 있다.</p>
-<ul>
-<li>객체지향 프로그래밍</li>
-</ul>
-<p>JS는 클래스를 지원하지 않지만(ES6에서는 함수의 형태로 만들어졌다.) 상속과 캡슐화 등의 객체지향 프로그래밍을 따라가고 있다.</p>
-<ul>
-<li>JS와 함수형 프로그래밍</li>
-</ul>
-<p>‘모듈화’하면 함수형 프로그래밍! JS의 일급 객체인 함수와 클로저를 활용하여 함수형 프로그래밍이 가능하게 한다.</p>
-<ul>
-<li>단점</li>
-</ul>
-<p>굉장히 유연한 언어의 단점은 디버깅이 힘들다는 점, 느슨한 타입 체크로 인한 컴파일 에러(런타임 에러로 이어진다.)</p>
+<p>일반 컨텐츠와 마찬가지로 border는 테두리를 지정하는 속성이다. 하지만 주의할 점은 표는 바깥 테두리와 셀 테두리를 따로 설정해주어야 한다는 점이다.</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -358,20 +335,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/09/03/htmltext/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            HTML 텍스트 관련된 태그들
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/09/02/htmlbasic/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/09/22/cssposition/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">HTML 기본 문서 구조</p>
+        <p class="article-nav-title">CSS 포지셔닝에 대해서</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -596,7 +563,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://rootjang92.github.io/2018/09/02/jsbasic/';
+    var disqus_url = 'http://rootjang92.github.io/2018/09/23/csstable/';
     
     (function() {
     var dsq = document.createElement('script');

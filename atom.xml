@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-09-22T07:57:24.000Z</updated>
+  <updated>2018-09-23T03:19:42.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>표 스타일</title>
+    <link href="http://rootjang92.github.io/2018/09/23/csstable/"/>
+    <id>http://rootjang92.github.io/2018/09/23/csstable/</id>
+    <published>2018-09-23T03:16:25.000Z</published>
+    <updated>2018-09-23T03:19:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="간단히-살펴보는-표-스타일"><a href="#간단히-살펴보는-표-스타일" class="headerlink" title="간단히 살펴보는 표 스타일"></a>간단히 살펴보는 표 스타일</h1><p>이제 테이블이라는 태그는 많이 사용하지 않지만, 자신이 만들어야 하는 웹 페이지에 테이블이 필요하다면 ul태그나 기타 다른 태그를 사용하는 것보단 테이블 태그를 사용하는 것이 훨씬 실용적이고, 또 웹 표준성에도 맞는 방법이다. 그렇기 때문에 오늘은 표 관련 css를 살펴보려고 한다.</p><ul><li>caption-side : 표 제목 위치</li></ul><p>표 제목은 caption 태그를 이용하는 데 그 위치를 조정하는 css 속성은 caption-side이다. top은 기본 값이며 제목이 위에 설정되도록, bottom은 제목이 아래에 오도록 하는 속성값이다.</p><ul><li>border : 표 테두리</li></ul><p>일반 컨텐츠와 마찬가지로 border는 테두리를 지정하는 속성이다. 하지만 주의할 점은 표는 바깥 테두리와 셀 테두리를 따로 설정해주어야 한다는 점이다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;간단히-살펴보는-표-스타일&quot;&gt;&lt;a href=&quot;#간단히-살펴보는-표-스타일&quot; class=&quot;headerlink&quot; title=&quot;간단히 살펴보는 표 스타일&quot;&gt;&lt;/a&gt;간단히 살펴보는 표 스타일&lt;/h1&gt;&lt;p&gt;이제 테이블이라는 태그는 많이 사용하지 
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/CSS/"/>
+    
+    
+      <category term="css,css3,css table" scheme="http://rootjang92.github.io/tags/css-css3-css-table/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS 포지셔닝에 대해서</title>
