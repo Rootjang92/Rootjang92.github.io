@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-09-25T02:12:34.000Z</updated>
+  <updated>2018-09-25T09:33:21.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML5 시맨틱 태그</title>
+    <link href="http://rootjang92.github.io/2018/09/25/csssemantic/"/>
+    <id>http://rootjang92.github.io/2018/09/25/csssemantic/</id>
+    <published>2018-09-25T02:13:12.000Z</published>
+    <updated>2018-09-25T09:33:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="시맨틱-태그"><a href="#시맨틱-태그" class="headerlink" title="시맨틱 태그"></a>시맨틱 태그</h1><p>많은 웹 사이트를 분석하여 웹 문서 레이아웃의 표준화를 하는 태그가 많이 추가되었다. (물론 아직 많이 사용하진 않는다.)<br>‘semantic’은 의미가 통한다는 의미이기 때문에 태그만 보면 ‘아 여기구나’라고 알 수 있다.</p><p>우리가 흔히 쓰는 의미 없는 상자 태그인 div 대신에 각 구역의 의미가 담긴 태그를 사용하는 것이다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/948up2sm/1/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>HTML5의 시맨틱 태그를 사용해야 하는 이유는 <strong>웹 표준성</strong>이다. 우리가 웹 사이트의 태그를 보고 필요한 내용을 즉각 찾아낼 수 있어 편리해지고, 어떤 내용인지 바로 알 수 있기 때문이다.</p><h2 id="header-머리말"><a href="#header-머리말" class="headerlink" title="header : 머리말"></a>header : 머리말</h2><p>head부분이 아니고 body안에 머릿말에 들어가는 태그이다. header 부분에는 검색창이나 메뉴를 삽입한다.</p><ul><li>nav 태그 : 문서를 연결하는 네비게이션</li></ul><p>보통 메뉴에 사용하는 태그이다. header, aside, footer 어디에든 사용 가능하다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/hmp29usv/3/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>(참조 : HTML5 &amp; CSS3 웹 표준의 정석)</p><h2 id="section-주제별-콘텐츠-영역"><a href="#section-주제별-콘텐츠-영역" class="headerlink" title="section : 주제별 콘텐츠 영역"></a>section : 주제별 콘텐츠 영역</h2><p>콘텐츠의 주제를 묶을 때 사용하는 태그이다.</p><h2 id="article-콘텐츠-내용"><a href="#article-콘텐츠-내용" class="headerlink" title="article : 콘텐츠 내용"></a>article : 콘텐츠 내용</h2><p>사전적의미로 신문이나 잡지의 기사를 뜻하는 내용이니, 일맥상통한다. 여기서는 블로그 포스트, 코멘트, 독립적인 웹 콘텐츠를 넣는다.<br>보통 section은 문맥상 콘텐츠를 주제별로 묶을 때 사용하기 떄문에 article 태그 안에 section 태그를 넣기도 한다.</p><h2 id="aside-본문-이외의-내용"><a href="#aside-본문-이외의-내용" class="headerlink" title="aside : 본문 이외의 내용"></a>aside : 본문 이외의 내용</h2><p>블로그나 웹 사이트의 왼쪽이나 오른쪽, 하단 사이드바를 만드는 태그이다. 문서의 메인 컨텐츠에 영향을 끼치지 않는 내용을 삽입한다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/k79oLfas/1/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><h2 id="iframe-외부-태그-삽입하기"><a href="#iframe-외부-태그-삽입하기" class="headerlink" title="iframe : 외부 태그 삽입하기"></a>iframe : 외부 태그 삽입하기</h2><p>HTML, CSS란에 있는 예제태그가 모두 iframe 태그를 통해 가져온 것이다. 즉 외부 문서를 삽입하는 태그이다.</p><h2 id="footer-제작정보-저작권-정보-표시"><a href="#footer-제작정보-저작권-정보-표시" class="headerlink" title="footer : 제작정보, 저작권 정보 표시"></a>footer : 제작정보, 저작권 정보 표시</h2><h2 id="address-사이트-제작-정보-연락처-정보"><a href="#address-사이트-제작-정보-연락처-정보" class="headerlink" title="address : 사이트 제작 정보, 연락처 정보"></a>address : 사이트 제작 정보, 연락처 정보</h2><p>주로 footer 태그 안에서 사용되며 연락처 정보 등을 남긴다.</p><h2 id="div는-뭔데-그럼"><a href="#div는-뭔데-그럼" class="headerlink" title="div는 뭔데 그럼?"></a>div는 뭔데 그럼?</h2><p>div는 콘텐츠를 묶어서 css 등을 사용해야 할 때 사용합니다. (물론 주로 div로 다 한다.)</p><h2 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h2><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/jguvx2zq/2/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;시맨틱-태그&quot;&gt;&lt;a href=&quot;#시맨틱-태그&quot; class=&quot;headerlink&quot; title=&quot;시맨틱 태그&quot;&gt;&lt;/a&gt;시맨틱 태그&lt;/h1&gt;&lt;p&gt;많은 웹 사이트를 분석하여 웹 문서 레이아웃의 표준화를 하는 태그가 많이 추가되었다. (물론 아직
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/CSS/"/>
+    
+    
+      <category term="css,css3, css semantic tag, 시맨틱 태그" scheme="http://rootjang92.github.io/tags/css-css3-css-semantic-tag-%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>표 스타일</title>
