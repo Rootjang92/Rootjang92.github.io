@@ -21,7 +21,7 @@
 <meta property="og:description" content="간단히 살펴보는 표 스타일이제 테이블이라는 태그는 많이 사용하지 않지만, 자신이 만들어야 하는 웹 페이지에 테이블이 필요하다면 ul태그나 기타 다른 태그를 사용하는 것보단 테이블 태그를 사용하는 것이 훨씬 실용적이고, 또 웹 표준성에도 맞는 방법이다. 그렇기 때문에 오늘은 표 관련 css를 살펴보려고 한다.  caption-side : 표 제목 위치  표">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://rootjang92.github.io/images/rootjang.png">
-<meta property="og:updated_time" content="2018-09-23T03:19:42.000Z">
+<meta property="og:updated_time" content="2018-09-25T02:12:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="표 스타일">
 <meta name="twitter:description" content="간단히 살펴보는 표 스타일이제 테이블이라는 태그는 많이 사용하지 않지만, 자신이 만들어야 하는 웹 페이지에 테이블이 필요하다면 ul태그나 기타 다른 태그를 사용하는 것보단 테이블 태그를 사용하는 것이 훨씬 실용적이고, 또 웹 표준성에도 맞는 방법이다. 그렇기 때문에 오늘은 표 관련 css를 살펴보려고 한다.  caption-side : 표 제목 위치  표">
@@ -216,6 +216,31 @@ ga('send', 'pageview');
 <li>border : 표 테두리</li>
 </ul>
 <p>일반 컨텐츠와 마찬가지로 border는 테두리를 지정하는 속성이다. 하지만 주의할 점은 표는 바깥 테두리와 셀 테두리를 따로 설정해주어야 한다는 점이다.</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/rootjang/hmrpgesz/1/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+
+
+<ul>
+<li>border-collapse : 테두리 통합, 분리</li>
+</ul>
+<p>바깥 테두리와 셀의 각 테두리를 떨어트릴지 하나로 합칠 것인지를 정하는 속성이다. collapse는 테두리를 하나로 합치는 속성값이고, separate는 테두리를 따로 표시하는 속성값이다.(이래서 영어공부를 해야한다.)</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/rootjang/5m0fjdtc/1/embedded/html,css,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
+
+
+
+<ul>
+<li>border-spacing : 인접한 셀 테두리 사이 거리 지정</li>
+</ul>
+<p>border-collapse : separate를 지정했을 때 인접한 셀 테두리의 거리를 지정하는 속성이다.</p>
+<ul>
+<li>empty-cells : 빈 셀 표시 여부 지정.</li>
+</ul>
+<p>빈 셀의 표시여부를 지정할 수 있다. 속성값으로는 show와 hide가 있다.</p>
+<ul>
+<li>table-layout : 콘텐츠에 맞는 셀 너비</li>
+</ul>
+<p>width값으로 셀 너비를 지정할 수 있지만, 영문의 경우는 그걸 무시하고 한 줄로 표시된다. 이를 지정하는 속성이 table-layout 속성이다.</p>
+<p>fixed는 너비 고정, auto는 셀의 너비가 달라진다.(기본값)</p>
 
         </div>
         <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
