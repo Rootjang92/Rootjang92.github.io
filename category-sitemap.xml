@@ -7,13 +7,6 @@
     </url>
 
     <url>
-        <loc>http://rootjang92.github.io/categories/HTML-CSS/HTML/</loc>
-        <lastmod>2018-09-11T05:39:27.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://rootjang92.github.io/categories/Project/</loc>
         <lastmod>2018-09-12T01:58:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -35,13 +28,6 @@
     </url>
 
     <url>
-        <loc>http://rootjang92.github.io/categories/HTML-CSS/</loc>
-        <lastmod>2018-09-25T09:33:21.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://rootjang92.github.io/categories/HTML-CSS/CSS/</loc>
         <lastmod>2018-09-25T09:33:21.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -58,6 +44,20 @@
     <url>
         <loc>http://rootjang92.github.io/categories/Javascript/ES6/</loc>
         <lastmod>2018-09-26T08:06:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://rootjang92.github.io/categories/HTML-CSS/</loc>
+        <lastmod>2018-10-01T05:39:27.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://rootjang92.github.io/categories/HTML-CSS/HTML/</loc>
+        <lastmod>2018-10-01T05:39:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
