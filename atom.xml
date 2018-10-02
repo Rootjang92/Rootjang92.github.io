@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-10-02T05:10:03.000Z</updated>
+  <updated>2018-10-02T07:25:45.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS30 - 시계만들기</title>
+    <link href="http://rootjang92.github.io/2018/10/02/js302/"/>
+    <id>http://rootjang92.github.io/2018/10/02/js302/</id>
+    <published>2018-10-02T07:24:29.000Z</published>
+    <updated>2018-10-02T07:25:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JS와-CSS로-시계-만들기"><a href="#JS와-CSS로-시계-만들기" class="headerlink" title="JS와 CSS로 시계 만들기"></a>JS와 CSS로 시계 만들기</h1><p>코드 설명은 추후에 만들기로…</p><p>유튜브 보기</p><iframe width="560" height="315" src="https://www.youtube.com/embed/JHrBJF7jDz4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><p>코드 보기<br><a href="https://github.com/Rootjang92/js30" target="_blank" rel="noopener">MyGithub</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;JS와-CSS로-시계-만들기&quot;&gt;&lt;a href=&quot;#JS와-CSS로-시계-만들기&quot; class=&quot;headerlink&quot; title=&quot;JS와 CSS로 시계 만들기&quot;&gt;&lt;/a&gt;JS와 CSS로 시계 만들기&lt;/h1&gt;&lt;p&gt;코드 설명은 추후에 만들기로…&lt;/
+      
+    
+    </summary>
+    
+      <category term="Project" scheme="http://rootjang92.github.io/categories/Project/"/>
+    
+      <category term="JS30" scheme="http://rootjang92.github.io/categories/Project/JS30/"/>
+    
+    
+      <category term="javascript,js,es6,clock" scheme="http://rootjang92.github.io/tags/javascript-js-es6-clock/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS 선택자</title>
