@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-10-02T07:25:45.000Z</updated>
+  <updated>2018-10-04T03:32:44.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS 애니메이션 - 변형</title>
+    <link href="http://rootjang92.github.io/2018/10/04/csstransform/"/>
+    <id>http://rootjang92.github.io/2018/10/04/csstransform/</id>
+    <published>2018-10-04T02:37:34.000Z</published>
+    <updated>2018-10-04T03:32:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CSS-Transform"><a href="#CSS-Transform" class="headerlink" title="CSS Transform"></a>CSS Transform</h1><p>특정 요소의 크기나 형태가 변하는 것을 변형이라고 한다. 웹에서도 마찬가지로 css를 이용하여 텍스트나 이미지 등을 움직이게 할 수 있다.</p><h2 id="2차원과-3차원-변형"><a href="#2차원과-3차원-변형" class="headerlink" title="2차원과 3차원 변형"></a>2차원과 3차원 변형</h2><p>2차원 변형은 x,y 축, 즉 수평 혹은 수직으로 이동하고 회전시키는 것을 말한다. x축은 오른쪽으로 y축은 아래쪽으로 이동한다.<br>3차원 변형은 x,y 축에 z라는 원근감을 주는 요소를 추가하여 변형시킨다. 보는 사람 쪽으로 다가올 수록 값이 커진다.</p><ul><li>transform과 변형 함수</li></ul><p>이 때 사용하는 것이 transform 속성이다.</p><pre><code>.photo { transform: translate(50px, 100px); }</code></pre><p>2차원 변형 함수에는 translate(x,y), scale(x,y),rotate(degree), skew(x,y)가 있다.<br>translate는 이동, scale은 확대/축소, rotate는 회전, skew는 왜곡이다.</p><p>3차원 변형 함수에는 matrix3d(n,[, n]), translate3d(x,y,z), scale3d(x,y,z), rotate3d(x,y,z),rotateX,rotateY,rotateZ, perspective(길이)가 있다.</p><p>matrix3d는 4*4행렬을 이용해 이동, 확대/축소, 회전 등의 변환을 지정할 수 있다.<br>그 외에는 모두 같고 perspective는 입체적으로 보일 수 있는 깊이 값을 지정하는 것이다.</p><ul><li>translate : 요소 이동</li></ul><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/snkxu5b6/2/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>scale : 요소 확대/축소</li></ul><p>숫자로 얼만큼 확대할 것인지 지정할 수 있다. (몇 배로 확대할 것인지)</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/hfecx7w2/3/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>rotate : 요소 회전하기</li></ul><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/98k6w0vt/7/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>skew : 요소 왜곡하기</li></ul><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/vksqfgap/2/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><h2 id="변형-관련-속성들"><a href="#변형-관련-속성들" class="headerlink" title="변형 관련 속성들"></a>변형 관련 속성들</h2><ul><li>transform-origin : 변형 기준점 설정하기</li></ul><p>이 속성을 사용하면 x,y,z 축이 아닌 다른 지점을 변형의 기준으로 설정할 수 있다. 2차원, 3차원 변형 모두 적용할 수 있다.</p><ul><li>perspective, perspective-origin : 원근감 표현하기</li></ul><p>3차원 변형 속성으로 원근감을 갖게 한다. 속성값은 0보다 커야한다. 또한 perspective-origin을 사용하면 더 높은 곳에서 원근을 조절하는 느낌을 받을 수 있다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/azuo185f/3/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>transform-style : 3D 변형 적용하기</li></ul><p>여러 가지 변형을 동시에 적용할 땐 이 속성을 사용하면 된다. 속성값으로는 flat(하위 요소 평면 처리), preserve-3d(하위 요소들 3d적용)<br>이 있다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/o53r187t/9/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>backface-visibility : 요소의 뒷면 표시</li></ul><p>요소 회전 시 각도가 90도가 넘으면 뒷면이 보이는 데, 그 때의 표시 유무를 지정할 수 있다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;CSS-Transform&quot;&gt;&lt;a href=&quot;#CSS-Transform&quot; class=&quot;headerlink&quot; title=&quot;CSS Transform&quot;&gt;&lt;/a&gt;CSS Transform&lt;/h1&gt;&lt;p&gt;특정 요소의 크기나 형태가 변하는 것을 변형이라
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/CSS/"/>
+    
+    
+      <category term="css,css3, css transform" scheme="http://rootjang92.github.io/tags/css-css3-css-transform/"/>
+    
+  </entry>
   
   <entry>
     <title>JS30 - 시계만들기</title>
