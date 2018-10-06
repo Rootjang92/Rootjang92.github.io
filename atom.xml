@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-10-04T03:32:44.000Z</updated>
+  <updated>2018-10-06T03:43:20.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>트랜지션</title>
+    <link href="http://rootjang92.github.io/2018/10/06/transition/"/>
+    <id>http://rootjang92.github.io/2018/10/06/transition/</id>
+    <published>2018-10-06T03:07:56.000Z</published>
+    <updated>2018-10-06T03:43:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="트랜지션과-애니메이션-살펴보기"><a href="#트랜지션과-애니메이션-살펴보기" class="headerlink" title="트랜지션과 애니메이션 살펴보기"></a>트랜지션과 애니메이션 살펴보기</h1><h2 id="트랜지션"><a href="#트랜지션" class="headerlink" title="트랜지션?"></a>트랜지션?</h2><p>트랜지션은 웹 요소의 배경 색, 도형 테두리 변경 등 스타일 속성을 변화시키는 것을 말한다. 예를 들어 마우스를 올려 놓았을 때 배경색이 바뀐다던지, 테두리가 사격형에서 원형으로 바뀐다던 지의 변화들을 말하는 것이다.</p><ul><li>transition-property : 트랜지션을 적용할 속성 지정</li></ul><p>트랜지션을 어느 속성에 적용할 지 정하는 속성이다. 속성 값에는 all(모든 요소, 생략 가능), none, 속성이름 등이 있다.</p><pre><code>transition-property: all; /* 해당 요소의 모든 속성 */transition-property: none; /* 아무것도 적용되지 않음 */transition-property: beckground-color; /* 해당 요소의 배경색에 트랜지션 적용 */</code></pre><ul><li>transition-duration : 트랜지션 시간 정하기</li></ul><p>트랜지션 대상을 지정한 후, 진행 시간을 지정하는 속성이 바로 transition-duration 이다. 기본은 0초이며 초 혹은 밀리초로 지정할 수 있다. 또한 쉼표를 이용하여 순서대로 여러 개를 지정할 수 있다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/qL6n1ckx/1/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>만약 transition-property 속성을 4개 지정하고 transition-duration을 2개 지정했다면 2개의 속성 씩 반복 적용된다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/6u719hcq/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>transition-timing-function : 트랜지션 속도 곡선 지정</li></ul><p>천천히 시작하다가 빨라지거나 하는 속도를 지정할 수 있는 속성이다. 속성 값에는 linear(같은 속도로), ease(천천히-빠르게-천천히, 기본값)<br>ease-in(시작을 느리게), ease-out(끝을 느리게), ease-in-out(느리게 시작하고 느리게 끝), cubic-bezier(n,n,n,n)(베지에 함수를 직접 정의 n은 0~1)</p><ul><li>transition-delay : 지연 시간 설정</li></ul><p>시작 시간을 언제로 시작할 것인지를 설정하는 속성이다. 초나 밀리초를 사용하며 기본값은 0s이다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/seyb5L20/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>transition : 한꺼번에 설정하기</li></ul><p>단 트랜지션 적용 대상을 한정할 시에는 따로따로 지정해주는 게 좋다. 하지만 전체적으로 적용할 때 실행시간이 다르지 않다면 한 번에 하는 것이 편하다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/cyvb85a4/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;트랜지션과-애니메이션-살펴보기&quot;&gt;&lt;a href=&quot;#트랜지션과-애니메이션-살펴보기&quot; class=&quot;headerlink&quot; title=&quot;트랜지션과 애니메이션 살펴보기&quot;&gt;&lt;/a&gt;트랜지션과 애니메이션 살펴보기&lt;/h1&gt;&lt;h2 id=&quot;트랜지션&quot;&gt;&lt;a 
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/CSS/"/>
+    
+    
+      <category term="css, css transition" scheme="http://rootjang92.github.io/tags/css-css-transition/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS 애니메이션 - 변형</title>
