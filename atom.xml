@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-10-07T04:15:37.000Z</updated>
+  <updated>2018-10-12T05:17:12.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>반응형 웹이란?</title>
+    <link href="http://rootjang92.github.io/2018/10/12/reactiveweb/"/>
+    <id>http://rootjang92.github.io/2018/10/12/reactiveweb/</id>
+    <published>2018-10-12T04:36:36.000Z</published>
+    <updated>2018-10-12T05:17:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="반응형-웹이란-무엇일까"><a href="#반응형-웹이란-무엇일까" class="headerlink" title="반응형 웹이란 무엇일까?"></a>반응형 웹이란 무엇일까?</h1><p>많은 웹 사이트가 데스크탑 위주로 만들어 지긴 하지만, 모바일 시장이 점점 발전하고 스마트폰 보급이 많아지면서 어디서 접속하든 화면을 보는데 불편함이 없게 만들고자 하는 디자인 형태가 늘어나고 있다. 이를 반응형 웹 디자인이라고 한다.</p><h2 id="모바일-기기와-웹-디자인"><a href="#모바일-기기와-웹-디자인" class="headerlink" title="모바일 기기와 웹 디자인"></a>모바일 기기와 웹 디자인</h2><p>스마트폰에서 웹을 사용하는 일이 더 많아지면서 반응형 웹은 이제 흔히 볼 수 있게 되었다. 그래서 포털 사이트, 쇼핑몰 등이 모바일 전용 사이트를 따로 만들어내기 시작하였다. 근데 솔직히 언제 하나하나 다 만들고 있을지 의문이다. 그렇기 때문에 하나의 웹 사이트에서도 크기에 맞게 웹 사이틀 표시하게 만든 것이 반응형 웹 이다.</p><ul><li>반응형 웹의 장점</li></ul><ol><li><p>어떤 스마트 기기던지 접속할 수 있다.<br>단 W3C의 웹 표준으로 만든다면!</p></li><li><p>스마트 폰이나 태블릿 가로 모드의 맞춰 레이아웃을 변경할 수 있다.<br>개인적으로 이게 제일 신기하다.</p></li><li><p>사이트 유지와 관리가 용이해진다.<br>사이트를 하나하나 만드는 것이 아니기 때문이다.</p></li></ol><h2 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h2><p>반응형 웹의 기본 중 하나는 뷰포트를 알고 가는 것이다. pc화면과 모바일 기기의 픽셀 표현방법이 다르기 때문이다. 뷰포트는 스마트폰 화면에서 표시되는 실제 영역이다. webkit 기반의 모바일 브라우저들의 기본 뷰포트는 980px이다. 결국 스마트폰의 비율인 320px에 맞춰 웹 사이트를 제작해도 스마트폰의 모바일 브라우저의 기본 뷰포트가 980px이기 때문에 글씨와 그림이 작아진다.</p><p>그래서 뷰포트를 따로 설정해 줘야 한다.</p><pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;&quot;&gt;</code></pre><p>이 때 content안의 속성은 width, height, user-scalable, initial-scale, minimum-scale, maximum-scale이 있다.</p><h2 id="가변-그리드-레이아웃-만들기"><a href="#가변-그리드-레이아웃-만들기" class="headerlink" title="가변 그리드 레이아웃 만들기"></a>가변 그리드 레이아웃 만들기</h2><ul><li>고정 그리드와 가변 그리드</li></ul><p>grid system은 사이트 전체의 디자인이나 일관성을 유지하는 데 편안하다. 그리드 시스템이란 화면을 몇가지 column으로 나누어 요소들을 배치할 때 사용하는 것이다.</p><p>고정 그리드 아웃은 화면 너비를 특정값으로 지정하여 그 안에 표시할 요소들의 너비 값을 지정하기 때문에 배치가 굉장히 편하다. 반면 기기에 상관없이 동일한 레이아웃을 위해서는 각 요소의 너비를 백분율과 같은 가변 값으로 지정해줘야 한다.</p><p>고정 그리드</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/rez8x0k5/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>코드를 직접 입력해보고 창을 줄였다 늘였다하면서 비교해보면 좋을 것 같다.</p><p>가변 그리드</p><p>우선 전체를 감싸는 요소를 확인한다. 고정된 픽스값이 아니라 너비를 백분율로 표시하는 것이 좋다. 그 후 각 요소의 너비 값을 계싼해서 지정해야 한다.<br>(요소의 너비 / 콘텐츠 전체를 감싸는 요소의 너비) * 100</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/oLx5uqtp/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;반응형-웹이란-무엇일까&quot;&gt;&lt;a href=&quot;#반응형-웹이란-무엇일까&quot; class=&quot;headerlink&quot; title=&quot;반응형 웹이란 무엇일까?&quot;&gt;&lt;/a&gt;반응형 웹이란 무엇일까?&lt;/h1&gt;&lt;p&gt;많은 웹 사이트가 데스크탑 위주로 만들어 지긴 하지
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/CSS/"/>
+    
+    
+      <category term="css, css3, 반응형 웹, reactive web" scheme="http://rootjang92.github.io/tags/css-css3-%EB%B0%98%EC%9D%91%ED%98%95-%EC%9B%B9-reactive-web/"/>
+    
+  </entry>
   
   <entry>
     <title>애니메이션</title>
