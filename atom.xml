@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-10-12T05:17:12.000Z</updated>
+  <updated>2018-10-15T02:55:53.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>가변 레이아웃과 가변 요소</title>
+    <link href="http://rootjang92.github.io/2018/10/15/fluid/"/>
+    <id>http://rootjang92.github.io/2018/10/15/fluid/</id>
+    <published>2018-10-15T02:03:10.000Z</published>
+    <updated>2018-10-15T02:55:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="가변-레이아웃과-가변-요소"><a href="#가변-레이아웃과-가변-요소" class="headerlink" title="가변 레이아웃과 가변 요소"></a>가변 레이아웃과 가변 요소</h1><h2 id="가변-글꼴"><a href="#가변-글꼴" class="headerlink" title="가변 글꼴"></a>가변 글꼴</h2><p>보통 우리는 텍스트 크기를 px단위로 지정한다. 하지만 px단위로 지정하게 되면 화면에 크기가 고정되기 떄문에 작은 기기에서 매우 작게 표시되는 상황이 발생한다.<br>가변 그리드 레이아웃을 사용할 때는 글자 크기도 유동적으로 변해야 하는데 그 때 사용하는 것이 ‘가변 글꼴’이다.</p><ul><li>em 단위</li></ul><p>em단위는 부모 요소에서 지정한 폰트의 대문자 M의 넓이를 1em으로 지정한 것이다. (1em = 16px) 따라서 이미 px로 표시한 글자의 크기를 16px로 나누면 em값으로 계산이 가능하다.</p><p>em = px / 16px</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/xfm467cu/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>여기서 2em은 32px이다. (크롬 인스펙터에서 Computed를 확인해보길 바란다.)</p><ul><li>rem 단위</li></ul><p>em 단위는 부모 요소의 글꼴을 기준으로 하기 때문에 부모 요소의 크기에 따라 글자 크기가 달라진다. 이러한 점은 보완하는 단위가 rem 단위이다. rem은 처음부터 기본 크기를 지정하기 때문에 중간에 기본값이 바뀌지 않는다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/z12ywLmr/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>가변 이미지</li></ul><p>이미지 또한 크기가 정해져있기 때문에 가변 이미지 형태로 만들어 창의 너비에 따라 이미지 너비도 적절히 조절할 수 있다.</p><ul><li>css 이용하기</li></ul><p>css에 max-width 속성값은 100%로 하면 이미지와 너비가 바뀐다.</p><p><img src="/images/fluid-img.png" alt="fluid-img"></p><p><img src="/images/fluid-img2.png" alt="fluid-img2"></p><ul><li>img 태그와 srcset 속성</li></ul><p>max-width 속성을 언제든지 사용할 수 있다면 참 좋겠지만, 고해상도 이미지를 크기만 줄인다면 파일 사이즈 크기 떄문에 모바일에서는 시간이 더 오래걸린다. 또한 텍스트가 포함되어 있다면 크기가 줄었을 때 텍스트를 알아보기가 힘들어진다. 이 때 사용하는 것이 img 태그에 srcset 속성이다.</p><pre><code>&lt;img src=&quot;&lt;img&gt;&quot; srcset=&quot;&lt;img&gt;[,]&quot;&gt;</code></pre><p>[]안에는 화면 너비가 달라질 때마다 표시할 이미지를 나열한 것이다. 이 때 픽셀 밀도를 함께 표시하여야 한다.</p><ul><li>picture 태그와 source 태그</li></ul><p>두 태그는 상황별로 다른 이미지를 표시하는 태그이다. 둘을 함께 사용한다면 해상도나 화면 너비에 따른 이미지 파일을 표시할 수 있다.</p><pre><code>&lt;picture&gt;  &lt;source srcset=&quot;&lt;img-large&gt;&quot; media=&quot;(min-width)&quot;&gt;  &lt;img src=&quot;&lt;img&gt;&quot; style=&quot;width&quot;&gt;&lt;/picture&gt;</code></pre><ul><li>가변 비디오</li></ul><p>이미지와 마찬가지로 비디오도 max-width:100%를 사용할 수 있다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/98jfvdwm/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;가변-레이아웃과-가변-요소&quot;&gt;&lt;a href=&quot;#가변-레이아웃과-가변-요소&quot; class=&quot;headerlink&quot; title=&quot;가변 레이아웃과 가변 요소&quot;&gt;&lt;/a&gt;가변 레이아웃과 가변 요소&lt;/h1&gt;&lt;h2 id=&quot;가변-글꼴&quot;&gt;&lt;a href=&quot;#
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/CSS/"/>
+    
+    
+      <category term="css, css3, css fluid elements" scheme="http://rootjang92.github.io/tags/css-css3-css-fluid-elements/"/>
+    
+  </entry>
   
   <entry>
     <title>반응형 웹이란?</title>
