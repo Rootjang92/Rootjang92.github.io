@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-10-15T02:55:53.000Z</updated>
+  <updated>2018-10-16T03:45:09.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>미디어 쿼리</title>
+    <link href="http://rootjang92.github.io/2018/10/16/mediaquery/"/>
+    <id>http://rootjang92.github.io/2018/10/16/mediaquery/</id>
+    <published>2018-10-16T02:48:32.000Z</published>
+    <updated>2018-10-16T03:45:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="미디어-쿼리"><a href="#미디어-쿼리" class="headerlink" title="미디어 쿼리"></a>미디어 쿼리</h1><p>미디어 쿼리는 CSS3 모듈 중 하나로 사이트에 접속하는 장치에 따라 그에 맞는 css 스타일링을 하게 해준다. 즉, 다른 기기로 접속할 때마다 레이아웃이 바뀐다.</p><ul><li>구문</li></ul><p>구문은</p><pre><code>@media [only | not] 미디어 유형 [and 조건] * [and 조건]</code></pre><p>이런 식으로 작성한다. 대소문자 구별이 없고 style 태그 내에서 사용한다. 여기서 only는 미디어쿼리를 지원하는 웹 브라우저에서만 동작하게, not은 지정하는 미디어 유형을 제외하는 것이다. 유형의 종류에는 all(모두), print(인쇄 장치), screen, tv, aural(음성 장치), braille(점자 표시), handheld(패드), projection(프로젝터)가 있다.</p><ul><li>조건</li></ul><p>미디어 쿼리는 조건 체크가 중요하다. 조건에 따라 css가 적용되기 때문이다.</p><ul><li>웹 문서의 가로, 세로</li></ul><p>뷰포트의 너비와 높이를 미디어 쿼리의 조건으로 사용할 수 있다. 예를 들어서</p><pre><code>@media all (min-width: 600px) and (max-width: 959px)</code></pre><p>이라고 하면 모든 장치의 뷰포터의 너비가 600이상 959이하일 때 적용한다는 의미이다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/e5qxmpjg/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>화면의 너비를 늘였다 줄였다 해보면 어떻게 변화하는 지 볼 수 있을 것이니 코드를 직접 작성해보길 바란다.</p><ul><li>단말기의 가로, 세로</li></ul><p>device-width, device-height로 측정하고 앞에 min, max를 붙여 최소, 최대값을 나타낼 수 있다.</p><ul><li>화면 회전</li></ul><p>스마트폰이나 태블릿은 가로모드 혹은 세로 고정 모드가 있다. 즉 화면을 회전시킬 수 있다. 미디어 쿼리에서는 orientation 속성을 통해서 회전을 지정할 수 있다.<br>orientation:portrait는 세로방향, orientation: landscape는 가로 방향이다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/un42wv5b/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>개발자 도구의 디바이스 모드에서 확인해볼 수 있다.</p><ul><li>화면 비율과 단말기의 물리적 화면 비율</li></ul><p>aspect-ratio 속성은 너비 값을 높이 값으로 나눈 것으로 계산이 가능하다. 예를 들어 화면 비율이 16:9라고 가정했을 때</p><pre><code>@media all and (device-aspect-ratio: 16/9)</code></pre><p>이런 식으로 작성할 수 있다.</p><ul><li>색상 비트 수</li></ul><p>단말기의 최대 색상 비트 수를 미디어 쿼리로 사용할 수 있다. 속성은 color이다. 예를 들어 color:4이면 2^4 즉 16가지의 색상을 표현할 수 있다. 만약 컬러를 지원하지 않는다면 color:0으로 설정하면 된다.</p><ul><li>중단점 만들기</li></ul><p>미디어 쿼리 작성 시 다른 css를 적용할 화면 크기를 중단점이라고 한다. 보통은 모바일, 태블릿, 데스크탑 정도로만 구분한다. (모든 크기를 맞추긴 힘들기 때문에)<br>또한 처리 속도나 화면의 크기 등을 고려했을 때 모바일의 제약 조건이 많기 때문에 모바일을 기본으로 css를 만든다.</p><ul><li>외부 css 연결하기</li></ul><ul><li>link 태그 사용하기</li></ul><p>가장 많이 사용하는 방법이다. (css) head태그 사이에 삽입한다.</p><pre><code>&lt;link rel=&quot;stylesheet&quot; media=&quot;조건&quot; href=&quot;주소&quot;&gt;</code></pre><p>즉 미디어에 따른 스타일 시트 파일을 만들어 놓았다면 조건을 좀 더 추가해서 사용할 수도 있다.</p><ul><li>@import 구문</li></ul><p>@import 구문은 style태그 사이에 만든다.</p><pre><code>@import url(&quot;css/tablet.css&quot;) only screen and (min-width:321px) and (max-width:768px)</code></pre><p>이런 식으로 사용한다.</p><p>둘의 차이는 크지 않으나 많은 css 파일을 사용할 때에는 <strong>link 태그</strong>가 좀 더 처리 속도가 빠르다. 또한 IE의 경우 @import구문과 js가 함께 있으면 js를 먼저 다운로드하기 때문에 자바스크립트에서 스타일 처리를 할 경우 오류가 날 가능성이 있다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/7819xhpk/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>모바일용 미디어쿼리이다. (div부분은 이미지파일을 가져오기 힘들어 임의로 넣었습니다.)</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/xj5hLb6o/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>테블릿용이다. 이미지는 본인이 직접 넣어서 적용해보면 된다. (css 그대로입니다.)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;미디어-쿼리&quot;&gt;&lt;a href=&quot;#미디어-쿼리&quot; class=&quot;headerlink&quot; title=&quot;미디어 쿼리&quot;&gt;&lt;/a&gt;미디어 쿼리&lt;/h1&gt;&lt;p&gt;미디어 쿼리는 CSS3 모듈 중 하나로 사이트에 접속하는 장치에 따라 그에 맞는 css 스타일링을
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/CSS/"/>
+    
+    
+      <category term="css, css3, css mediaquery" scheme="http://rootjang92.github.io/tags/css-css3-css-mediaquery/"/>
+    
+  </entry>
   
   <entry>
     <title>가변 레이아웃과 가변 요소</title>
