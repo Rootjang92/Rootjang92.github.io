@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-10-16T03:45:09.000Z</updated>
+  <updated>2018-10-19T03:40:18.000Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>플랙서블 박스 레이아웃에 대해 알아보자.</title>
+    <link href="http://rootjang92.github.io/2018/10/19/flexbox/"/>
+    <id>http://rootjang92.github.io/2018/10/19/flexbox/</id>
+    <published>2018-10-19T02:04:03.000Z</published>
+    <updated>2018-10-19T03:40:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Flex-box-layout"><a href="#Flex-box-layout" class="headerlink" title="Flex box layout"></a>Flex box layout</h1><p>flexible box layout은 그리드 레이아웃을 기본으로 하여 플랙스 박스를 원하는 위치에 배치하는 것이다. 여유 공간에 따라 너비나 높이, 위치를 자유롭게 변형할 수 있고 화면 크기에 따라 에이아수의 배치나 크기를 조절할 때 편하게 이용 가능하다는 장점이 있다.</p><p><img src="https://poiemaweb.com/img/CSS3-Flexbox-Model.jpg" alt="flexbox"></p><p>flexbox를 사용하기 위해서는 부모 요소의 display 속성을 flex로 만들어야 한다. 이를 flex-container라고 한다. (부모 요소가 inline이라면 inline-flex)</p><p>이 flex-container에 담기는 자식 요소들을 flex-item이라고 한다.</p><p>main-axis는 플렉스 항목을 배치하는 기본 방향으로 기본적으로는 왼쪽에서 오른쪽(수평)으로 배치된다. flex 항목의 배치가 시작하는 점을 main start(주축 시작점), 끝을 main end(주축 끝점)이라고 한다.</p><p>cross-axis는 주축과 교차되는 방향을 나타낸다. cross start(교차축 시작점, cross end(교차축 끝점)으로 표현한다.</p><p>더 자세히 알고 싶다면 w3c의 표준 documents를 보는 것이 좋다.</p><a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank" rel="noopener">표준</a><ul><li>기본 속성</li></ul><ul><li>display 속성을 flex-container에 지정하기</li></ul><p>flexible한 레이아웃을 만들기 위해서는 컨텐츠를 flex-container로 감싸 주어야 한다. 그 후 그 부모요소의 display값을 flex (inline 요소일 경우 inline-flex)로 만들어 주어야 한다.</p><p>주의할 점은 각 브라우저마다 지원 방법이 다르기 때문에 브라우저 접두사를 붙여주어야 한다는 것이다.</p><ul><li>flex-direction : 플렉스 방향</li></ul><p>이 속성은 배치를 row(가로)로 할지 column(세로)로 할지 결정하는 것이다. 기본 값은 row이다.</p><p>row(주축 가로, 교차축 세로 / 주축 시작 -&gt; 끝), row-inverse(주축 가로, 교차축 세로 / 주축끝 -&gt; 시작)<br>column(주축 세로, 교차축 가로 / 주축 시작 -&gt; 끝), column-inverse(주축 세로, 교차축 가로 / 주축 끝 -&gt; 시작)</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/d37610Lx/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/7bhceaf9/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>flex-wrap : 항목을 한 줄 혹은 여러 줄로 배치하기</li></ul><p>기본적으로는 주축을 따라 한 줄로 배치되지만 flex-wrap 속성을 통해 조절할 수 있다. no-wrap은 기본값으로 한 줄에 표시, wrap은 여러 줄에 표시, wrap-reverse는 여러 줄에 표시하지만 반대방향으로 배치하는 속성 값이다.</p><p>flex-wrap: wrap은 왼쪽에서 오른쪽으로 위에서 아래로 배치한다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/tjqumfxn/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>flex-wrap: wrap-reverse은 왼쪽에서 오른쪽이지만 아래에서 위 방향으로 배치한다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/prazju5h/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>flex-flow : flex-direction과 flex-wrap을 한꺼번에</li></ul><p>귀찮으니깐 한 번에 표시하자!</p><pre><code>flex-flox: row wrap;</code></pre><p>이런식으로 쓰면 된다.</p><ul><li>order : 배치 순서 바꾸기</li></ul><p>flex 항목은 입력한 순서대로 주축을 따라 배치되는데, order 속성을 사용하면 배치를 바꿀 수 있다. order:0이면 그대로 하며 숫자값이 바뀔 때마다 그 순서에 따라 배치된다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/stez07o5/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>flex : 항목 크기 조절하기</li></ul><p>플렉스 항목의 너비를 조절하는 속성이다.</p><p>flex-grow는 얼마나 늘일지, flex-shrink는 얼마나 줄일지, flex-basis는 기본 크기를 지정하는 속성값으로 0이나 auto를 지정한다.<br>initial은 항목의 width, height 값으로 결정하며 컨테이너 공간을 넘어갈 경우 최소 크기까지 줄인다.<br>auto는 항목의 width, height값으로 결정되지만 공간에 따라 늘이거나 줄일 수 있다.</p><p>예를 들어</p><pre><code>flex: [&lt;flex-grow&gt; &lt;flex-shrink&gt; &lt;flex-basis&gt;] | auto | initialflex : 2 2 0;</code></pre><p>으로 설정하면 2배 늘이거나 2배 줄인다는 의미이다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/w9eo6f0b/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>flex 항목 배치 속성들</li></ul><ul><li>justify-content : 주축 기준의 배치 방법 지정</li></ul><p>이 속성은 flex 항목을 주축 방향으로 배치할 때의 배치 기준을 지정할 수 있다.</p><p>flex-start는 주축의 시작점을 기준으로 배치한다.<br>flex-end는 주축의 끝 점을 기준으로 배치한다.<br>center는 주축의 중앙을 기준으로 배치한다.<br>space-between은 첫 번째 flex 항목과 마지막 flex 항목을 시작점과 끝점에 배치한 후 가운데 항목들을 같은 간격으로 배치한다.<br>space-around는 모든 플렉스 항목들을 같은 간격으로 배치한다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/xfthwog6/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>align-items, align-self : 교차축 기준의 배치</li></ul><p>교차축으로 배치 방법을 조절할 수 있다.</p><p><strong>align-items 속성들</strong></p><p>stretch : flex 항목을 확장하여 교차축을 꽉 채운다. (기본값)<br>flex-start: 교차축의 시작점을 기준으로 배치한다.<br>flex-end : 교차축의 끝점을 기준으로 배치한다.<br>center: 교차축의 중앙을 기준으로 배치한다.<br>baseline: 시작점과 글자 기준선이 가장 먼 flex 항목을 시작점에 배치한다. 그리고 그 글자의 기준선과 다른 항목의 기준선을 맞춰 배치한다. (예시로 보는게 빠릅니다.)</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/p4wua215/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p><strong>align-self 속성들</strong></p><p>align-self는 각 flex 항목들을 개별적으로 배치할 수 있다. 속성값들은 위와 같지만 auto 속성이 추가된다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/n6L5v02d/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>위 예제는 align-items 항목을 center로 지정한 후 box1 항목만 align-self를 flex-start로 지정했다.</p><ul><li>align-content : 여러 줄일 때의 배치 방법</li></ul><p>flex 항목이 여러 줄에 표시될 때 align-content 속성을 사용하면 교차축 방향 배치방법을 정할 수 있다. 속성값은 justify-contetn와 같다.</p><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/3dajos06/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><ul><li>예제</li></ul><iframe width="100%" height="300" src="//jsfiddle.net/rootjang/5m8cjrna/embedded/html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe><p>(이미지는 찾아서 넣으시면 됩니다. 솔로라서 슬픈데 이런 예제를…)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Flex-box-layout&quot;&gt;&lt;a href=&quot;#Flex-box-layout&quot; class=&quot;headerlink&quot; title=&quot;Flex box layout&quot;&gt;&lt;/a&gt;Flex box layout&lt;/h1&gt;&lt;p&gt;flexible box layou
+      
+    
+    </summary>
+    
+      <category term="HTML &amp; CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/"/>
+    
+      <category term="CSS" scheme="http://rootjang92.github.io/categories/HTML-CSS/CSS/"/>
+    
+    
+      <category term="css, css3, css flex, flex box" scheme="http://rootjang92.github.io/tags/css-css3-css-flex-flex-box/"/>
+    
+  </entry>
   
   <entry>
     <title>미디어 쿼리</title>
