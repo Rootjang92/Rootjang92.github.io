@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-10-19T03:40:18.000Z</updated>
+  <updated>2018-10-25T12:56:32.289Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS30 - Ajax ahead example</title>
+    <link href="http://rootjang92.github.io/2018/10/25/js303/"/>
+    <id>http://rootjang92.github.io/2018/10/25/js303/</id>
+    <published>2018-10-25T12:50:48.000Z</published>
+    <updated>2018-10-25T12:56:32.289Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JS30-Project-Ajax-Type-ahead"><a href="#JS30-Project-Ajax-Type-ahead" class="headerlink" title="JS30 Project - Ajax Type ahead"></a>JS30 Project - Ajax Type ahead</h1><p>유튜브 보기</p><iframe width="750" height="510" src="https://www.youtube.com/embed/M3ecTcf9aG4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><p>코드 보기</p><a href="https://github.com/Rootjang92/js30/tree/master/06-Ahead" target="_blank" rel="noopener">MyGithub</a>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;JS30-Project-Ajax-Type-ahead&quot;&gt;&lt;a href=&quot;#JS30-Project-Ajax-Type-ahead&quot; class=&quot;headerlink&quot; title=&quot;JS30 Project - Ajax Type ahead&quot;&gt;&lt;/a&gt;
+      
+    
+    </summary>
+    
+      <category term="Project" scheme="http://rootjang92.github.io/categories/Project/"/>
+    
+      <category term="JS30" scheme="http://rootjang92.github.io/categories/Project/JS30/"/>
+    
+    
+      <category term="JavaScript, es6, javascript 30" scheme="http://rootjang92.github.io/tags/JavaScript-es6-javascript-30/"/>
+    
+  </entry>
   
   <entry>
     <title>플랙서블 박스 레이아웃에 대해 알아보자.</title>
