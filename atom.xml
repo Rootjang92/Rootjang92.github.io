@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-10-25T12:56:32.289Z</updated>
+  <updated>2018-11-02T02:48:12.058Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTMLCanvas</title>
+    <link href="http://rootjang92.github.io/2018/11/02/HTMLCanvas/"/>
+    <id>http://rootjang92.github.io/2018/11/02/HTMLCanvas/</id>
+    <published>2018-11-02T02:46:29.000Z</published>
+    <updated>2018-11-02T02:48:12.058Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-Canvas-만들기"><a href="#HTML-Canvas-만들기" class="headerlink" title="HTML Canvas 만들기"></a>HTML Canvas 만들기</h1><p>이 동영상과 코드는 Javascript 30 동영상 강의를 참조하였습니다.</p><a href="https://courses.wesbos.com/" target="_blank" rel="noopener">Javascript30</a><p>동영상 보기</p><iframe width="797" height="510" src="https://www.youtube.com/embed/YIhBLMhhlDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><a href="https://github.com/Rootjang92/js30/tree/master/08-html5%20Canvas" target="_blank" rel="noopener">깃허브 보기</a>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;HTML-Canvas-만들기&quot;&gt;&lt;a href=&quot;#HTML-Canvas-만들기&quot; class=&quot;headerlink&quot; title=&quot;HTML Canvas 만들기&quot;&gt;&lt;/a&gt;HTML Canvas 만들기&lt;/h1&gt;&lt;p&gt;이 동영상과 코드는 Javascr
+      
+    
+    </summary>
+    
+      <category term="Project" scheme="http://rootjang92.github.io/categories/Project/"/>
+    
+      <category term="JS30" scheme="http://rootjang92.github.io/categories/Project/JS30/"/>
+    
+    
+      <category term="JavaScript,js,es6, HTML Canvas" scheme="http://rootjang92.github.io/tags/JavaScript-js-es6-HTML-Canvas/"/>
+    
+  </entry>
   
   <entry>
     <title>JS30 - Ajax ahead example</title>
