@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-11-10T02:17:49.872Z</updated>
+  <updated>2018-11-12T03:45:17.102Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6 파라미터를 알아보자.araboza</title>
+    <link href="http://rootjang92.github.io/2018/11/12/param/"/>
+    <id>http://rootjang92.github.io/2018/11/12/param/</id>
+    <published>2018-11-12T03:12:32.000Z</published>
+    <updated>2018-11-12T03:45:17.102Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ES6-파라미터"><a href="#ES6-파라미터" class="headerlink" title="ES6 파라미터"></a>ES6 파라미터</h1><ul><li>파라미터 기본값</li></ul><p>es5에서는 파라미터 기본값을 설정할 수 없었지만, es6에선 기본값을 설정할 수 있어 함수 내 파라미터 검사를 수행하지 않아도 된다.</p><ul><li>Rest 파라미터</li></ul><p>Rest 파라미는 Spread 연산자를 사용하여 파라미터를 정의한 것이다. 그래서 인수 리스트를 함수 내부에서 배열로 전달받을 수 있다.</p><pre><code>function foo(...rest) {  console.log(Array.isArray(rest));  console.log(rest);}foo(1,2,3,4,5);</code></pre><p>위 결과로 볼 수 있듯이 인수는 순차적으로 파라미터와 Rest 파라미터에 할당된다.<br>또한 주의할 점은 rest 파라미터는 항상 인수의 맨 마지막에 와야 한다는 것이다. 그렇게 하지 않을 시 문법에러가 발생한다.</p><ul><li>argumetns와 rest 파라미터</li></ul><p>es5의 가변 인자 함수는 arguments 객체를 통해서 인수를 확인했다.</p><pre><code>var foo = fucntion() {  console.log(arguments);};foo(1,2);</code></pre><p>arguments는 파라미터로 인수를 전달받는 것이 불가능했다. 또한 유사 배열 객체이기 때문에 배열 메서드를 사용하기 위해선 Function.prototype.call을 사용해야 하는 불편함이 있었다.</p><p>하지만 es6에서는 rest 파라미터를 통해 가변 인자를 함수 내부에 배열로 전달이 가능하다. 위처럼 arguments 객체를 배열로 변경하는 등의 수고스러움을 덜 수 있다.</p><pre><code>function sum(...args) {  console.log(arguments)  console.log(Array.isArray(args));  return args.reduce((pre,cur) =&gt; pre + cur);}console.log(sum(1,2,3));</code></pre><p>주의할 점은 화살표 함수에는 arguments 프로퍼티가 없기 떄문에 화살표 함수로 가변 인자 함수롤 구현해야 한다면 <strong>반드시</strong> rest 파라미터를 사용해야 한다.</p><ul><li>Spread 연산자</li></ul><p>spread 연산자는 대상 배열이나 이터러블을 개별 요소로 분리한다.</p><ol><li>함수 인자로 사용하는 경우</li></ol><p>원래라면 Function.prototype.apply를 통해 개별적인 파라미터로 전달했다. 하지만 spread 연산자를 이용하면 쉽게 매개변수로 전달이 가능하다.</p><pre><code>function foo(x,y,z) {  console.log(x);  console.log(y);  console.log(z);}const arr = [1,2,3];foo(...arr);</code></pre><p>…rest와 spread연산자의 차이는 …rest는 분리된 요소를 <strong>함수 내부에 배열로 전달</strong>한다는 것이고 spread 연산자는 <strong>매개변수에 할당</strong>한다는 것이다.<br>또한 spread연산자는 자유롭게 사용할 수 있다.</p><ol start="2"><li>배열에서 사용할 경우</li></ol><p>es5에서는 기존 배열에 대한 많은 메서드를 사용하여 해결해야 했지만 spread 연산자로 좀 더 편하고 가독성이 좋게 만들 수 있다.</p><ul><li><h2 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h2><pre><code>var arr = [1,2,3];console.log(arr.concat([4,5,6]));const arr = [1,2,3];console.log([...arr,4,5,6]);</code></pre></li></ul><ul><li><h2 id="push"><a href="#push" class="headerlink" title="push"></a>push</h2><pre><code>var arr1 = [1,2,3];var arr2 = [4,5,6];Array.prototype.push.apply(arr1, arr2);console.log(arr1);const arr1 = [1,2,3];const arr2 = [4,5,6];arr1.push(...arr2);console.log(arr1);</code></pre></li></ul><ul><li><h2 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h2><pre><code>var arr1 = [1,2,3,6];var arr2 = [4,5];Array.prototype.splice.apply(arr1, [3,0].concat(arr2));console.log(arr1);const arr1 = [1,2,3,6];const arr2 = [4,5];arr1.splice(3,0,...arr2);console.log(arr1);</code></pre></li></ul><ul><li><h2 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h2><pre><code>var arr = [1,2,3];var copy = arr.slice();console.log(copy);copy.push(4);console.log(copy);console.log(arr);</code></pre></li></ul><p>원본 배열에 변화는 없다.</p><pre><code>const arr = [1,2,3];const copy = [...arr];console.log(copy);</code></pre><ol start="3"><li><h2 id="객체에서-사용하는-경우"><a href="#객체에서-사용하는-경우" class="headerlink" title="객체에서 사용하는 경우"></a>객체에서 사용하는 경우</h2><p>   cost merged = {…{x:1, y:2 }, …{y: 10, z: 3}};<br>   console.log(merged);</p><p>   const changed = {…{x:1, y:2 }, y:100};<br>   console.log(changed);</p><p>   const added = {…{x:1, y:2},z:0};<br>   console.log(added);</p></li></ol><p>Object.assign 메서드를 사용해도 같은 작업이 가능하다.</p><pre><code>const merged = Object.assign({}, {x:1, y:2}, {y: 10, z: 3});console.log(merged);const changed = Object.assign({}, {x:1, y:2}, {y: 100});console.log(changed);const added = Object.assign({}, {x:1,y:2}, {z:0});console.log(added);</code></pre><p>spread연산자를 사용하여 유사 배열 객체를 손쉽게 배열로 변경할 수 있다.</p><pre><code>const htmlCollection = document.getElementByTagName(&apos;li&apos;);const newArray = [...htmlCollection];</code></pre><p>위 예제는 html 파일을 만들어서!<br>Array.from 메서드로도 가능하다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;ES6-파라미터&quot;&gt;&lt;a href=&quot;#ES6-파라미터&quot; class=&quot;headerlink&quot; title=&quot;ES6 파라미터&quot;&gt;&lt;/a&gt;ES6 파라미터&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;파라미터 기본값&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;es5에서는 파라미터 기본값을 
+      
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://rootjang92.github.io/categories/Javascript/"/>
+    
+      <category term="ES6" scheme="http://rootjang92.github.io/categories/Javascript/ES6/"/>
+    
+    
+      <category term="es6, javascript, rest parameter, spread" scheme="http://rootjang92.github.io/tags/es6-javascript-rest-parameter-spread/"/>
+    
+  </entry>
   
   <entry>
     <title>화살표 함수</title>
