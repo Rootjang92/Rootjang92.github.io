@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-11-14T03:09:48.635Z</updated>
+  <updated>2018-11-22T02:54:31.042Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6 Class</title>
+    <link href="http://rootjang92.github.io/2018/11/22/es6class/"/>
+    <id>http://rootjang92.github.io/2018/11/22/es6class/</id>
+    <published>2018-11-22T02:07:56.000Z</published>
+    <updated>2018-11-22T02:54:31.042Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Class에-대하여"><a href="#Class에-대하여" class="headerlink" title="Class에 대하여"></a>Class에 대하여</h1><p>원래 자바스크립트는 <strong>프로토타입 기반 객체지향 언어</strong>이다.</p><a href="https://rootjang92.github.io/2018/09/05/jsprototype/">프로토타입이란?</a><p>그래서 프로토타입 체인, 클로저를 이용하여 class없이 상속과 캡슐화 등을 구현할 수 있다.</p><p><strong>프로토타입 예제</strong></p><pre><code>var Person = (function () {  function Person(name) {    this._name = name;  }  Person.prototype.sayHi = function() {    console.log(&apos;Hi! &apos; + this._name)  };  return Person;}());var me = new Person(&apos;Jang&apos;);me.sayHi();console.log(me instanceof Person);</code></pre><p>Person 생성자 함수가 new 생성자로 객체를 생성하면 [[prototype]]에 의해 Person.prototype에 있는 sayHi() 함수를 불러 올 수 있다.</p><h2 id="그렇다면-class를-왜"><a href="#그렇다면-class를-왜" class="headerlink" title="그렇다면 class를 왜?"></a>그렇다면 class를 왜?</h2><p>클래스 기반에 언어를 익힌 사람들에게 편리성을 제공하기 위해 ES6에서는 class라는 <strong>함수</strong>를 만들었다.</p><p>위 예제를 class로 정의한다면</p><pre><code>class Person {  constructor(name) {    this._name = name;  }  sayHi() {    console.log(`Hi! ${this._name}`);  }}const me = new Person(&apos;Jang&apos;);me.sayHi();console.log(me instanceof Person);</code></pre><p>중요한 점은 class는 표현식으로 정의하는 것을 자제해야 하는데 클래스 표현식에서 사용한 클래스 이름은 외부에서 접근할 수 없기 때문이다.</p><h2 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h2><p>constructor는 인스턴스를 생성하고 클래스 프로퍼티를 초기화하기 위한 메서드이다. 클래스 내에 한 개만 존재하며 new 연산자를 이용해 호출한다.<br>또한 생략이 가능하며 생략 시 빈 객체가 생성된다. 결국 클래스 프로퍼티를 선언하려면 인스턴스를 생성하고 클래스 프로퍼티를 동적으로 할당해줘야 한다.</p><pre><code>class Foo {}const foo = new Foo();console.log(foo) // ???foo.num = 1;console.log(foo);</code></pre><h2 id="클래스-프로퍼티"><a href="#클래스-프로퍼티" class="headerlink" title="클래스 프로퍼티"></a>클래스 프로퍼티</h2><p>클래스 몸체에는 메서드만 선언할 수 있기 때문에 클래스 프로퍼티는 <strong>반드시</strong> constructor 안에서 선언과 초기화를 진행해야 한다.<br>이 클래스 프로퍼티는 this에 바인딩 된다. 그러면서 클래스 프로퍼티는 생성할 인스턴스의 프로퍼티가 되고 클래스 외부에서 언제나 참조가 가능하게 된다.<br>주의할 점은 접근 제한자를 지원하지 않는다.</p><h2 id="호이스팅"><a href="#호이스팅" class="headerlink" title="호이스팅"></a>호이스팅</h2><p>클래스는 let, const 처럼 호이스팅 되지 않는 것처럼 동작한다.(TDZ) 선언문 전에 참조하면 참조 에러가 발생한다.<br>여기서 알 수 있는 것은 클래스는 결국 함수고 함수 표현식처럼 동작한다는 것이다.</p><p>{$ link TDZ <a href="https://github.com/wonism/TIL/blob/master/front-end/javascript/tdz.md%}" target="_blank" rel="noopener">https://github.com/wonism/TIL/blob/master/front-end/javascript/tdz.md%}</a></p><h2 id="getter-setter"><a href="#getter-setter" class="headerlink" title="getter, setter"></a>getter, setter</h2><p>getter는 클래스 프로퍼티에 접근할 때마다 클래스 프로퍼티의 값을 조작해야 할 때 사용한다. get 키워드를 사용하여 정의하며 메서드 이름은 클래스 프로퍼티 이름처럼 사용한다. (참조 형식) 무언가를 얻을 때 사용하기 떄문에 반드시 반환값이 있어야 한다.</p><pre><code>class Foo {  constructor(arr = []) {    this._arr = arr;  }  get firstElem() {    return this._arr.length ? this._arr[0] : null;  }}const foo = new Foo([1,2]);console.log(foo.firstElem); // ???</code></pre><p>setter는 클래스 프로퍼티에 값을 할당할 때 클래스 프로퍼티 값을 조작해야 할 때 사용한다. set 키워드를 사용하여 정의하며 마찬가지로 메서드 이름은 클래스 프로퍼티 이름처럼 사용할 수 있다. setter는 호출이 아니라 값을 할당하는 것이기 때문에 메서드가 호출된다.</p><pre><code>class Foo {  constructor(arr = []) {    this._arr = arr;  }  get firstElem() {    return this._arr.length ? this._arr[0] : null;  }  set firstElem(elem) {    this._arr = [elem, ...this._arr];  }}const foo = new Foo([1,2,3]);foo.firstElem = 100;console.log(foo.firstElem);</code></pre><h2 id="static-메서드"><a href="#static-메서드" class="headerlink" title="static 메서드"></a>static 메서드</h2><p>정적 메서드란 인스턴스에 따라 달라지지 않는 메서드를 말한다. static 키워드를 사용하며 클래스 이름으로 호출한다. 인스턴스에 따라 달라지지 않기 때문에 클래스의 인스턴스를 생성하지 않아도 호출이 가능하다.</p><pre><code>class Foo {  constructor(prop) {    this.prop = prop;  }  static staticMethod() {    return &apos;staticMethod&apos;;  }  prototypeMethod() {    return this.prop;  }}console.log(Foo.staticMethod());const foo = new Foo(123);console.log(foo.staticMethod()); // TypeError</code></pre><p>하지만 인스턴스를 호출할 수 없기 때문에 this를 사용할 수 없다. 주로 Math 객체의 메서드처럼 애플리케이션 전역에서 사용할 유틸리티 함수를 생성할 때 주로 사용한다.</p><p>프로토타입의 개념으로 살펴보자면 staticMethod는 Foo 생성자 함수의 메서드이고 prototypeMethod는 프로토타입 객체의 메서드이다. 따라서 foo 객체는 [[prototype]]에 의해서 prototype 객체 메서드를 참조할 수는 있지만(프로토타입 체인) Foo 생성자 함수의 메서드는 참조할 수 없다.</p><h2 id="클래스-상속"><a href="#클래스-상속" class="headerlink" title="클래스 상속"></a>클래스 상속</h2><p>extends 키워드는 부모 클래스를 상속받는 자식 클래스를 정의할 때 사용한다.</p><pre><code>class Circle {  constructor(radius) {    this.radius = radius;  }  getDiameter() {    return 2 * this.radius;  }  getPerimeter() {    return 2 * Math.PI * this.radius;  }  getArea() {    return Math.PI * Math.pow(this.radius,2);  }}class Cylinder extends Circle {  constructor(radius, height) {    super(radius);    this.height = height;  }  getArea() {    return (this.height * super.getPerimeter()) + (2 * super.getArea());  }  getVolume() {    return super.getArea() + this.height;  }}const cylinder = new Cyliner(2, 10);console.log(cylinder.getDiameter());console.log(cylinder.getPerimeter());//더 찍어보세요!</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Class에-대하여&quot;&gt;&lt;a href=&quot;#Class에-대하여&quot; class=&quot;headerlink&quot; title=&quot;Class에 대하여&quot;&gt;&lt;/a&gt;Class에 대하여&lt;/h1&gt;&lt;p&gt;원래 자바스크립트는 &lt;strong&gt;프로토타입 기반 객체지향 언어&lt;/s
+      
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://rootjang92.github.io/categories/Javascript/"/>
+    
+      <category term="ES6" scheme="http://rootjang92.github.io/categories/Javascript/ES6/"/>
+    
+    
+      <category term="es6, js, javascript, class" scheme="http://rootjang92.github.io/tags/es6-js-javascript-class/"/>
+    
+  </entry>
   
   <entry>
     <title>객체 리터럴 확장, 상속 그리고 디스트럭처링</title>
