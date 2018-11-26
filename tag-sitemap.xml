@@ -311,7 +311,14 @@
 
     <url>
         <loc>http://rootjang92.github.io/tags/es6-js-javascript-class/</loc>
-        <lastmod>2018-11-22T02:54:31.042Z</lastmod>
+        <lastmod>2018-11-22T03:02:05.155Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://rootjang92.github.io/tags/javascript-promise/</loc>
+        <lastmod>2018-11-26T03:01:55.385Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
