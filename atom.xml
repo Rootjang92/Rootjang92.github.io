@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-11-26T03:01:55.385Z</updated>
+  <updated>2018-11-28T01:51:23.353Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>이터레이션과 for-of</title>
+    <link href="http://rootjang92.github.io/2018/11/28/iteration/"/>
+    <id>http://rootjang92.github.io/2018/11/28/iteration/</id>
+    <published>2018-11-28T01:40:40.000Z</published>
+    <updated>2018-11-28T01:51:23.353Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="이터레이션-프로토콜과-for-of"><a href="#이터레이션-프로토콜과-for-of" class="headerlink" title="이터레이션 프로토콜과 for-of"></a>이터레이션 프로토콜과 for-of</h1><h2 id="iteration-protocol"><a href="#iteration-protocol" class="headerlink" title="iteration protocol"></a>iteration protocol</h2><p>우선 이터러블(iterable)에 대한 개념부터 알아보자. 이터러블은 <strong>순회 가능한 자료구조</strong>를 뜻한다. Symbol.iterator를 프로퍼티 키로 사용한 메서드를 구현함으로써 순회 가능한 자료구조가 된다.</p><p>그럼 어터레이터(iterator)는 무엇일까? 이터러블 메서드는 이터레이터를 반환하는데 여기서 이터레이터는 요소를 탐색하기 위한 포인터이다.<br>(next() 메서드를 갖는 객체) next() 메서드는 value, done 프로퍼티를 갖는 객체를 반환해서 이터러블 객체를 순회할 수 있다.</p><p>그래서 next() 메서드를 통해 데이터에 순차적으로 접근할 수 있는 방법을 보여주는 것이다.</p><pre><code>const iterable = [1,2,3];const iterator = iterable[Symbol.iterator]();console.log(iterator.next());console.log(iterator.next());console.log(iterator.next());console.log(iterator.next());// for문 으로 순회for (;;) {  const res = iterator.next();  console.log(res);  if (res.done) break;}</code></pre><h2 id="for-of"><a href="#for-of" class="headerlink" title="for-of"></a>for-of</h2><p>for-of는 이터러블 객체를 순회한다. next() 메서드를 호출하며 반환하는 객체의 done 프로퍼티가 true값이 될 떄까지 반복된다.</p><pre><code>for (const val of [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]) {  console.log(val);}// 문자열for (const val2 of &apos;abc&apos;) {  console.log(val2);}// Mapfor (const [key, value] of new Map([&apos;a&apos;,&apos;1&apos;],[&apos;b&apos;,&apos;2&apos;],[&apos;c&apos;,&apos;3&apos;])) {  console.log(`key : ${key} value: ${value}`);}// Setfor (const val3 of new Set([1,2,3,])) {  console.log(val3);}</code></pre><h2 id="커스텀-이터러블"><a href="#커스텀-이터러블" class="headerlink" title="커스텀 이터러블"></a>커스텀 이터러블</h2><p>이터레이션 프로토콜을 지킨다면 객체도 이터러블로 만들 수 있다. 밑 예제는 피보나치 수열을 이터러블 객체로 구현해본 것이다.</p><pre><code>const fibonacci = {  [Symbol.iterator]() {    let [prev, curr] = [0,1];    let step = 0;    const maxStep = 5;    return {      next() {        [prev,curr] = [curr, prev + curr];        return { value: curr, done: step++ &gt;= maxStep };      }    };  }};for (const num of fibonacci) {  console.log(num);}const arr = [...fibonacci];console.log(arr);const [first, second, ...rest] = fibonacci;console.log(first,seond,rest);</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;이터레이션-프로토콜과-for-of&quot;&gt;&lt;a href=&quot;#이터레이션-프로토콜과-for-of&quot; class=&quot;headerlink&quot; title=&quot;이터레이션 프로토콜과 for-of&quot;&gt;&lt;/a&gt;이터레이션 프로토콜과 for-of&lt;/h1&gt;&lt;h2 id=&quot;i
+      
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://rootjang92.github.io/categories/Javascript/"/>
+    
+      <category term="ES6" scheme="http://rootjang92.github.io/categories/Javascript/ES6/"/>
+    
+    
+      <category term="js,javascript, iteration, for of" scheme="http://rootjang92.github.io/tags/js-javascript-iteration-for-of/"/>
+    
+  </entry>
   
   <entry>
     <title>프로미스</title>

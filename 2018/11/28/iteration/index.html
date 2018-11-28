@@ -6,22 +6,28 @@
     
 
     
-    <title>Tag: css, css transition | Rootjang&#39;s IT Blog</title>
+    <title>이터레이션과 for-of | Rootjang&#39;s IT Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="HTML, CSS, Javascript, es5, es6, Angular, React, Vue.js, Node.js">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rootjang&#39;s IT Blog">
-<meta property="og:url" content="http://rootjang92.github.io/tags/css-css-transition/index.html">
+        <meta name="keywords" content="js,javascript, iteration, for of" />
+    
+    <meta name="description" content="이터레이션 프로토콜과 for-ofiteration protocol우선 이터러블(iterable)에 대한 개념부터 알아보자. 이터러블은 순회 가능한 자료구조를 뜻한다. Symbol.iterator를 프로퍼티 키로 사용한 메서드를 구현함으로써 순회 가능한 자료구조가 된다. 그럼 어터레이터(iterator)는 무엇일까? 이터러블 메서드는 이터레이터를 반환하는데">
+<meta name="keywords" content="js,javascript, iteration, for of">
+<meta property="og:type" content="article">
+<meta property="og:title" content="이터레이션과 for-of">
+<meta property="og:url" content="http://rootjang92.github.io/2018/11/28/iteration/index.html">
 <meta property="og:site_name" content="Rootjang&#39;s IT Blog">
+<meta property="og:description" content="이터레이션 프로토콜과 for-ofiteration protocol우선 이터러블(iterable)에 대한 개념부터 알아보자. 이터러블은 순회 가능한 자료구조를 뜻한다. Symbol.iterator를 프로퍼티 키로 사용한 메서드를 구현함으로써 순회 가능한 자료구조가 된다. 그럼 어터레이터(iterator)는 무엇일까? 이터러블 메서드는 이터레이터를 반환하는데">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://rootjang92.github.io/images/rootjang.png">
+<meta property="og:updated_time" content="2018-11-28T01:51:23.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rootjang&#39;s IT Blog">
+<meta name="twitter:title" content="이터레이션과 for-of">
+<meta name="twitter:description" content="이터레이션 프로토콜과 for-ofiteration protocol우선 이터러블(iterable)에 대한 개념부터 알아보자. 이터러블은 순회 가능한 자료구조를 뜻한다. Symbol.iterator를 프로퍼티 키로 사용한 메서드를 구현함으로써 순회 가능한 자료구조가 된다. 그럼 어터레이터(iterator)는 무엇일까? 이터러블 메서드는 이터레이터를 반환하는데">
 <meta name="twitter:image" content="http://rootjang92.github.io/images/rootjang.png">
     
-    <link rel="canonical" href="http://rootjang92.github.io/tags/css-css-transition/"/>
+    <link rel="canonical" href="http://rootjang92.github.io/2018/11/28/iteration/"/>
     
         <link rel="alternate" href="/" title="Rootjang&#39;s IT Blog" type="application/atom+xml" />
     
@@ -143,7 +149,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>css, css transition</em>
+    <a class="page-title-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Javascript/ES6/">ES6</a>
     </h1>
 </div>
 
@@ -167,72 +173,200 @@ ga('send', 'pageview');
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-                            
-
-    
-    
+                            <article id="post-iteration" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/10/06/transition/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/css3.png)" alt="트랜지션" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/10/06/transition/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/HTML-CSS/">HTML & CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/HTML-CSS/CSS/">CSS</a>
-            </div>
-            <div class="date"><time datetime="2018-10-06T03:07:56.000Z" itemprop="datePublished">2018-10-06</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/10/06/transition/">트랜지션</a>
+        이터레이션과 for-of
         </h1>
     
 
-        <p class="article-excerpt">
-            트랜지션과 애니메이션 살펴보기트랜지션?트랜지션은 웹 요소의 배경 색, 도형 테두리 변경 등 스타일 속성을 변화시키는 것을 말한다. 예를 들어 마우스를 올려 놓았을 때 배경색이 바뀐다던지, 테두리가 사격형에서 원형으로 바뀐다던 지의 변화들을 말하는 것이다.
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/11/28/iteration/" class="article-date">
+            <time datetime="2018-11-28T01:40:40.000Z" itemprop="datePublished">2018-11-28</time>
+        </a>
+    </div>
 
-transition-property : 트랜지션을 적용할 속성 지정
+		
 
-트랜지션을 어느 속성에 적용할 
-        </p>
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/js-javascript-iteration-for-of/">js,javascript, iteration, for of</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="이터레이션-프로토콜과-for-of"><a href="#이터레이션-프로토콜과-for-of" class="headerlink" title="이터레이션 프로토콜과 for-of"></a>이터레이션 프로토콜과 for-of</h1><h2 id="iteration-protocol"><a href="#iteration-protocol" class="headerlink" title="iteration protocol"></a>iteration protocol</h2><p>우선 이터러블(iterable)에 대한 개념부터 알아보자. 이터러블은 <strong>순회 가능한 자료구조</strong>를 뜻한다. Symbol.iterator를 프로퍼티 키로 사용한 메서드를 구현함으로써 순회 가능한 자료구조가 된다.</p>
+<p>그럼 어터레이터(iterator)는 무엇일까? 이터러블 메서드는 이터레이터를 반환하는데 여기서 이터레이터는 요소를 탐색하기 위한 포인터이다.<br>(next() 메서드를 갖는 객체) next() 메서드는 value, done 프로퍼티를 갖는 객체를 반환해서 이터러블 객체를 순회할 수 있다.</p>
+<p>그래서 next() 메서드를 통해 데이터에 순차적으로 접근할 수 있는 방법을 보여주는 것이다.</p>
+<pre><code>const iterable = [1,2,3];
+const iterator = iterable[Symbol.iterator]();
+
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+
+// for문 으로 순회
+
+
+for (;;) {
+  const res = iterator.next();
+  console.log(res);
+  if (res.done) break;
+}
+</code></pre><h2 id="for-of"><a href="#for-of" class="headerlink" title="for-of"></a>for-of</h2><p>for-of는 이터러블 객체를 순회한다. next() 메서드를 호출하며 반환하는 객체의 done 프로퍼티가 true값이 될 떄까지 반복된다.</p>
+<pre><code>for (const val of [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]) {
+  console.log(val);
+}
+
+// 문자열
+
+for (const val2 of &apos;abc&apos;) {
+  console.log(val2);
+}
+
+// Map
+
+for (const [key, value] of new Map([&apos;a&apos;,&apos;1&apos;],[&apos;b&apos;,&apos;2&apos;],[&apos;c&apos;,&apos;3&apos;])) {
+  console.log(`key : ${key} value: ${value}`);
+}
+
+
+// Set
+
+for (const val3 of new Set([1,2,3,])) {
+  console.log(val3);
+}
+</code></pre><h2 id="커스텀-이터러블"><a href="#커스텀-이터러블" class="headerlink" title="커스텀 이터러블"></a>커스텀 이터러블</h2><p>이터레이션 프로토콜을 지킨다면 객체도 이터러블로 만들 수 있다. 밑 예제는 피보나치 수열을 이터러블 객체로 구현해본 것이다.</p>
+<pre><code>const fibonacci = {
+  [Symbol.iterator]() {
+    let [prev, curr] = [0,1];
+    let step = 0;
+
+    const maxStep = 5;
+    return {
+      next() {
+        [prev,curr] = [curr, prev + curr];
+        return { value: curr, done: step++ &gt;= maxStep };
+      }
+    };
+  }
+};
+
+for (const num of fibonacci) {
+  console.log(num);
+}
+
+const arr = [...fibonacci];
+console.log(arr);
+
+const [first, second, ...rest] = fibonacci;
+console.log(first,seond,rest);
+</code></pre>
+        </div>
+        <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7977783901878304",
+    enable_page_level_ads: true
+  });
+</script> -->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7977783901878304"
+     data-ad-slot="9345512684"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
     </div>
 </article>
-    
-        </div>
-    
 
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-    </div></section>
+    
+    </section>
 
 
 
@@ -280,6 +414,19 @@ transition-property : 트랜지션을 적용할 속성 지정
     </div>
     <div class="github-card" data-github="Rootjang92" data-width="340" data-height="152" data-theme="default"></div>
     <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/11/26/es6Promise/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">프로미스</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -511,11 +658,13 @@ transition-property : 트랜지션을 적용할 속성 지정
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://rootjang92.github.io/2018/11/28/iteration/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
