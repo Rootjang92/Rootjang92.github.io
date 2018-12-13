@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2018-11-28T01:51:23.353Z</updated>
+  <updated>2018-12-13T07:57:33.762Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>자바스크립트의 변수</title>
+    <link href="http://rootjang92.github.io/2018/12/12/Variable/"/>
+    <id>http://rootjang92.github.io/2018/12/12/Variable/</id>
+    <published>2018-12-12T07:05:42.000Z</published>
+    <updated>2018-12-13T07:57:33.762Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="자바스크립트의-변수-비교해보기"><a href="#자바스크립트의-변수-비교해보기" class="headerlink" title="자바스크립트의 변수 비교해보기."></a>자바스크립트의 변수 비교해보기.</h1><p><strong>변수</strong>는 어떠한 프로그래밍 언어든지 가장 중요한 요소 중 하나이다.</p><h2 id="변수란"><a href="#변수란" class="headerlink" title="변수란?"></a>변수란?</h2><p>값을 담기 위해 사용하는 것으로 데어터에 고유한 이름(식별자)를 붙여 명시한 것이다. ES5에선 ‘var’ 키워드를 사용한다.</p><p>즉 변수는 키워드를 사용하여 선언하고 할당 연산자를 이용하여 값을 할당하고 값을 참조하여 사용한다.</p><p><code>`</code> var a = 1;</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;자바스크립트의-변수-비교해보기&quot;&gt;&lt;a href=&quot;#자바스크립트의-변수-비교해보기&quot; class=&quot;headerlink&quot; title=&quot;자바스크립트의 변수 비교해보기.&quot;&gt;&lt;/a&gt;자바스크립트의 변수 비교해보기.&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;변수&lt;/
+      
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://rootjang92.github.io/categories/Javascript/"/>
+    
+      <category term="JS Memo" scheme="http://rootjang92.github.io/categories/Javascript/JS-Memo/"/>
+    
+    
+      <category term="js,var,let,const" scheme="http://rootjang92.github.io/tags/js-var-let-const/"/>
+    
+  </entry>
   
   <entry>
     <title>이터레이션과 for-of</title>
