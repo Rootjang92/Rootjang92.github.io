@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="js,var,let,const" />
     
-    <meta name="description" content="자바스크립트의 변수 비교해보기.변수는 어떠한 프로그래밍 언어든지 가장 중요한 요소 중 하나이다. 변수란?값을 담기 위해 사용하는 것으로 데어터에 고유한 이름(식별자)를 붙여 명시한 것이다. ES5에선 ‘var’ 키워드를 사용한다. 즉 변수는 키워드를 사용하여 선언하고 할당 연산자를 이용하여 값을 할당하고 값을 참조하여 사용한다. ` var a = 1;">
+    <meta name="description" content="자바스크립트의 변수 비교해보기.변수는 어떠한 프로그래밍 언어든지 가장 중요한 요소 중 하나이다. 변수란?값을 담기 위해 사용하는 것으로 데어터에 고유한 이름(식별자)를 붙여 명시한 것이다. ES5에선 ‘var’ 키워드를 사용한다. 즉 변수는 키워드를 사용하여 선언하고 할당 연산자를 이용하여 값을 할당하고 값을 참조하여 사용한다. var a = 1; 그렇다면">
 <meta name="keywords" content="js,var,let,const">
 <meta property="og:type" content="article">
 <meta property="og:title" content="자바스크립트의 변수">
 <meta property="og:url" content="http://rootjang92.github.io/2018/12/12/Variable/index.html">
 <meta property="og:site_name" content="Rootjang&#39;s IT Blog">
-<meta property="og:description" content="자바스크립트의 변수 비교해보기.변수는 어떠한 프로그래밍 언어든지 가장 중요한 요소 중 하나이다. 변수란?값을 담기 위해 사용하는 것으로 데어터에 고유한 이름(식별자)를 붙여 명시한 것이다. ES5에선 ‘var’ 키워드를 사용한다. 즉 변수는 키워드를 사용하여 선언하고 할당 연산자를 이용하여 값을 할당하고 값을 참조하여 사용한다. ` var a = 1;">
+<meta property="og:description" content="자바스크립트의 변수 비교해보기.변수는 어떠한 프로그래밍 언어든지 가장 중요한 요소 중 하나이다. 변수란?값을 담기 위해 사용하는 것으로 데어터에 고유한 이름(식별자)를 붙여 명시한 것이다. ES5에선 ‘var’ 키워드를 사용한다. 즉 변수는 키워드를 사용하여 선언하고 할당 연산자를 이용하여 값을 할당하고 값을 참조하여 사용한다. var a = 1; 그렇다면">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://rootjang92.github.io/images/rootjang.png">
-<meta property="og:updated_time" content="2018-12-13T07:57:33.762Z">
+<meta property="og:updated_time" content="2018-12-13T08:26:27.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="자바스크립트의 변수">
-<meta name="twitter:description" content="자바스크립트의 변수 비교해보기.변수는 어떠한 프로그래밍 언어든지 가장 중요한 요소 중 하나이다. 변수란?값을 담기 위해 사용하는 것으로 데어터에 고유한 이름(식별자)를 붙여 명시한 것이다. ES5에선 ‘var’ 키워드를 사용한다. 즉 변수는 키워드를 사용하여 선언하고 할당 연산자를 이용하여 값을 할당하고 값을 참조하여 사용한다. ` var a = 1;">
+<meta name="twitter:description" content="자바스크립트의 변수 비교해보기.변수는 어떠한 프로그래밍 언어든지 가장 중요한 요소 중 하나이다. 변수란?값을 담기 위해 사용하는 것으로 데어터에 고유한 이름(식별자)를 붙여 명시한 것이다. ES5에선 ‘var’ 키워드를 사용한다. 즉 변수는 키워드를 사용하여 선언하고 할당 연산자를 이용하여 값을 할당하고 값을 참조하여 사용한다. var a = 1; 그렇다면">
 <meta name="twitter:image" content="http://rootjang92.github.io/images/rootjang.png">
     
     <link rel="canonical" href="http://rootjang92.github.io/2018/12/12/variable/"/>
@@ -210,7 +210,91 @@ ga('send', 'pageview');
             <h1 id="자바스크립트의-변수-비교해보기"><a href="#자바스크립트의-변수-비교해보기" class="headerlink" title="자바스크립트의 변수 비교해보기."></a>자바스크립트의 변수 비교해보기.</h1><p><strong>변수</strong>는 어떠한 프로그래밍 언어든지 가장 중요한 요소 중 하나이다.</p>
 <h2 id="변수란"><a href="#변수란" class="headerlink" title="변수란?"></a>변수란?</h2><p>값을 담기 위해 사용하는 것으로 데어터에 고유한 이름(식별자)를 붙여 명시한 것이다. ES5에선 ‘var’ 키워드를 사용한다.</p>
 <p>즉 변수는 키워드를 사용하여 선언하고 할당 연산자를 이용하여 값을 할당하고 값을 참조하여 사용한다.</p>
-<p><code>`</code> var a = 1;</p>
+<pre><code>var a = 1;
+</code></pre><p>그렇다면 왜 저장을 할까? 그냥 쓰면 되지?! (실제로 받아본 질문)</p>
+<p>결국 <strong>재사용성</strong>이다. 일정 기간 유지할 필요가 있는, 즉 지속적으로 사용할 값은 저장해 놓은 후 계속 참조하는 게 효율성이 더 좋지 않을까??</p>
+<h2 id="명명-규칙"><a href="#명명-규칙" class="headerlink" title="명명 규칙."></a>명명 규칙.</h2><p>그렇다면 변수를 의미있게 사용하려면 우선 변수명에 의미를 담아야 한다. 예를 들어 변수에 원주율을 담는다고 했을 때, 변수명을 단순히 만들면 모르는 사람은 이게 뭔가 싶을 것이다.</p>
+<pre><code>var PI = 3.14;
+</code></pre><p>이렇게 하면 ‘아 이게 원주율 변수구나!’ 하지 않을까 싶다.</p>
+<p>또한 다른 명명 규칙이 있는데 변수명 시작에는 영문자, underscore(_), 달러표시($)가 와야 한다. 또한 대소문자를 구별한다는 것도 중요하다.</p>
+<h2 id="var의-문제들"><a href="#var의-문제들" class="headerlink" title="var의 문제들"></a>var의 문제들</h2><p>우선 var 키워드를 사용한 변수 선언은 중복 선언이 가능하다.</p>
+<pre><code>var x = 1;
+console.log(x);
+
+var x = 100;
+console.log(x);
+</code></pre><p>위 예제를 살펴보면 변수의 값을 덮어쓴다는 것을 알 수 있을 것이다.<br>그렇기 때문에 변수명을 확실하게 짓지 않거나 이런식으로 x로 지어버리면 <strong>의도치 않은</strong> 변수의 값 변경이 일어날 수 있다.</p>
+<p>두 번째로 암묵적으로 전역 변수가 선언된다.</p>
+<pre><code>x = 1;
+</code></pre><p>이런 식으로 값을 지정하면 자바스크립트 엔진이 전역 변수로 만든다.</p>
+<p>세 번째는 동적 타이핑이다. 자바스크립트는 다른 언어와 달리 변수의 타입을 선언하지 않고 값이 할당되었을 때 자바스크립트 엔진이 동적으로 값의 타입을 결정한다.</p>
+<p>마지막으로 변수 호이스팅이 발생한다. 호이스팅이란 var, function 선언문이 선언되지 않았지만 모든 선언문의 Scope의 선두로 옮겨진 것처럼 동작하는 특성이다.</p>
+<p>그 전에 변수는 선언, 초기화, 할당의 순서로 발생하는 데 선언과 초기화가 동시에 이루어진다. 즉 선언 후에는 값을 할당하지 않아도 undefined로 초기화가 된다.</p>
+<pre><code>var x;
+
+
+console.log(foo);
+var foo = 123;
+console.log(foo);
+{
+  var foo = 456;
+}
+console.log(foo);
+</code></pre><p>자바스크립트는 함수 레벨 스코프를 갖는다. 따라서 예제에서 봤듯이 foo의 값은…</p>
+<h2 id="let과-const의-등장"><a href="#let과-const의-등장" class="headerlink" title="let과 const의 등장"></a>let과 const의 등장</h2><p>앞서 봤듯이 var는 변수 선언 규칙이나 할당 등이 매우 자유롭지만 그만큼 단점도 많다. 그래서 ES6에서 등장한 키워드가 let과 const이다.</p>
+<p>우선 let과 const는 블록 레벨 스코프를 갖는다. 앞에서 var는 함수 레벨 스코프를 갖는다고 하였다. 위 예제를 let으로 바꾸어 보면,</p>
+<pre><code>let foo = 123;
+{
+  let foo = 456;
+  let bar = 456;
+}
+console.log(foo);
+console.log(bar);
+</code></pre><p>분명한 차이를 느낄 것이다. 에러가 나기 때문이다. 블록 내에 선언한 foo와 bar는 블록 안에서만 유효한 변수이다.</p>
+<p>또한 중복 선언이 금지된다. let 키워드는 중복 선언시 문법에러가 발생하게 된다.</p>
+<h2 id="호이스팅-문제"><a href="#호이스팅-문제" class="headerlink" title="호이스팅 문제"></a>호이스팅 문제</h2><p>자바스크립트는 기본적으로 모든 선언을 호이스팅한다. 하지만 let은 선언 이전에 참조하면 참조에러가 발생한다. 그 이유는 바로 <strong>일시적 사각지대</strong> 이다.</p>
+<p><img src="https://poiemaweb.com/img/let-lifecycle.png" alt="TDZ"></p>
+<p>var 키워드는 선언과 초기화가 한 번에 이루어지지만 let은 선언 후 일시적 사각지대에 빠지게 된다.(즉 선언과 초기화가 분리되어 진행된다.)</p>
+<pre><code>let foo = 1; // 전역 변수
+
+{
+  console.log(foo); // ReferenceError: foo is not defined
+  let foo = 2; // 지역 변수
+}
+</code></pre><p>전역 변수 foo가 출력될 것 같지만 참조에러가 발생한다. 블록 레벨 스코프에 이한 호이스팅이 발생하기 때문이다.</p>
+<h2 id="클로저"><a href="#클로저" class="headerlink" title="클로저"></a>클로저</h2><pre><code>var funcs = [];
+
+// 함수의 배열을 생성하는 for 루프의 i는 전역 변수다.
+for (var i = 0; i &lt; 3; i++) {
+  funcs.push(function () { console.log(i); });
+}
+
+// 배열에서 함수를 꺼내어 호출한다.
+for (var j = 0; j &lt; 3; j++) {
+  funcs[j]();
+}
+</code></pre><p>실습을 통해 답이 어떻게 나오나 알아보도록 하자</p>
+<pre><code>var funcs = [];
+
+// 함수의 배열을 생성하는 for 루프의 i는 for 루프의 코드 블록에서만 유효한 지역 변수이면서 자유 변수이다.
+for (let i = 0; i &lt; 3; i++) {
+  funcs.push(function () { console.log(i); });
+}
+
+// 배열에서 함수를 꺼내어 호출한다
+for (var j = 0; j &lt; 3; j++) {
+  console.dir(funcs[j]);
+  funcs[j]();
+}
+</code></pre><p>지금은 아 이렇구나 하고 넘어가면 된다. ㅎㅎ..</p>
+<h2 id="const는"><a href="#const는" class="headerlink" title="const는?"></a>const는?</h2><p>const는 보통 상수에 사용한다. 그래서 let은 재할당이 자유로우나 const는 재할당이 금지되어 있다. 또한 const는 선언과 동시에 할당이 이루어져야 한다.</p>
+<h2 id="const와-객체"><a href="#const와-객체" class="headerlink" title="const와 객체"></a>const와 객체</h2><p>const는 재할당이 금지되어 있기 때문에 객체에 대한 참조를 변경하지 못할 것 같지만, 객체의 프로퍼티는 <strong>보호되지 않는다.</strong></p>
+<pre><code>const user = {name: &apos;Jang&apos; };
+
+user.name = &apos;Son&apos;;
+
+console.log(user);
+</code></pre><h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>ES6를 사용하면 var 쓰지 말자!<br>재할당은 let!<br>재할당이 필요없는 원시 타입이나 객체 타입은 const!</p>
 
         </div>
         <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
