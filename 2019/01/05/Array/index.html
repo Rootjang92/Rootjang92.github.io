@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>자바스크립트의 배열 | Rootjang&#39;s IT Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="javascript,array" />
+    
+    <meta name="description" content="자바스크립트의 배열 활용하기저~~번에 살펴봤듯이 배열은 Array 타입의 객체 이며 Array.prototype의 프로퍼티를 상속받는다. 오늘은 Array.prototype 객체에 저장되어 있는 배열 메서드를 활용하는 방법에 대해 알아보려고 한다. 수정 메서드수정 메서드는 원본 배열을 바로 수정해버리기 때문에 주의가 필요하다.  push 메서드  배열 마지">
+<meta name="keywords" content="javascript,array">
+<meta property="og:type" content="article">
+<meta property="og:title" content="자바스크립트의 배열">
+<meta property="og:url" content="http://rootjang92.github.io/2019/01/05/Array/index.html">
+<meta property="og:site_name" content="Rootjang&#39;s IT Blog">
+<meta property="og:description" content="자바스크립트의 배열 활용하기저~~번에 살펴봤듯이 배열은 Array 타입의 객체 이며 Array.prototype의 프로퍼티를 상속받는다. 오늘은 Array.prototype 객체에 저장되어 있는 배열 메서드를 활용하는 방법에 대해 알아보려고 한다. 수정 메서드수정 메서드는 원본 배열을 바로 수정해버리기 때문에 주의가 필요하다.  push 메서드  배열 마지">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://rootjang92.github.io/images/rootjang.png">
+<meta property="og:updated_time" content="2019-01-05T09:12:43.991Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="자바스크립트의 배열">
+<meta name="twitter:description" content="자바스크립트의 배열 활용하기저~~번에 살펴봤듯이 배열은 Array 타입의 객체 이며 Array.prototype의 프로퍼티를 상속받는다. 오늘은 Array.prototype 객체에 저장되어 있는 배열 메서드를 활용하는 방법에 대해 알아보려고 한다. 수정 메서드수정 메서드는 원본 배열을 바로 수정해버리기 때문에 주의가 필요하다.  push 메서드  배열 마지">
+<meta name="twitter:image" content="http://rootjang92.github.io/images/rootjang.png">
+    
+    <link rel="canonical" href="http://rootjang92.github.io/2019/01/05/array/"/>
+    
+        <link rel="alternate" href="/" title="Rootjang&#39;s IT Blog" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-125046231-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Geunho&#39;s IT Blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/HTML-CSS/">HTML & CSS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/HTML-CSS/CSS/">CSS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/HTML-CSS/HTML/">HTML</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Javascript/">Javascript</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Javascript/ES5/">ES5</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Javascript/ES6/">ES6</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Javascript/JS-Memo/">JS Memo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Javascript/Js-Memo/">Js Memo</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/">Project</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/JS30/">JS30</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Project/todo/">todo</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/geunho">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Javascript/Js-Memo/">Js Memo</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7977783901878304",
+    enable_page_level_ads: true
+  });
+</script> -->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7977783901878304"
+     data-ad-slot="9345512684"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-Array" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        자바스크립트의 배열
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/01/05/Array/" class="article-date">
+            <time datetime="2019-01-05T08:06:13.000Z" itemprop="datePublished">2019-01-05</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript-array/">javascript,array</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="자바스크립트의-배열-활용하기"><a href="#자바스크립트의-배열-활용하기" class="headerlink" title="자바스크립트의 배열 활용하기"></a>자바스크립트의 배열 활용하기</h1><p>저~~번에 살펴봤듯이 배열은 Array 타입의 <strong>객체</strong> 이며 Array.prototype의 프로퍼티를 상속받는다. 오늘은 Array.prototype 객체에 저장되어 있는 배열 메서드를 활용하는 방법에 대해 알아보려고 한다.</p>
+<h2 id="수정-메서드"><a href="#수정-메서드" class="headerlink" title="수정 메서드"></a>수정 메서드</h2><p>수정 메서드는 원본 배열을 바로 수정해버리기 때문에 주의가 필요하다.</p>
+<ul>
+<li>push 메서드</li>
+</ul>
+<p>배열 마지막에 하나 이상의 요소를 추가한 후 그 배열의 길이를 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>];</span><br><span class="line">a.push(<span class="string">'D'</span>);</span><br></pre></td></tr></table></figure>
+<p>두 개 이상 추가 시에는 요소의 값을 쉼표로 구분하여 인수로 넘긴다.</p>
+<ul>
+<li>pop 메서드</li>
+</ul>
+<p>배열의 마지막 요소를 잘라내어 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>];</span><br><span class="line">a.pop();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>shift 메서드</li>
+</ul>
+<p>배열의 첫 번째 요소를 제거한 후 모든 배열 요소를 왼쪽으로 이동시킨다. 반환값은 삭제된 요소의 값이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>];</span><br><span class="line">a.shift();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>unshift 메서드</li>
+</ul>
+<p>배열 앞부분에 요소를 한 개 이상 추가한 후 배열 요소를 모두 오른쪽으로 이동시킨다. 반환값을 배열의 길이이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>];</span><br><span class="line">a.unshift(<span class="string">"X"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>splice 메서드</li>
+</ul>
+<p>특정 인덱스의 배열 요소를 갈아 끼우거나 삭제할 때 사용한다.</p>
+<p>Array.prototype.splice(index, howmany [,data …]);</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>];</span><br><span class="line">a.splice(<span class="number">1</span>, <span class="number">2</span>, <span class="string">'X'</span>,<span class="string">'Y'</span>,<span class="string">'Z'</span>); <span class="comment">// 인덱스 1부터 2개를 삭제하고 그 위에 생성된 요소를 끼워 넣는다.</span></span><br></pre></td></tr></table></figure>
+<p>첫 번째 인수만 넘기면 그 인덱스 <strong>이후</strong>에 있는 모든 배열 요소를 삭제한다. 또한 첫 번째 인수가 음수이면 이 값에 배열 길이를 더한 값을 삭제 시작위치로 간주한다.</p>
+<p>두 번째 인수가 0일 경우 인덱스가 가리키는 요소 바로 앞에 세 번째 이후 요소를 끼워 넣는다.</p>
+<ul>
+<li>sort 메서드</li>
+</ul>
+<p>배열 안의 요소를 정렬하는 메서드이다. 인수는 실제 비교를 담당하는 함수의 참조를 넘기고 반환값을 정렬된 배열이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> points = [<span class="number">40</span>, <span class="number">100</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">25</span>, <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">points.sort();</span><br><span class="line"><span class="built_in">console</span>.log(points); <span class="comment">// [ 1, 10, 100, 2, 25, 40, 5 ]</span></span><br></pre></td></tr></table></figure>
+<p>주의할 점은 배열의 요소가 숫자여도 일시적으로 문자열로 변환된다는 사실이다. 그래서 10이 2보다 앞서게 되는 상황이 발생하게 된다. (유니코드)</p>
+<p>그래서 그런 경우를 방지하기 위해 밑의 예제처럼 사용하는 공식이 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> points = [<span class="number">40</span>, <span class="number">100</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">25</span>, <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 숫자 배열 오름차순 정렬</span></span><br><span class="line"><span class="comment">// 비교 함수의 반환값이 0보다 작은 경우, a를 우선하여 정렬한다.</span></span><br><span class="line">points.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a - b; &#125;);</span><br><span class="line"><span class="built_in">console</span>.log(points); <span class="comment">// [ 1, 2, 5, 10, 25, 40, 100 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 숫자 배열에서 최소값 취득</span></span><br><span class="line"><span class="built_in">console</span>.log(points[<span class="number">0</span>]); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 숫자 배열 내림차순 정렬</span></span><br><span class="line"><span class="comment">// 비교 함수의 반환값이 0보다 큰 경우, b를 우선하여 정렬한다.</span></span><br><span class="line">points.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> b - a; &#125;);</span><br><span class="line"><span class="built_in">console</span>.log(points); <span class="comment">// [ 100, 40, 25, 10, 5, 2, 1 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 숫자 배열에서 최대값 취득</span></span><br><span class="line"><span class="built_in">console</span>.log(points[<span class="number">0</span>]); <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
+<p>또한 undefined는 배열의 마지막에 위치시킨다.<br>예제를 참조하여 프로퍼티 이름을 key값으로 받아 key가 가리키는 프로퍼티를 기준으로 객체 배열을 정렬해 보자.</p>
+<h2 id="접근자-메서드"><a href="#접근자-메서드" class="headerlink" title="접근자 메서드"></a>접근자 메서드</h2><p>접근자 메서드는 새로운 배열을 반환하여 원래 배열을 수정하지 않는 메서드이다. 사실 상 가장 많이 사용되는 배열 메서드이다.</p>
+<ul>
+<li>join 메서드</li>
+</ul>
+<p>join은 배열의 모든 요소 값을 문자열로 바꾼 후에 인수로 받은 문자로 연결하여 반환한다. undefined나 null은 빈 문자열로 간주한다.</p>
+<ul>
+<li>concat 메서드</li>
+</ul>
+<p>concat은 인수로 받은 값을 그 배열의 요소로 추가하여 새로운 배열을 생성한다. 참고로 원시값도 배열에 추가할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">var</span> b = [<span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'z'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = a.concat(b);</span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// ['a', 'b', 'c', 'x', 'y', 'z']</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>slice 메서드</li>
+</ul>
+<p>일부 요소를 제거한 새로운 배열을 반환하는 메서드이다.</p>
+<p>첫 번째 인수는 요소를 꺼낼 시작 위치를, 두 번째 인수는 요소를 꺼낼 마지막 위치를 지정한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> res1 = items.slice(<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res1);</span><br></pre></td></tr></table></figure>
+<p>두 번째 인수를 생략하면 마지막 요소까지 잘라내며 음수는 끝에서 n번째 라는 의미를 갖는다.</p>
+<ul>
+<li>indexOf와 lastIndexOf 메서드</li>
+</ul>
+<p>두 메서드는 배열 안에서 인수로 지정한 값을 검색해서 가장 먼저 찾은 요소의 인덱스를 반환한다. 찾지 못하면 -1을 반환한다. 첫 번째 인수는 검색할 값을 지정하고 두 번째 인수에는 검색을 시작할 인덱스를 지정한다. 생략하면 0으로 간주한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.indexOf(<span class="number">2</span>));    <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.indexOf(<span class="number">4</span>));    <span class="comment">// -1</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.indexOf(<span class="number">2</span>, <span class="number">2</span>)); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>toString과 toLocaleString 메서드</li>
+</ul>
+<p>배열의 요소를 문자열로 변환하여 쉼표로 연결한 문자열을 반환한다. toLocaleString은 해당 지역에 맞는 언어로 지역화한 문자열로 변환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log([<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,date].toString());</span><br><span class="line"><span class="built_in">console</span>.log([<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,date].toLocaleString());</span><br></pre></td></tr></table></figure>
+<h2 id="반복-메서드"><a href="#반복-메서드" class="headerlink" title="반복 메서드"></a>반복 메서드</h2><p>반복 메서드는 모든 요소를 순회하며 특정한 작업을 수행하거나 특정 조건을 만족하는 요소를 가져올 때 사용한다. 반복 메서드의 인수로 전달한 함수는 배열의 요소마다 호출된다.</p>
+<ul>
+<li>forEach 메서드</li>
+</ul>
+<p>Array.prototype.forEach(callback: (value: T, index: number, array: T[]) =&gt; void, thisArg?: any): void<br>인수로 받은 함수를 배열의 요소별로 한 번씩 실행한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> total = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> testArray = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// forEach 메소드는 원본 배열을 변경하지 않는다.</span></span><br><span class="line">testArray.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'['</span> + index + <span class="string">'] = '</span> + item);</span><br><span class="line">  total += item;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>함수형 프로그래밍을 할 때 for문 대신 사용할 수 있다. 하지만 for문에 비해 성능이 좋지는 않다.</p>
+<p>또한 두 번째 인자로 this를 전달할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Counter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">this</span>.count = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Counter.prototype.add = <span class="function"><span class="keyword">function</span> (<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// entry는 array의 배열 요소의 값</span></span><br><span class="line">  array.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">entry</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.sum += entry; <span class="comment">// 2번째 인자 this를 전달하지 않으면 this === window</span></span><br><span class="line">    <span class="keyword">this</span>.count++;</span><br><span class="line">  &#125;, <span class="keyword">this</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> counter = <span class="keyword">new</span> Counter();</span><br><span class="line">counter.add([<span class="number">2</span>, <span class="number">5</span>, <span class="number">9</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(counter.count);</span><br><span class="line"><span class="built_in">console</span>.log(counter.sum);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>map 메서드</li>
+</ul>
+<p>인수로 받은 함수를 배열의 요소별로 한번씩 실행하는 데 그 콜백함수의 반환값으로 새로운 배열을 생성한다. 반드시 값을 반환해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 배열을 순회하며 각 요소에 대하여 인자로 주어진 콜백함수를 실행</span></span><br><span class="line"><span class="keyword">var</span> roots = a.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.sqrt(item);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 위 코드의 축약표현은 아래와 같다.</span></span><br><span class="line"><span class="comment">// var roots = numbers.map(Math.sqrt);</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(roots);   <span class="comment">// [ 1, 2, 3 ]</span></span><br><span class="line"><span class="comment">// map 메소드는 원본 배열은 변경하지 않는다</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// [ 1, 4, 9 ]</span></span><br></pre></td></tr></table></figure>
+<p>map의 반환값은 원본 배열과 같은 개수의 원소가 들어 있는 배열이기 때문에 메서드 체인으로 연결해서 배열 처리가 가능하다.</p>
+<ul>
+<li>reduce</li>
+</ul>
+<p>배열의 첫 번째 요소부터 마지막 요소까지 합성 곱 처리를 한다.(배열 요소 하나를 함수로 처리한 후 그 반환값을 다음 번 요소를 처리할 때 함수의 입력값으로 사용)<br>그래서 마지막 요소를 처리한 함수가 값을 반환한다.</p>
+<p>Array.prototype.reduce<u>(callback: (state: U, element: T, index: number, array: T[]) =&gt; U, firstState?: U): U</u></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">previousValue: 이전 콜백의 반환값</span></span><br><span class="line"><span class="comment">currentValue : 배열 요소의 값</span></span><br><span class="line"><span class="comment">currentIndex : 인덱스</span></span><br><span class="line"><span class="comment">array        : 순회할 배열</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> sum = arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">previousValue, currentValue, currentIndex, array</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(previousValue + <span class="string">'+'</span> + currentValue + <span class="string">'='</span> + (previousValue + currentValue));</span><br><span class="line">  <span class="keyword">return</span> previousValue + currentValue; <span class="comment">// 결과는 다음 콜백의 첫번째 인자로 전달된다</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 배열의 최대값.</span></span><br><span class="line"><span class="keyword">var</span> max = arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">prev, cur</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> prev &gt; cur ? prev : cur;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(max); <span class="comment">// 5: 최대값</span></span><br></pre></td></tr></table></figure>
+<p>주의할 점은 초깃값 지정 여부에 따라 callback 함수가 처음 호출될 때 인수로 들어오는 값이 바뀌는데 지정했을 경우에는 state는 초깃값, element는 배열의 첫 번째 요소, index는 0이 된다.<br>지정하지 않을 경우에는 state는 배열의 첫 번째 요소의 값, element는 두 번째 요소의 값, index는 1이 된다.</p>
+<p>[예제 살펴보기]</p>
+<h2 id="유사-배열-객체"><a href="#유사-배열-객체" class="headerlink" title="유사 배열 객체"></a>유사 배열 객체</h2><p>배열은 아니지만 배열로 처리할 수 있는 개체를 유사 배열 객체라고 한다.</p>
+<p>Arguments객체와 DOM의 getElementByTagName, getElementByName이 반환하는 Nodelist, String등이 유사 배열 객체이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  a[i] = i;</span><br><span class="line">&#125;</span><br><span class="line">a.length = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, sum = <span class="number">0</span>; i&lt;a.length; i++) sum += a[i];</span><br><span class="line"><span class="built_in">console</span>.log(sum);</span><br></pre></td></tr></table></figure>
+<p>그래서 Array.prototype.call 메서드를 이용하여 메서드들을 간접 호출할 수 있다. 하지만 concat 메서드를 제외한 나머지는 배열처럼 동작하지는 않는다.</p>
+<h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h2><ul>
+<li>비구조화 할당</li>
+</ul>
+<p>우리가 디스트럭쳐링이라고 부르는 것이 바로 비구조화 할당이다. 구조화 되어 있는 배열 혹은 객체를 파괴하여 개별적인 변수에 할당하는 것이다.</p>
+<ul>
+<li>배열 디스트럭쳐링</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> one = arr[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">var</span> two = arr[<span class="number">1</span>];</span><br><span class="line"><span class="keyword">var</span> three = arr[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(one, two, three);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [one,two,three] = arr;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(one, two, three);</span><br></pre></td></tr></table></figure>
+<p>배열 디스트럭쳐링을 위해서는 할당 연산자 왼쪽에 배열 형태의 변수 리스트가 있어야 한다. 이 때 배열의 인덱스를 기준으로 할당된다.</p>
+<ul>
+<li>객체 디스트럭쳐링</li>
+</ul>
+<p>ES5에선 객체의 프로퍼티 이름을 활용하여야 변수에 할당이 가능했다. ES6에서는 객체의 각 프로퍼티를 객체로부터 추출하여 변수 리스트에 할당할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">firstName</span>: <span class="string">'Geun ho'</span>, <span class="attr">lastName</span>: <span class="string">'Jang'</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> firstName = obj.firstName;</span><br><span class="line"><span class="keyword">var</span> lastName = obj.lastName;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(firstName, lastName);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">firstName</span>: <span class="string">'Geun ho'</span>, <span class="attr">lastName</span>: <span class="string">'Jang'</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; firstName, lastName &#125; = obj;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(firstName, lastName);</span><br></pre></td></tr></table></figure>
+<p>객체 디스트럭처링도 마찬가지로 할당 연산자 왼쪽에 객체 형태의 변수 리스트가 필요하다. 또한 객체 디스트럭처링은 객체에서 프로퍼티 이으로 필요한 프로퍼티 값만을 추출할 수 있다.</p>
+<p>이는 예제를 통해 살펴보도록 하자.</p>
+<h2 id="Spread-연산자"><a href="#Spread-연산자" class="headerlink" title="Spread 연산자"></a>Spread 연산자</h2><p>Spread 연산자는 연산자의 대상 배열이나 반복 가능한 객체를 개별 요소로 분리한다. Rest 파라미터와는 다르다는 것을 주의하여야 한다.</p>
+<ul>
+<li>함수를 인자로 사용하는 경우</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,y,z</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br><span class="line">  <span class="built_in">console</span>.log(y);</span><br><span class="line">  <span class="built_in">console</span>.log(z);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">foo.apply(<span class="literal">null</span>, arr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,y,z</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br><span class="line">  <span class="built_in">console</span>.log(y);</span><br><span class="line">  <span class="built_in">console</span>.log(z);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">foo(...arr);</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7977783901878304",
+    enable_page_level_ads: true
+  });
+</script> -->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7977783901878304"
+     data-ad-slot="9345512684"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/rootjang1/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/Rootjang92" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="Rootjang92" data-width="340" data-height="152" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/12/19/expAndope/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">표현식과 연산자 정리</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/05/Array/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/js.png)" alt="자바스크립트의 배열" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/Js-Memo/">Js Memo</a></p>
+                            <p class="item-title"><a href="/2019/01/05/Array/" class="title">자바스크립트의 배열</a></p>
+                            <p class="item-date"><time datetime="2019-01-05T08:06:13.000Z" itemprop="datePublished">2019-01-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/19/expAndope/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/js.png)" alt="표현식과 연산자 정리" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/JS-Memo/">JS Memo</a></p>
+                            <p class="item-title"><a href="/2018/12/19/expAndope/" class="title">표현식과 연산자 정리</a></p>
+                            <p class="item-date"><time datetime="2018-12-19T07:53:59.000Z" itemprop="datePublished">2018-12-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/13/dataType/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/js.png)" alt="데이터 타입" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/JS-Memo/">JS Memo</a></p>
+                            <p class="item-title"><a href="/2018/12/13/dataType/" class="title">데이터 타입</a></p>
+                            <p class="item-date"><time datetime="2018-12-13T08:28:02.000Z" itemprop="datePublished">2018-12-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/12/Variable/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/js.png)" alt="자바스크립트의 변수" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/JS-Memo/">JS Memo</a></p>
+                            <p class="item-title"><a href="/2018/12/12/Variable/" class="title">자바스크립트의 변수</a></p>
+                            <p class="item-date"><time datetime="2018-12-12T07:05:42.000Z" itemprop="datePublished">2018-12-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/28/iteration/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/js.png)" alt="이터레이션과 for-of" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/ES6/">ES6</a></p>
+                            <p class="item-title"><a href="/2018/11/28/iteration/" class="title">이터레이션과 for-of</a></p>
+                            <p class="item-date"><time datetime="2018-11-28T01:40:40.000Z" itemprop="datePublished">2018-11-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/">HTML & CSS</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/CSS/">CSS</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/HTML/">HTML</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/ES5/">ES5</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/ES6/">ES6</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/JS-Memo/">JS Memo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/Js-Memo/">Js Memo</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/JS30/">JS30</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/todo/">todo</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html/">HTML, html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-HTML-hyperlink-html-link/">HTML, html, HTML basic syntax, HTML hyperlink, html link</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-html-tag/">HTML, html, HTML basic syntax, html tag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-htmltag/">HTML, html, HTML basic syntax, htmltag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-HTML-basic-syntax-htmltag-ul-li/">HTML, html, HTML basic syntax, htmltag, ul, li</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-html-html-form-form-tag/">HTML, html, html form, form tag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-es6-javascript-30/">JavaScript, es6, javascript 30</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-js-es6-HTML-Canvas/">JavaScript,js,es6, HTML Canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javasciprt-expression-operator/">Javasciprt, expression, operator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-JS-prototype-prototype-chain/">Javascript, JS prototype, prototype chain</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5/">Javascript, js, es5, ES5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5-data-datatype/">Javascript, js, es5, ES5, data, datatype</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5-object-js-object/">Javascript, js, es5, ES5, object, js object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-ES5-prototype-js-prototype/">Javascript, js, es5, ES5, prototype, js prototype</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es5-closure-js-closure/">Javascript, js, es5, closure, js closure</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-es6-drum/">Javascript, js, es6, drum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript-js-js-this-this-prototype-chain/">Javascript, js, js this, this, prototype chain</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css-transition/">css, css transition</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-animation-keyframes/">css, css3, css animation, keyframes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-flex-flex-box/">css, css3, css flex, flex box</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-fluid-elements/">css, css3, css fluid elements</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-layout/">css, css3, css layout</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-mediaquery/">css, css3, css mediaquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-positioning-float-z-index/">css, css3, css positioning, float, z-index</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-selector/">css, css3, css selector</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-반응형-웹-reactive-web/">css, css3, 반응형 웹, reactive web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-semantic-tag-시맨틱-태그/">css,css3, css semantic tag, 시맨틱 태그</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-transform/">css,css3, css transform</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-basic/">css,css3,css basic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-image-css-background/">css,css3,css image, css background</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-table/">css,css3,css table</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-css3-css-text/">css,css3,css text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6-javascript-rest-parameter-spread/">es6, javascript, rest parameter, spread</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6-js-javascript-class/">es6, js, javascript, class</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html-html-input/">html, html input</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html-html5-html-video-html-audio/">html,html5, html video, html audio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-es6-arrow/">javascript, es6, arrow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-function-programming-함수형-프로그래밍-함수형-프로그래밍-이란/">javascript, function programming, 함수형 프로그래밍, 함수형 프로그래밍 이란?</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-promise/">javascript, promise</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-array/">javascript,array</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-js-es6-clock/">javascript,js,es6,clock</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-js-es6-let-const/">javascript,js,es6,let,const</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javsscript-객체지향-프로그래밍-object-oriented-programming/">javsscript, 객체지향 프로그래밍, object oriented programming</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-javascript-es6-destructuring/">js, javascript, es6, destructuring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-javascript-es6-template-literal/">js, javascript, es6, template literal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-javascript-execution-context-scope/">js, javascript, execution context, scope</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-javascript-javascript-function-자바스크립트-함수/">js, javascript, javascript function, 자바스크립트 함수</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-js-data-type/">js, js data type</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-javascript-iteration-for-of/">js,javascript, iteration, for of</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-var-let-const/">js,var,let,const</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo-todolist-front-end/">todo,todolist,front-end</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/HTML-html/" style="font-size: 10px;">HTML, html</a> <a href="/tags/HTML-html-HTML-basic-syntax-HTML-hyperlink-html-link/" style="font-size: 10px;">HTML, html, HTML basic syntax, HTML hyperlink, html link</a> <a href="/tags/HTML-html-HTML-basic-syntax-html-tag/" style="font-size: 10px;">HTML, html, HTML basic syntax, html tag</a> <a href="/tags/HTML-html-HTML-basic-syntax-htmltag/" style="font-size: 10px;">HTML, html, HTML basic syntax, htmltag</a> <a href="/tags/HTML-html-HTML-basic-syntax-htmltag-ul-li/" style="font-size: 10px;">HTML, html, HTML basic syntax, htmltag, ul, li</a> <a href="/tags/HTML-html-html-form-form-tag/" style="font-size: 10px;">HTML, html, html form, form tag</a> <a href="/tags/JavaScript-es6-javascript-30/" style="font-size: 10px;">JavaScript, es6, javascript 30</a> <a href="/tags/JavaScript-js-es6-HTML-Canvas/" style="font-size: 10px;">JavaScript,js,es6, HTML Canvas</a> <a href="/tags/Javasciprt-expression-operator/" style="font-size: 10px;">Javasciprt, expression, operator</a> <a href="/tags/Javascript-JS-prototype-prototype-chain/" style="font-size: 10px;">Javascript, JS prototype, prototype chain</a> <a href="/tags/Javascript-js-es5-ES5/" style="font-size: 10px;">Javascript, js, es5, ES5</a> <a href="/tags/Javascript-js-es5-ES5-data-datatype/" style="font-size: 10px;">Javascript, js, es5, ES5, data, datatype</a> <a href="/tags/Javascript-js-es5-ES5-object-js-object/" style="font-size: 10px;">Javascript, js, es5, ES5, object, js object</a> <a href="/tags/Javascript-js-es5-ES5-prototype-js-prototype/" style="font-size: 10px;">Javascript, js, es5, ES5, prototype, js prototype</a> <a href="/tags/Javascript-js-es5-closure-js-closure/" style="font-size: 10px;">Javascript, js, es5, closure, js closure</a> <a href="/tags/Javascript-js-es6-drum/" style="font-size: 10px;">Javascript, js, es6, drum</a> <a href="/tags/Javascript-js-js-this-this-prototype-chain/" style="font-size: 10px;">Javascript, js, js this, this, prototype chain</a> <a href="/tags/css-css-transition/" style="font-size: 10px;">css, css transition</a> <a href="/tags/css-css3-css-animation-keyframes/" style="font-size: 10px;">css, css3, css animation, keyframes</a> <a href="/tags/css-css3-css-flex-flex-box/" style="font-size: 10px;">css, css3, css flex, flex box</a> <a href="/tags/css-css3-css-fluid-elements/" style="font-size: 10px;">css, css3, css fluid elements</a> <a href="/tags/css-css3-css-layout/" style="font-size: 10px;">css, css3, css layout</a> <a href="/tags/css-css3-css-mediaquery/" style="font-size: 10px;">css, css3, css mediaquery</a> <a href="/tags/css-css3-css-positioning-float-z-index/" style="font-size: 10px;">css, css3, css positioning, float, z-index</a> <a href="/tags/css-css3-css-selector/" style="font-size: 10px;">css, css3, css selector</a> <a href="/tags/css-css3-반응형-웹-reactive-web/" style="font-size: 10px;">css, css3, 반응형 웹, reactive web</a> <a href="/tags/css-css3-css-semantic-tag-시맨틱-태그/" style="font-size: 10px;">css,css3, css semantic tag, 시맨틱 태그</a> <a href="/tags/css-css3-css-transform/" style="font-size: 10px;">css,css3, css transform</a> <a href="/tags/css-css3-css-basic/" style="font-size: 10px;">css,css3,css basic</a> <a href="/tags/css-css3-css-image-css-background/" style="font-size: 10px;">css,css3,css image, css background</a> <a href="/tags/css-css3-css-table/" style="font-size: 10px;">css,css3,css table</a> <a href="/tags/css-css3-css-text/" style="font-size: 10px;">css,css3,css text</a> <a href="/tags/es6-javascript-rest-parameter-spread/" style="font-size: 10px;">es6, javascript, rest parameter, spread</a> <a href="/tags/es6-js-javascript-class/" style="font-size: 10px;">es6, js, javascript, class</a> <a href="/tags/html-html-input/" style="font-size: 10px;">html, html input</a> <a href="/tags/html-html5-html-video-html-audio/" style="font-size: 10px;">html,html5, html video, html audio</a> <a href="/tags/javascript-es6-arrow/" style="font-size: 10px;">javascript, es6, arrow</a> <a href="/tags/javascript-function-programming-함수형-프로그래밍-함수형-프로그래밍-이란/" style="font-size: 10px;">javascript, function programming, 함수형 프로그래밍, 함수형 프로그래밍 이란?</a> <a href="/tags/javascript-promise/" style="font-size: 10px;">javascript, promise</a> <a href="/tags/javascript-array/" style="font-size: 10px;">javascript,array</a> <a href="/tags/javascript-js-es6-clock/" style="font-size: 10px;">javascript,js,es6,clock</a> <a href="/tags/javascript-js-es6-let-const/" style="font-size: 10px;">javascript,js,es6,let,const</a> <a href="/tags/javsscript-객체지향-프로그래밍-object-oriented-programming/" style="font-size: 10px;">javsscript, 객체지향 프로그래밍, object oriented programming</a> <a href="/tags/js-javascript-es6-destructuring/" style="font-size: 10px;">js, javascript, es6, destructuring</a> <a href="/tags/js-javascript-es6-template-literal/" style="font-size: 10px;">js, javascript, es6, template literal</a> <a href="/tags/js-javascript-execution-context-scope/" style="font-size: 10px;">js, javascript, execution context, scope</a> <a href="/tags/js-javascript-javascript-function-자바스크립트-함수/" style="font-size: 10px;">js, javascript, javascript function, 자바스크립트 함수</a> <a href="/tags/js-js-data-type/" style="font-size: 10px;">js, js data type</a> <a href="/tags/js-javascript-iteration-for-of/" style="font-size: 10px;">js,javascript, iteration, for of</a> <a href="/tags/js-var-let-const/" style="font-size: 10px;">js,var,let,const</a> <a href="/tags/todo-todolist-front-end/" style="font-size: 10px;">todo,todolist,front-end</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.naver.com/kojack1">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7977783901878304",
+    enable_page_level_ads: true
+  });
+</script> -->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7977783901878304"
+     data-ad-slot="9345512684"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Geun ho</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://rootjang92.github.io/2019/01/05/Array/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
