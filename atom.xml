@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rootjang92.github.io/"/>
-  <updated>2019-01-18T09:45:32.340Z</updated>
+  <updated>2019-01-18T10:04:33.491Z</updated>
   <id>http://rootjang92.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML 폼과 CSS 제어하기</title>
+    <link href="http://rootjang92.github.io/2019/01/18/form/"/>
+    <id>http://rootjang92.github.io/2019/01/18/form/</id>
+    <published>2019-01-18T09:46:23.000Z</published>
+    <updated>2019-01-18T10:04:33.491Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-폼-태그와-CSS-제어하기"><a href="#HTML-폼-태그와-CSS-제어하기" class="headerlink" title="HTML 폼 태그와 CSS 제어하기"></a>HTML 폼 태그와 CSS 제어하기</h1><h2 id="폼"><a href="#폼" class="headerlink" title="폼"></a>폼</h2><p>웹에서는 사용자 정보를 입력할 때, 검색 키워드를 입력할 때 그리고 키워드를 검색할 때 등 다양한 용도로 사용된다. 데이터 처리 관점에서 바라보자면</p><p>폼에 입력한 데이터를 웹 서버로 보내고 웹 서버는 데이터를 처리하여 반환한다는 관점과<br>클라이언트 측 자바스크립트로 웹 어플리케이션을 만들 때 사용자 입력을 받는 UI로 사용한다. 이 때 데이터 처리는 클라이언트 자바스크립트가 담당한다라는 두 가지 관점이 있다.</p><h3 id="폼-요소와-폼-컨트롤-요소"><a href="#폼-요소와-폼-컨트롤-요소" class="headerlink" title="폼 요소와 폼 컨트롤 요소"></a>폼 요소와 폼 컨트롤 요소</h3><p>폼 요소를 작성하고는 method와 action 속성을 지정한다. method 속성에는 post, get 등의 방법이 있고 action은 데이터를 처리하는 CGI 프로그램의 URL을 받는다.</p><h3 id="폼-요소와-폼-컨트롤-요소-가져오기"><a href="#폼-요소와-폼-컨트롤-요소-가져오기" class="headerlink" title="폼 요소와 폼 컨트롤 요소 가져오기"></a>폼 요소와 폼 컨트롤 요소 가져오기</h3><ul><li>DOM 메서드로 가져오기</li></ul><p>DOM을 할 때 배웠던 getElementById, getElementByTagName 등의 메서드를 사용하여 가져올 수 있다.</p><ul><li>forms 프로퍼티로 form 요소 가져오기</li></ul><p>form 요소 목록은 Document 객체의 forms 프로퍼티에서도 가져올 수 있다.</p><ul><li>form 요소 객체의 자식 요소로 객체 가져오기</li></ul><h2 id="CSS-제어하기"><a href="#CSS-제어하기" class="headerlink" title="CSS 제어하기"></a>CSS 제어하기</h2><p>스타일을 변경하는 방법에는 요소 객체의 style 속성을 수정하기, class 속성 값을 바꾸어 스타일 전환하기, 스타일 시트를 수정하는 방법이 있다.<br>주로 1,2를 사용한다.</p><h3 id="인라인-스타일-제어하기"><a href="#인라인-스타일-제어하기" class="headerlink" title="인라인 스타일 제어하기"></a>인라인 스타일 제어하기</h3><p>1번의 방법을 인라인 스타일이라고 하는데 이를 제어할 수 있다.</p><p>요소 객체가 가진 style 프로퍼티의 값은 CSSStyleDeclaration 객체이다(카멜 케이스)</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"title"</span>&gt;</span>Javascript<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">'title'</span>);</span></span><br><span class="line"><span class="javascript">    element.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      element.style.backgroundColor = <span class="string">"pink"</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="클래스-제어로-스타일-변경"><a href="#클래스-제어로-스타일-변경" class="headerlink" title="클래스 제어로 스타일 변경"></a>클래스 제어로 스타일 변경</h3><p>이 방법을 이용하면 여러 요소의 스타일을 한꺼번에 바꿀 수 있다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;HTML-폼-태그와-CSS-제어하기&quot;&gt;&lt;a href=&quot;#HTML-폼-태그와-CSS-제어하기&quot; class=&quot;headerlink&quot; title=&quot;HTML 폼 태그와 CSS 제어하기&quot;&gt;&lt;/a&gt;HTML 폼 태그와 CSS 제어하기&lt;/h1&gt;&lt;h2 i
+      
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://rootjang92.github.io/categories/Javascript/"/>
+    
+      <category term="JS Memo" scheme="http://rootjang92.github.io/categories/Javascript/JS-Memo/"/>
+    
+    
+      <category term="js, form, css" scheme="http://rootjang92.github.io/tags/js-form-css/"/>
+    
+  </entry>
   
   <entry>
     <title>문서 제어</title>
