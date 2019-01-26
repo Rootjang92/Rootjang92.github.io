@@ -6,22 +6,28 @@
     
 
     
-    <title>Archive: 2018/9 | Rootjang&#39;s IT Blog</title>
+    <title>HTTP 통신과 Ajax | Rootjang&#39;s IT Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="HTML, CSS, Javascript, es5, es6, Angular, React, Vue.js, Node.js">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Rootjang&#39;s IT Blog">
-<meta property="og:url" content="http://rootjang92.github.io/archives/2018/09/page/2/index.html">
+        <meta name="keywords" content="Javascript, HTTP, Ajax" />
+    
+    <meta name="description" content="HTTP 통신과 AjaxHTTPHTTP는 Hyper Text Transfer Protocol의 줄임말로 HTML로 작성된 웹 페이지나 동영상, 음성 파일 등을 주고 받기 위한 통신 규약이다.이것을 SSL로 암호화한 것이 HTTPS이다. HTTP 통신 HTTP에서는 클라이언트가 요청 메세지(Request)를 보내고 서버가 응답메세지(Response)를 반환한">
+<meta name="keywords" content="Javascript, HTTP, Ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP 통신과 Ajax">
+<meta property="og:url" content="http://rootjang92.github.io/2019/01/26/httpAjax/index.html">
 <meta property="og:site_name" content="Rootjang&#39;s IT Blog">
+<meta property="og:description" content="HTTP 통신과 AjaxHTTPHTTP는 Hyper Text Transfer Protocol의 줄임말로 HTML로 작성된 웹 페이지나 동영상, 음성 파일 등을 주고 받기 위한 통신 규약이다.이것을 SSL로 암호화한 것이 HTTPS이다. HTTP 통신 HTTP에서는 클라이언트가 요청 메세지(Request)를 보내고 서버가 응답메세지(Response)를 반환한">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://rootjang92.github.io/images/rootjang.png">
+<meta property="og:updated_time" content="2019-01-26T08:23:17.509Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rootjang&#39;s IT Blog">
+<meta name="twitter:title" content="HTTP 통신과 Ajax">
+<meta name="twitter:description" content="HTTP 통신과 AjaxHTTPHTTP는 Hyper Text Transfer Protocol의 줄임말로 HTML로 작성된 웹 페이지나 동영상, 음성 파일 등을 주고 받기 위한 통신 규약이다.이것을 SSL로 암호화한 것이 HTTPS이다. HTTP 통신 HTTP에서는 클라이언트가 요청 메세지(Request)를 보내고 서버가 응답메세지(Response)를 반환한">
 <meta name="twitter:image" content="http://rootjang92.github.io/images/rootjang.png">
     
-    <link rel="canonical" href="http://rootjang92.github.io/archives/2018/09/page/2/"/>
+    <link rel="canonical" href="http://rootjang92.github.io/2019/01/26/httpajax/"/>
     
         <link rel="alternate" href="/" title="Rootjang&#39;s IT Blog" type="application/atom+xml" />
     
@@ -143,7 +149,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2018/9
+    <a class="page-title-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Javascript/JS-Memo/">JS Memo</a>
     </h1>
 </div>
 
@@ -167,531 +173,191 @@ ga('send', 'pageview');
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-                            
-
-    
-    
+                            <article id="post-httpAjax" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/12/executioncontext/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/js.png)" alt="실행 컨텍스트와 스코프" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/09/12/executioncontext/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/ES5/">ES5</a>
-            </div>
-            <div class="date"><time datetime="2018-09-12T07:33:21.000Z" itemprop="datePublished">2018-09-12</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/12/executioncontext/">실행 컨텍스트와 스코프</a>
+        HTTP 통신과 Ajax
         </h1>
     
 
-        <p class="article-excerpt">
-            실행 컨텍스트와 스코프실행 컨텍스트란?ECMAScript의 정의를 살펴보면 실행 가능한 코드를 형상화하고 구분하는 추상적인 개념이라고 설명하고 있다.즉 실행 가능한 자바스크립트 코드 블록이 실행되는 환경이라고 할 수 있다. 실행 가능한 코드에는 전역 코드, eval() 코드, 함수 코드가 있다.
-우리는 오늘 한가지 예제를 통해 콜 스택부터 실행 컨텍스트, 
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/01/26/httpAjax/" class="article-date">
+            <time datetime="2019-01-26T07:41:00.000Z" itemprop="datePublished">2019-01-26</time>
+        </a>
     </div>
-</article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/12/cssbasic/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/css3.png)" alt="CSS의 기초 살펴보기" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/09/12/cssbasic/">0</span>
-    
-</span>
+		
 
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Javascript-HTTP-Ajax/">Javascript, HTTP, Ajax</a>
+    </div>
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/HTML-CSS/">HTML & CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/HTML-CSS/CSS/">CSS</a>
             </div>
-            <div class="date"><time datetime="2018-09-12T02:04:28.000Z" itemprop="datePublished">2018-09-12</time></div>
-        </div>
         
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/12/cssbasic/">CSS의 기초 살펴보기</a>
-        </h1>
-    
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="HTTP-통신과-Ajax"><a href="#HTTP-통신과-Ajax" class="headerlink" title="HTTP 통신과 Ajax"></a>HTTP 통신과 Ajax</h1><h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>HTTP는 Hyper Text Transfer Protocol의 줄임말로 HTML로 작성된 웹 페이지나 동영상, 음성 파일 등을 주고 받기 위한 통신 규약이다.<br>이것을 SSL로 암호화한 것이 HTTPS이다.</p>
+<h2 id="HTTP-통신"><a href="#HTTP-통신" class="headerlink" title="HTTP 통신"></a>HTTP 통신</h2><p><img src="https://poiemaweb.com/img/traditional-webpage-lifecycle.png" alt="http"></p>
+<p>HTTP에서는 클라이언트가 요청 메세지(Request)를 보내고 서버가 응답메세지(Response)를 반환한다.<br>HTTP에서는 전송 계층 프로토콜로 TCP를 사용하고 네트워크 계층 프로토콜로 IP를 사용하는데 이를 합쳐 TCP/IP라고 부른다. 즉 IP주소를 사용한 포트 번호를 이용해 통신할 컴퓨터를 결정한다. 기본적으로 80번 포트를 사용한다.</p>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>Ajax는 Asynchronous(비동기적) Javascript + XML로 XMLHttpRequest라는 자바스크립트 객체를 이용하여 웹 서버와 <strong>비동기</strong>로 통신하고 DOM을 이용하여 웹 페이지를 <strong>동적</strong>으로 갱신하는 프로그래밍 기법을 말한다.</p>
+<p><img src="https://poiemaweb.com/img/ajax-webpage-lifecycle.png" alt="Ajax Listcycle"></p>
+<p>주로 JSON과 text 데이터를 사용하고 있다. Ajax의 포인트는 <strong>필요한 부분</strong>만 DOM으로 변경한다는 것이다. 또한 통신이 비동기적으로 이루어지기 때문에 서버가 데이터를 다 보내지 않은 상태라 하더라도 클라이언트를 자유롭게 사용할 수 있다.</p>
+<p>즉 Ajax의 장점을 정리하자면</p>
+<ol>
+<li>최소한의 데이터 통신으로 속도가 빠르고 부하가 적다.</li>
+<li>비동기 통신이기 때문에 클라이언트가 다른 작업을 할 수 있다.</li>
+<li>웹 페이지의 갱신을 클라이언트가 담당하여 페이지 전환대신 일부분만 변경하여 빠른 렌더링이 가능하다.</li>
+</ol>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p>JSON은 JavaScript Object Notation의 약자로 클라이언트와 서버간의 데이터 교환 규칙(데이터 포맷)을 말한다. JSON은 일반 데이터 포맷보다 효과적인 데이터 구조화가 가능하며 XML보다 가볍기 떄문에 사용이 편리하다. 또한 <strong>순수한 텍스트</strong>로 구성되어 있다.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"Jang"</span>,</span><br><span class="line">  <span class="attr">"gender"</span>: <span class="string">"male"</span>,</span><br><span class="line">  <span class="attr">"age"</span>: <span class="number">26</span>,</span><br><span class="line">  <span class="attr">"alive"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>키는 반드시 큰 따옴표로 둘러싸야 한다.</strong></p>
+<h3 id="JSON-stringify"><a href="#JSON-stringify" class="headerlink" title="JSON.stringify"></a>JSON.stringify</h3><p>JSON.stringify 메서드는 객체를 JSON 형식의 문자열로 변형한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">  name: <span class="string">'Jang'</span>,</span><br><span class="line">  gender: <span class="string">'male'</span>,</span><br><span class="line">  age: <span class="number">26</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> strObj = <span class="built_in">JSON</span>.stringify(o);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> strObj, strObj);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 값의 타입이 Number이면 필터링되어 반환하지 않게 만들어 보세요.!</span></span><br></pre></td></tr></table></figure>
+<h3 id="JSON-parse"><a href="#JSON-parse" class="headerlink" title="JSON.parse"></a>JSON.parse</h3><p>JSON.parse는 JSON 데이터 문자열을 객체로 반환한다. 서버로부터 전달된 JSON 데이터는 텍스트이기 때문에 객체화하여야 한다. 이를 역직렬화라고 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JSON 형식의 문자열 =&gt; 객체</span></span><br><span class="line"><span class="comment">// 위 예제와 이어서 진행.</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(strObj);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> obj, obj); <span class="comment">// object &#123; name: 'Lee', gender: 'male' &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h2><p>Ajax 기법을 사용할 때에는 자바스크립트의 XMLHttpRequest 객체를 사용하여야 한다. 기본적인 처리 흐름으로는</p>
+<ol>
+<li>XMLHttpRequest 객체를 생성한다.</li>
+<li>서버와 통신할 떄 사용할 처리 방법을 등록한다.</li>
+<li>요청을 전송하고 통신을 시작한다.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// XMLHttpRequest 객체의 생성</span></span><br><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="comment">// 비동기 방식으로 Request를 오픈한다</span></span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'/users'</span>);</span><br><span class="line"><span class="comment">// Request를 전송한다</span></span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+<p>open 메서드를 사용하여 서버로의 요청을 준비한다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><center>매개변수</center></th>
+<th style="text-align:center"><center>설명</center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><center>method<center></center></center></td>
+<td style="text-align:center"><center>HTTP method(“GET”,”POST”,”PUT”,”DELETE”)</center></td>
+</tr>
+<tr>
+<td style="text-align:left"><center>async</center></td>
+<td style="text-align:center"><center>비동기 조작여부, default는 true</center></td>
+</tr>
+</tbody>
+</table>
+<p>send 메서드로 준비된 요청을 서버에 전달한다. 기본적으로 GET,POST에 따라 그 방식이 달라진다. GET의 경우 URL의 일부분을인 쿼리 문자열로 데이터를 전달하는 반면에 POST는 페이로드를 Request Body에 담아 전달한다.</p>
+<p><img src="https://poiemaweb.com/img/HTTP_request+response_message.gif" alt="HTTP Request Example"></p>
+<p><strong>페이로드란?</strong></p>
+<p>페이로드라는 용어는 큰 데이터 덩어리 중에 ‘흥미 있는’ 데이터를 구별하는 데 사용된다. 이 용어는 운송업에서 비롯하였는데, 지급(pay)해야 하는 적화물(load)을 의미한다. 예를 들어, 유조선 트럭이 20톤의 기름을 운반한다면 트럭의 총 무게는 차체, 운전자 등의 무게 때문에 그것보다 더 될 것이다. 이 모든 무게를 운송하는데 비용이 들지만, 고객은 오직 기름의 무게만을 지급(pay)하게 된다. 그래서 ‘pay-load’란 말이 나온 것이다.</p>
+<p>프로그래밍에서 주로 메시지 프로토콜(message protocols) 중에 프로토콜 오버헤드(protocol overhead)와 원하는 데이터를 구별할 때 사용된다.<br>(출처 : 위키백과)</p>
+<p><a href="https://stackoverflow.com/questions/978061/http-get-with-request-body" target="_blank" rel="noopener">https://stackoverflow.com/questions/978061/http-get-with-request-body</a></p>
+<h3 id="XMLRequest-setRequestHeader"><a href="#XMLRequest-setRequestHeader" class="headerlink" title="XMLRequest.setRequestHeader"></a>XMLRequest.setRequestHeader</h3><p>이것은 HTTP Request Header의 값을 설정한다. Content-type은 Request Body에 담아 전송할 데이터의 MIME-type의 정보를 표현한다 MIME-type이란<br>클라이언트에게 전송된 문서의 다양성을 알려주기 위한 메커니즘이다. text타입(text/plain, text/html, text/css, text/javascritp), Application(application/json, application/x-www-form-urlencode), File 업로드(multiport/formed-data)가 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// json으로 전송하는 경우</span></span><br><span class="line">xhr.open(<span class="string">'POST'</span>, <span class="string">'/users'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 클라이언트가 서버로 전송할 데이터의 MIME-type 지정: json</span></span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> data = &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">title</span>: <span class="string">'JavaScript'</span>, <span class="attr">author</span>: <span class="string">'Park'</span>, <span class="attr">price</span>: <span class="number">5000</span>&#125;;</span><br><span class="line"></span><br><span class="line">xhr.send(<span class="built_in">JSON</span>.stringify(data));</span><br></pre></td></tr></table></figure>
+<p>이런식으로 사용한다.</p>
+<p>또한 클라이언트가 서버에 요청할 때 서버가 Send Back할 데이터의 MIME-type을 Accept로 정할 수 있다. Accept를 설정하지 않으면 send 메서드 호출 시 Acccept 헤더가 <em>/</em>로 전송된다.</p>
+<h3 id="응답처리"><a href="#응답처리" class="headerlink" title="응답처리"></a>응답처리</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// XMLHttpRequest.readyState 프로퍼티가 변경될 때 이벤트 핸들러를 호출.</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// readyStates는 XMLHttpRequest의 상태(state)를 반환</span></span><br><span class="line">  <span class="comment">// readyState: 4 =&gt; DONE(서버 응답 완료)</span></span><br><span class="line">  <span class="keyword">if</span> (xhr.readyState === XMLHttpRequest.DONE) &#123;</span><br><span class="line">    <span class="comment">// status는 response 상태 코드를 반환 : 200 =&gt; 정상</span></span><br><span class="line">    <span class="keyword">if</span>(xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'Error!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>여기서 onreadystatechange는 Response가 클라이언트에 도달하여 발생하게 된 이벤트를 감지하여 콜백함수를 실행하여 준다. 이 상황은 readyState가 변했을 떄 실행횐다.</p>
+<p>readyState의 값은 0~4까지 있으며 0은 open메서드 호출 이전, 1은 호출 완료(OPENED), 2는 (HEADERS_RECIVED), 3은 LOADING, 4는 DONE(완료)이다.</p>
 
-        <p class="article-excerpt">
-            왜 css인가?웹 문서에 텍스트만 있다면 어떤 느낌일 것 같은가? 물론 기존 html로 기초적인 스타일링은 할 수 있지만 지금은 2018년, 4차 산업 혁명 시대 아니겠는가? css는 우리가 보는 view라는 웹 문서를 꾸미는 언어라고 보면 된다.css의 가장 큰 장점은 웹 문서를 건드리지 않고 단순히 디자인만 바꿀 수 있다.라는 정말 큰 장점이 있다.
-참
-        </p>
+        </div>
+        <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7977783901878304",
+    enable_page_level_ads: true
+  });
+</script> -->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7977783901878304"
+     data-ad-slot="9345512684"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
     </div>
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/12/todo/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/09/12/todo/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Project/">Project</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Project/todo/">todo</a>
-            </div>
-            <div class="date"><time datetime="2018-09-12T01:55:37.000Z" itemprop="datePublished">2018-09-12</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/12/todo/">Todo app 만들기</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Todo 프로젝트 만들기.이 프로젝트는 ES5와 ES6를 이용하여 만들었습니다. 그 외 Angular를 활용한 코드도 깃허브에 있으니 참조하여 보시면 감사하겠습니다.
-
-깃허브페이지
-
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/11/jsprotochain/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/js.png)" alt="프로토타입 체이닝" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/09/11/jsprotochain/">0</span>
-    
-</span>
+    </section>
 
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/ES5/">ES5</a>
-            </div>
-            <div class="date"><time datetime="2018-09-11T05:40:20.000Z" itemprop="datePublished">2018-09-11</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/11/jsprotochain/">프로토타입 체이닝</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            프로토타입 체이닝자바스크립트는 프로토타입 기반 객체지향 언어이다. 자바스크립트를 이해하기 위해서 무조건 알아가야 할 개념 중 하나가 이 프로토타입이다.그래서 오늘은 상속의 개념을 구현하는 프로토타입과 프로토타입 체이닝에 대해 글을 써보려고 한다.
-가장 중요한 건 자신을 생성한 생성자 함수의 prototype 프로퍼티가 가리키는 프로토타입 객체를 자신의 부모
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/10/htmlinput/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/htmltag.jpg)" alt="Input 태그" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/09/10/htmlinput/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/HTML-CSS/">HTML & CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/HTML-CSS/HTML/">HTML</a>
-            </div>
-            <div class="date"><time datetime="2018-09-10T06:30:48.000Z" itemprop="datePublished">2018-09-10</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/10/htmlinput/">Input 태그</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-             태그Input 태그란?Input 태그는 기본적으로 입력 항목을 만드는 태그다.체크박스 등의 클릭하는 버튼도 input 태그를 활용해 만든다.원래는 form 태그 안에 속해야 하지만 ajax통신에서는 그러지 않아도 된다.
-
-id 속성을 사용하면 label 태그를 사용할 수 있다.
-
-
-Input 태그의 type 속성에 사용 하는 유형.input type태그속
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/10/jsfuncthis/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/js.png)" alt="함수의 this" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/09/10/jsfuncthis/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/ES5/">ES5</a>
-            </div>
-            <div class="date"><time datetime="2018-09-10T05:15:07.000Z" itemprop="datePublished">2018-09-10</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/10/jsfuncthis/">함수의 this</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            thisthis
-arguments 객체자바스크립트는 인자의 갯수를 달리해도 오류가 발생하지 않는다. 넘겨지지 않은 인자는 undefined, 갯수가 많을 경우에는 무시된다.이렇기 때문에 런타임 시 인자의 갯수를 확인하여 동작을 다르게 해줘야 하는데 이를 가능하게 하는 것이 arguments 객체이다.
-
-function add(a,b) {
-  console.
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/09/jsfunction/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/js.png)" alt="자바스크립트의 함수" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/09/09/jsfunction/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/ES5/">ES5</a>
-            </div>
-            <div class="date"><time datetime="2018-09-09T06:52:11.000Z" itemprop="datePublished">2018-09-09</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/09/jsfunction/">자바스크립트의 함수</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            함수란?함수자바스크립트에서 가장 중요한 것이 무엇이냐고 했을 때 십중팔구는 함수를 이야기 할 것이다. 자바스크립트의 함수는 모듈화, 클로져, 객체 생성, 함수형 프로그래밍 지향에 있어서 정말 중요한 개념이고 잘 이해하여야 한다.(그런 의미에서 나는 아직 멀었다.)
-함수의 생성방법함수 생성방법은 객체 생성방법과 비슷하게 3가지가 있다. 함수 선언문, 함수 표
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/09/htmlform/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/htmltag.jpg)" alt="Form 태그에 대하여" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/09/09/htmlform/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/HTML-CSS/">HTML & CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/HTML-CSS/HTML/">HTML</a>
-            </div>
-            <div class="date"><time datetime="2018-09-09T06:15:24.000Z" itemprop="datePublished">2018-09-09</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/09/htmlform/">Form 태그에 대하여</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            HTML 폼 태그에 대하여폼 태그란 특정 형식에 사용자가 무언가를 입력하는 형태로 이루어져 있다. 로그인이나 회원가입 창이 그 예이다.웬만한 페이지에서는 형식에 구해받지 않고 이런 폼 태그를 볼 수 있다. 우리가 많이 사용하는 SNS에서도 회원가입을 하기 위해서 입력하는 정보들도 폼이다.
-로그인을 예로 들면 우리가 클라리언트에서 정보를 입력하여 서버로 보내
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/05/jsprototype/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/js.png)" alt="프로토타입과 배열 그리고 연산자" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/09/05/jsprototype/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Javascript/">Javascript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Javascript/ES5/">ES5</a>
-            </div>
-            <div class="date"><time datetime="2018-09-05T07:27:24.000Z" itemprop="datePublished">2018-09-05</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/05/jsprototype/">프로토타입과 배열 그리고 연산자</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            프로토타입자바스크립트의 모든 객체는 자신의 부모 역할을 하는 객체와 연결되어 있다. 이를 통해 자바스크립트에서는 상속 개념을 구현할 수 있다. 이를 프로토타입 객체라고 한다.
-var foo = {
-  name: &apos;Jang&apos;,
-  age: 27
-};
-
-console.log(foo.toString());
-console.dir(foo);
-코드를
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/05/htmlimage/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/htmltag.jpg)" alt="이미지와 하이퍼텍스트링크" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://rootjang92.github.io/2018/09/05/htmlimage/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/HTML-CSS/">HTML & CSS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/HTML-CSS/HTML/">HTML</a>
-            </div>
-            <div class="date"><time datetime="2018-09-05T01:37:02.000Z" itemprop="datePublished">2018-09-05</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/05/htmlimage/">이미지와 하이퍼텍스트링크</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            이미지와 하이퍼텍스트 링크웹에서 사용되는 이미지 파일 형식은?웹 페이지는 기본적으로 설명은 텍스트, 메뉴나 로고 등은 이미지로 처리 한다. 웹 페이지의 경우 크기가 작고 화질이 좋은 파일 형식을 사용하여야 하는데 웹에서 사용할 수 있는 파일 형식은 GIF, JPG/JPEG, PNG 파일이 있다.
-이미지 파일 형식
-img 태그HTML에서 이미지를 삽입하는 태
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">Page 2 of 3</span>
-        <a class="extend prev" rel="prev" href="/archives/2018/09/">&laquo;</a><a class="page-number" href="/archives/2018/09/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/09/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/09/page/3/">&raquo;</a>
-    </nav>
 
 
                         </div>
@@ -738,6 +404,19 @@ img 태그HTML에서 이미지를 삽입하는 태
     </div>
     <div class="github-card" data-github="Rootjang92" data-width="340" data-height="152" data-theme="default"></div>
     <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/01/18/form/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">HTML 폼과 CSS 제어하기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -969,11 +648,13 @@ img 태그HTML에서 이미지를 삽입하는 태
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://rootjang92.github.io/2019/01/26/httpAjax/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
